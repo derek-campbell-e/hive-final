@@ -6,6 +6,7 @@ module.exports = function MindLoader(options){
   let baseFolder = options.base || path.join(__dirname, '..', '..', 'bees');
   let mindFolder = path.join(baseFolder, options.class);
   let mindPath = path.join(mindFolder, options.mind);
+  
   try {
     mind = require(mindPath);
   } catch (e){

@@ -16,6 +16,9 @@ module.exports = function Queen(Hive, options){
   options = require('extend')(true, {}, defaultOptions, options);
   let queen = require('./Bee')(Hive);
 
+  // object for holding our drones
+  queen.drones = {};
+
   //overwrite some defaults
   queen.meta.class = 'queen';
 
@@ -54,25 +57,54 @@ module.exports = function Queen(Hive, options){
     });
   };
 
-  queen.loadDrones = function(){
+  queen.gatherDrones = function(){
     let hasDronesToLoad = options.loadDrones.length > 0;
-    let startAllLoadedDrones = options.startDrones.length > 0;
     let dronesToLoad = [];
+
     if(hasDronesToLoad || !options.loadAllDrones){
       debug('we have specific drones to load...');
       queen.droneFinder(options.loadDrones, function(returnedDrones){
         dronesToLoad = [...dronesToLoad, ...returnedDrones];
+        queen.loadDrones(dronesToLoad);
       });
     } else {
       queen.droneFinder([], function(returnedDrones){
         dronesToLoad = [...dronesToLoad, ...returnedDrones];
+        queen.loadDrones(dronesToLoad);
       });
     }
-    
+  };
+
+  queen.loadDrones = function(dronesToLoad){
+    let drones = [...dronesToLoad];
+    let loadBee = function(){
+      let mind = drones.shift();
+      
+      if(typeof mind === 'undefined'){
+        queen.startDrones();
+        return;
+      }
+
+      let drone = require('./Drone')(Hive, mind);
+      queen.drones[drone.meta.id] = drone; 
+      loadBee();
+    };
+
+    loadBee();
+  };
+
+  queen.startDrones = function(){
+    for(let droneID in queen.drones){
+      let drone = queen.drones[droneID];
+      let isInStartDrones = options.startDrones.indexOf(drone.meta.mind) !== -1;
+      if(options.startDronesOnLoad || isInStartDrones){
+        drone.start();
+      }
+    }
   };
 
   let init = function(){
-    queen.loadDrones();
+    queen.gatherDrones();
     queen.spawn();
     return queen;
   };

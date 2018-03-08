@@ -19,6 +19,9 @@ module.exports = function Queen(Hive, options){
   // object for holding our drones
   queen.drones = {};
 
+  // object for holding our workers
+  queen.workers = {};
+
   //overwrite some defaults
   queen.meta.class = 'queen';
 
@@ -56,7 +59,7 @@ module.exports = function Queen(Hive, options){
       });
     });
   };
-
+  
   queen.gatherDrones = function(){
     let hasDronesToLoad = options.loadDrones.length > 0;
     let dronesToLoad = [];
@@ -76,21 +79,13 @@ module.exports = function Queen(Hive, options){
   };
 
   queen.loadDrones = function(dronesToLoad){
-    let drones = [...dronesToLoad];
-    let loadBee = function(){
-      let mind = drones.shift();
-      
-      if(typeof mind === 'undefined'){
-        queen.startDrones();
-        return;
-      }
-
-      let drone = require('./Drone')(Hive, mind);
-      queen.drones[drone.meta.id] = drone; 
-      loadBee();
-    };
-
-    loadBee();
+    let droneMinds = [...dronesToLoad];
+    for(let droneMindIndex in droneMinds){
+      let droneMind = droneMinds[droneMindIndex];
+      let drone = require('./Drone')(Hive, queen, droneMind);
+      queen.drones[drone.meta.id] = drone;
+    }
+    queen.startDrones();
   };
 
   queen.startDrones = function(){
@@ -101,6 +96,28 @@ module.exports = function Queen(Hive, options){
         drone.start();
       }
     }
+  };
+
+  queen.listenToWorker = function(worker){
+    worker.once('on:retire', function(bee){
+      debug("the queen knows about your two weeks..");
+      queen.workers[bee.meta.id] = null;
+      delete queen.workers[bee.meta.id];
+    });
+  };
+
+  queen.spawnWorker = function(drone, workerMind, absolutePath){
+    let workerPath = path.join(options.beeFolder, 'workers');
+    let workerMindFile = path.join(workerPath, workerMind);
+    if(absolutePath) {
+      workerMindFile = workerMind;
+    }
+    let worker = require('./Worker')(Hive, workerMindFile);
+    queen.workers[worker.meta.id] = {
+      drone: drone.meta.id,
+    };
+    queen.listenToWorker(worker);
+    return worker;
   };
 
   let init = function(){

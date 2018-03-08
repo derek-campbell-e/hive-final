@@ -14,6 +14,9 @@ module.exports = function Hive(){
   // our object for bee awareness
   hive.bees = {};
 
+  // our object for tasks
+  hive.tasks = {};
+
   // our delegates
   hive.delegates = {};
 
@@ -28,16 +31,16 @@ module.exports = function Hive(){
     delete hive.bees[bee.id];
   };
 
-  hive.delegates.on.taskStart = function(task, bee){
-    hive.tasks[task.id] = {
+  hive.delegates.on.taskStart = function(bee, task){
+    hive.tasks[task.meta.id] = {
       task: task,
-      bee: bee.id
+      bee: bee.meta.id
     };
   };
 
-  hive.delegates.on.taskComplete = function(task, bee){
-    hive.tasks[task.id] = null;
-    delete hive.tasks[task.id];
+  hive.delegates.on.taskComplete = function(bee, task){
+    hive.tasks[task.meta.id] = null;
+    delete hive.tasks[task.meta.id];
   };
 
   let init = function(){
@@ -48,6 +51,13 @@ module.exports = function Hive(){
       loadDrones: ['writeEverySecond']
     };
     let Queen = require('./Queen')(hive, options);
+    //let worker = Queen.loadWorker('fileWriter');
+    setInterval(function(){
+      process.stdout.write('\033c');
+      for(let taskID in hive.tasks){
+        debug(hive.tasks[taskID].task.meta);
+      }
+    }, 100);
     return hive;
   };
 

@@ -53,7 +53,13 @@ module.exports = function Worker(Hive, MindFile){
       currentTaskID = worker.taskStart(worker.meta.taskName(taskName));
       let task = worker.mind[taskName];
       let taskTickArguments = [...argsMinusCallback, ...arguments, loop];
-      task.apply(worker, taskTickArguments); // feed in arguments from caller, take out final callback, add our nextTick callback
+      try {
+        task.apply(worker, taskTickArguments); // feed in arguments from caller, take out final callback, add our nextTick callback
+      } catch (error){
+        error.name = taskName;
+        worker.error(error);
+      }
+      
     };
 
     loop.apply(worker, []); // start running the async loop

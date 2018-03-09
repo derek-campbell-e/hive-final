@@ -88,11 +88,20 @@ module.exports = function Queen(Hive, options){
     queen.startDrones();
   };
 
-  queen.startDrones = function(){
+  queen.startDrones = function(startDrones){
+    startDrones = startDrones || [];
     for(let droneID in queen.drones){
       let drone = queen.drones[droneID];
       let isInStartDrones = options.startDrones.indexOf(drone.meta.mind) !== -1;
-      if(options.startDronesOnLoad || isInStartDrones){
+      let ifShouldStartDronesOnLoad = options.startDronesOnLoad && options.startDrones.length === 0;
+      if(ifShouldStartDronesOnLoad || isInStartDrones){
+        if(!drone.meta.hasStarted){
+          drone.start();
+        }
+        continue;
+      }
+      let isInStartDroneArguments = startDrones.indexOf(drone.meta.mind) !== -1 || startDrones === '*';
+      if(isInStartDroneArguments){
         drone.start();
       }
     }

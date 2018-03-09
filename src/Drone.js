@@ -99,6 +99,7 @@ module.exports = function Drone(Hive, Queen, MindFile){
 
   drone.start = function(){
     debug("starting...");
+    drone.meta.hasStarted = true;
     drone.bindTask();
   };
 

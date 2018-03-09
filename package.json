@@ -1,10 +1,11 @@
 {
   "name": "hive",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "a better task scheduler",
   "main": "index.js",
   "scripts": {
-    "test": "DEBUG=*,-node* nodemon index.js"
+    "test": "DEBUG=*,-node* nodemon index.js",
+    "start": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +16,7 @@
     "glob": "^7.1.2",
     "later": "^1.2.0",
     "moment": "^2.21.0",
-    "node-cron": "^1.2.1"
+    "node-cron": "^1.2.1",
+    "vorpal": "^1.12.0"
   }
 }

@@ -3,10 +3,10 @@ module.exports = function WriteEverySecond(){
 
   mind.maxThreads = 2;
   
-  mind.hz = 1;
+  mind.hz = 1000;
   mind.task = function(callback){
     let fileWriterWorker = this.spawnWorker('fileWriter');
-    console.log(this.meta.threads());
+    this.log("hello\nniceday")
     fileWriterWorker("drone-test.txt", "HEYLLOO", callback);
   };
 

@@ -2,7 +2,10 @@ module.exports = function Bee(Hive){
   const uuid = require('./common/uuid');
   const makeEmitter = require('./common/makeEmitter');
   const delegateBinder = require('./common/delegateBinder');
+  const stdFormatter = require('./common/stdFormatter');
+  const logFormatter = require('./common/logFormatter');
   const moment = require('moment');
+ 
   let debug = require('debug')('bee');
 
   // start by making the module an event emitter
@@ -12,11 +15,13 @@ module.exports = function Bee(Hive){
   bee.meta = {};
 
   bee.meta.id = uuid();
+  bee.meta.hasStarted = false;
   bee.meta.class = 'base';
   bee.meta.mind = 'default';
   bee.meta.spawnAt = -1;
   bee.meta.stdout = "";
   bee.meta.stderr = "";
+  bee.meta.maxLog = 10; //only want last 50 lines of logs and errors
   bee.meta.threads = function(){
     return Object.keys(bee.tasks).length;
   };
@@ -32,6 +37,27 @@ module.exports = function Bee(Hive){
   // our delegate methods
   bee.delegates = {};
   bee.delegates.on = {};
+
+  bee.delegates.stderr = function(){
+    bee.meta.stderr += logFormatter(bee, stdFormatter.apply(bee, arguments));
+  };
+
+  bee.delegates.stdout = function(){
+    bee.meta.stdout += logFormatter(bee, stdFormatter.apply(bee, arguments));
+    bee.delegates.stdwrite();
+    //debug("GOT A STDOUT", bee.meta.stdout);
+  };
+
+  bee.delegates.stdwrite = function(){
+    let stdOutLines = bee.meta.stdout.split(/\n/g);
+    let numberOfStdOutLines = stdOutLines.length;
+    let newStdOut = "";
+    stdOutLines.splice(numberOfStdOutLines - bee.meta.maxLog, numberOfStdOutLines - bee.meta.maxLog);
+    bee.meta.stdout = stdOutLines.join("\n");
+  };
+
+  bee.log = bee.delegates.stdout;
+  bee.error = bee.delegates.stderr;
   
   bee.delegates.on.spawn = function(){
     debug = require('debug')(bee.meta.debugName());

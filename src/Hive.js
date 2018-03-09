@@ -3,16 +3,26 @@ module.exports = function Hive(){
   const makeEmitter = require('./common/makeEmitter');
   const delegateBinder = require('./common/delegateBinder');
   const debug = require('debug')('hive');
+  const path = require('path');
+  let package = require(path.join(__dirname, '..', 'package.json'));
 
   // start by making the module an event emitter
   let hive = makeEmitter({});
 
+  // our cli object
+  // might make this private??
+  hive.cli = null;
+
   // our meta object for data
   hive.meta = {};
   hive.meta.id = uuid();
+  hive.meta.version = package.version;
 
   // our object for bee awareness
   hive.bees = {};
+
+  // a special place for our queen
+  hive.queen = null;
 
   // our object for tasks
   hive.tasks = {};
@@ -23,12 +33,12 @@ module.exports = function Hive(){
   //
   hive.delegates.on = {};
   hive.delegates.on.beeSpawn = function(bee){
-    hive.bees[bee.id] = bee;
+    hive.bees[bee.meta.id] = bee;
   };
 
   hive.delegates.on.beeRetire = function(bee){
-    hive.bees[bee.id] = null;
-    delete hive.bees[bee.id];
+    hive.bees[bee.meta.id] = null;
+    delete hive.bees[bee.meta.id];
   };
 
   hive.delegates.on.taskStart = function(bee, task){
@@ -43,21 +53,46 @@ module.exports = function Hive(){
     delete hive.tasks[task.meta.id];
   };
 
+  // for our cli
+  hive.startDrones = function(args, callback){
+    if(args.options.all){
+      args.drones = '*';
+    }
+    hive.queen.startDrones(args.drones);
+    callback();
+  };
+
+  hive.showLogs = function(args, callback){
+    let output = "LOGS:\n";
+    for(let beeID in hive.bees){
+      let bee = hive.bees[beeID];
+      output += beeID+"\t"+bee.meta.class+":\t"+bee.meta.mind+"\n";
+      output += "\t\t"+bee.meta.stdout.replace(/\n/g, "\n\t\t");
+      output += "\n";
+    }
+    callback(output);
+  };
+
+  hive.showErrors = function(args, callback){
+    let output = "Errors:\n";
+    for(let beeID in hive.bees){
+      let bee = hive.bees[beeID];
+      output += beeID+"\t"+bee.meta.class+":\t"+bee.meta.mind+"\n";
+      output += "\t\t"+bee.meta.stderr.replace(/\n/g, "\n\t\t");
+      output += "\n";
+    }
+    callback(output);
+  };
+
   let init = function(){
     debug("initializing the hive...");
     delegateBinder(hive);
     let options = {
-      loadAllDrones: false,
-      loadDrones: ['writeEverySecond']
+      startAllDrones: false,
+      startDrones: ['writeEverySecond']
     };
-    let Queen = require('./Queen')(hive, options);
-    //let worker = Queen.loadWorker('fileWriter');
-    setInterval(function(){
-      process.stdout.write('\033c');
-      for(let taskID in hive.tasks){
-        debug(hive.tasks[taskID].task.meta);
-      }
-    }, 100);
+    hive.queen = require('./Queen')(hive, options);
+    hive.cli = require('./Cli')(hive);
     return hive;
   };
 

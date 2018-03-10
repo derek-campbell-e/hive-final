@@ -13,4 +13,12 @@ module.exports = function CLI(Hive){
     .command("start drones [drones...]")
     .option('-a, --all', 'start all the drones')
     .action(Hive.startDrones);
+
+  vorpal
+    .command("logs")
+    .action(Hive.tailLogs);
+  
+  vorpal
+    .command("errors")
+    .action(Hive.tailErrors);
 };

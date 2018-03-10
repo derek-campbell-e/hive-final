@@ -11,7 +11,8 @@ module.exports = function FileWriterWorker(){
   };
   
   mind.checkData = function(filename, data, callback){
-    throw new Error("HAHAH");
+    //throw new Error("HAHAH");
+    this.error("UH OH");
     setTimeout(callback, 1000);
   };
 

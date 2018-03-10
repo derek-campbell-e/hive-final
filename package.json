@@ -11,12 +11,14 @@
   "license": "ISC",
   "dependencies": {
     "async": "^2.6.0",
+    "colors": "^1.2.0",
     "debug": "^3.1.0",
     "extend": "^3.0.1",
     "glob": "^7.1.2",
     "later": "^1.2.0",
     "moment": "^2.21.0",
     "node-cron": "^1.2.1",
+    "socket.io": "^2.0.4",
     "vorpal": "^1.12.0"
   }
 }

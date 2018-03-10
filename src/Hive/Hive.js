@@ -1,13 +1,30 @@
 module.exports = function Hive(){
-  const uuid = require('./common/uuid');
-  const makeEmitter = require('./common/makeEmitter');
-  const delegateBinder = require('./common/delegateBinder');
+  // our common tools
+  const common = require('../common');
+  const uuid = common.uuid;
+  const makeEmitter = common.makeEmitter;
+  const delegateBinder = common.delegateBinder;
+  const makeLogger = common.makeLogger;
+
   const debug = require('debug')('hive');
   const path = require('path');
-  let package = require(path.join(__dirname, '..', 'package.json'));
-
-  // start by making the module an event emitter
+  let package = require(path.join(__dirname, '..', '..', 'package.json'));
   let hive = makeEmitter({});
+
+  hive.sockets = {};
+
+  let io = require('socket.io')(4202);
+  io.on('connection', function(socket){
+    debug("WE HAVE A NEW SOCKET CONNECTION YALL");
+    console.log("NEW SOCKET", socket.id);
+    hive.sockets[socket.id] = socket;
+  });
+  
+  // start by making the module an event emitter
+  
+
+  // make our hive a logger
+  makeLogger(hive);
 
   // our cli object
   // might make this private??
@@ -17,6 +34,10 @@ module.exports = function Hive(){
   hive.meta = {};
   hive.meta.id = uuid();
   hive.meta.version = package.version;
+  hive.meta.class = 'hive';
+  hive.meta.mind = 'default';
+  hive.meta.stdout = "";
+  hive.meta.stderr = "";
 
   // our object for bee awareness
   hive.bees = {};
@@ -84,15 +105,51 @@ module.exports = function Hive(){
     callback(output);
   };
 
+  hive.tailLogs = function(args, callback){
+    hive.on('logline', function(line){
+      hive.blast('logline', line);
+      console.log(line);
+    });
+    callback();
+  };
+
+  hive.stopTailLogs = function(args, callback){
+    hive.off('logline');
+    callback();
+  };
+
+  hive.tailErrors = function(args, callback){
+    hive.on('errorline', function(line){
+      hive.blast('errorline', line);
+      console.error(line);
+    });
+
+    callback();
+  };
+
+  hive.stopTailErrors = function(args, callback){
+    hive.off('errorline');
+    callback();
+  };
+
+  hive.blast = function(eventName,...args){
+    for(let socketID in hive.sockets){
+      let socket = hive.sockets[socketID];
+      socket.emit.apply(socket, [eventName, ...args]);
+    }
+  };
+
   let init = function(){
     debug("initializing the hive...");
+    hive.log("well well well");
     delegateBinder(hive);
     let options = {
       startAllDrones: false,
       startDrones: ['writeEverySecond']
     };
-    hive.queen = require('./Queen')(hive, options);
+    hive.queen = require('../Queen')(hive, options);
     hive.cli = require('./Cli')(hive);
+    console.log(hive.meta.stdout);
     return hive;
   };
 

@@ -1,8 +1,8 @@
-module.exports = function LogFormatter(bee, logString){
+module.exports = function LogFormatter(Module, logString){
   const moment = require('moment');
   const util = require('util');
   const dateString = moment().format('DD/MMM/YYYY:HH:mm:ss ZZ');
-  const metaString = bee.meta.id + " " + bee.meta.class + ":" + bee.meta.mind;
+  const metaString = Module.meta.id + " " + Module.meta.class + ":" + Module.meta.mind;
   logString = logString.replace(/\n/g, " ");
   return util.format('%s [%s] - %s \n', metaString, dateString, logString);
 };

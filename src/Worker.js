@@ -58,6 +58,7 @@ module.exports = function Worker(Hive, MindFile){
       } catch (error){
         error.name = taskName;
         worker.error(error);
+        loop.apply(loop, taskTickArguments);
       }
       
     };

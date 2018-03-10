@@ -6,7 +6,6 @@ module.exports = function WriteEverySecond(){
   mind.hz = 1000;
   mind.task = function(callback){
     let fileWriterWorker = this.spawnWorker('fileWriter');
-    this.log("hello\nniceday")
     fileWriterWorker("drone-test.txt", "HEYLLOO", callback);
   };
 

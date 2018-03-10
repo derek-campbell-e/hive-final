@@ -9,19 +9,13 @@ module.exports = function Hive(){
   const debug = require('debug')('hive');
   const path = require('path');
   let package = require(path.join(__dirname, '..', '..', 'package.json'));
+  
+  // start by making the module an event emitter
   let hive = makeEmitter({});
 
   hive.sockets = {};
 
-  let io = require('socket.io')(4202);
-  io.on('connection', function(socket){
-    debug("WE HAVE A NEW SOCKET CONNECTION YALL");
-    console.log("NEW SOCKET", socket.id);
-    hive.sockets[socket.id] = socket;
-  });
-  
-  // start by making the module an event emitter
-  
+  let io = require('socket.io')(4202);  
 
   // make our hive a logger
   makeLogger(hive);
@@ -50,88 +44,26 @@ module.exports = function Hive(){
 
   // our delegates
   hive.delegates = {};
+  hive.delegates.socket = require('./delegates/socket')(hive, io);
+  hive.delegates.cli = require('./delegates/cli')(hive);
+  hive.delegates.on = require('./delegates/on')(hive);
 
-  //
-  hive.delegates.on = {};
-  hive.delegates.on.beeSpawn = function(bee){
-    hive.bees[bee.meta.id] = bee;
-  };
-
-  hive.delegates.on.beeRetire = function(bee){
-    hive.bees[bee.meta.id] = null;
-    delete hive.bees[bee.meta.id];
-  };
-
-  hive.delegates.on.taskStart = function(bee, task){
-    hive.tasks[task.meta.id] = {
-      task: task,
-      bee: bee.meta.id
-    };
-  };
-
-  hive.delegates.on.taskComplete = function(bee, task){
-    hive.tasks[task.meta.id] = null;
-    delete hive.tasks[task.meta.id];
-  };
-
-  // for our cli
-  hive.startDrones = function(args, callback){
-    if(args.options.all){
-      args.drones = '*';
-    }
-    hive.queen.startDrones(args.drones);
-    callback();
-  };
-
-  hive.showLogs = function(args, callback){
-    let output = "LOGS:\n";
+  hive.getStats = function(args){
+    let hiveExport = {};
+    hiveExport.hive = hive.meta.id;
+    hiveExport.bees = {};
+    hiveExport.queen = hive.queen.export();
+    hiveExport.tasks = {};
     for(let beeID in hive.bees){
-      let bee = hive.bees[beeID];
-      output += beeID+"\t"+bee.meta.class+":\t"+bee.meta.mind+"\n";
-      output += "\t\t"+bee.meta.stdout.replace(/\n/g, "\n\t\t");
-      output += "\n";
+      hiveExport.bees[beeID] = hive.bees[beeID].export();
     }
-    callback(output);
-  };
-
-  hive.showErrors = function(args, callback){
-    let output = "Errors:\n";
-    for(let beeID in hive.bees){
-      let bee = hive.bees[beeID];
-      output += beeID+"\t"+bee.meta.class+":\t"+bee.meta.mind+"\n";
-      output += "\t\t"+bee.meta.stderr.replace(/\n/g, "\n\t\t");
-      output += "\n";
+    for(let taskID in hive.tasks){
+      let taskInfo = hive.tasks[taskID];
+      hiveExport.tasks[taskID] = taskInfo.task.export();
     }
-    callback(output);
+    return hiveExport;
   };
-
-  hive.tailLogs = function(args, callback){
-    hive.on('logline', function(line){
-      hive.blast('logline', line);
-      console.log(line);
-    });
-    callback();
-  };
-
-  hive.stopTailLogs = function(args, callback){
-    hive.off('logline');
-    callback();
-  };
-
-  hive.tailErrors = function(args, callback){
-    hive.on('errorline', function(line){
-      hive.blast('errorline', line);
-      console.error(line);
-    });
-
-    callback();
-  };
-
-  hive.stopTailErrors = function(args, callback){
-    hive.off('errorline');
-    callback();
-  };
-
+  
   hive.blast = function(eventName,...args){
     for(let socketID in hive.sockets){
       let socket = hive.sockets[socketID];
@@ -141,8 +73,6 @@ module.exports = function Hive(){
 
   let init = function(){
     debug("initializing the hive...");
-    hive.log("well well well");
-    delegateBinder(hive);
     let options = {
       startAllDrones: false,
       startDrones: ['writeEverySecond']

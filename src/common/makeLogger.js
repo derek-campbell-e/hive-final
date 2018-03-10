@@ -1,9 +1,16 @@
 module.exports = function MakeLogger(Module){
   const colors = require('colors');
+  const fs = require('fs');
+  const path = require('path');
 
   const logFormatter = require('./logFormatter');
   const stdFormatter = require('./stdFormatter');
+ 
   let logger = {};
+
+  let logpaths = {};
+  logpaths.stdout = path.join(__dirname, '..', '..', 'logs/stdout.txt');
+  logpaths.stderr = path.join(__dirname, '..', '..', 'logs/stderr.txt');
 
   logger.makeLogLine = function(){
     return logFormatter(Module, stdFormatter.apply(Module, arguments))
@@ -13,6 +20,7 @@ module.exports = function MakeLogger(Module){
     let line = logger.makeLogLine.apply(logger, arguments);
     Module.meta.stdout += line;
     Module.emit("logline", line.replace(/\n/g, " "));
+    fs.writeFileSync(logpaths.stdout, line, {encoding: 'utf-8', flag: 'a'});
     trim();
   };
 
@@ -20,6 +28,7 @@ module.exports = function MakeLogger(Module){
     let line = logger.makeLogLine.apply(logger, arguments);
     Module.meta.stderr += line;
     Module.emit("errorline", line.replace(/\n/g, " ").red);
+    fs.writeFileSync(logpaths.stderr, line, {encoding: 'utf-8', flag: 'a'});
     trim();
   };
 
@@ -31,8 +40,8 @@ module.exports = function MakeLogger(Module){
     let stdOutIndexAndCount = stdOutLines.length - maxLines;
     let stdErrIndexAndCount = stdErrLines.length - maxLines;
 
-    stdOutLines.splice(stdOutIndexAndCount, stdOutIndexAndCount);
-    stdErrLines.splice(stdErrIndexAndCount, stdErrIndexAndCount);
+    let stdOutWrite = stdOutLines.splice(stdOutIndexAndCount, stdOutIndexAndCount);
+    let stdErrWrite = stdErrLines.splice(stdErrIndexAndCount, stdErrIndexAndCount);
 
     Module.meta.stdout = stdOutLines.join("\n");
     Module.meta.stderr = stdErrLines.join("\n");

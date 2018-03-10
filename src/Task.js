@@ -1,4 +1,4 @@
-module.exports = function Task(taskName){
+module.exports = function Task(bee, taskName){
   const uuid = require('./common/uuid');
   const timestamp = require('./common/timestamp');
   
@@ -32,6 +32,20 @@ module.exports = function Task(taskName){
       endTime = timestamp();
     }
     task.meta.runTime = endTime - task.meta.startTime;
+  };
+
+  task.export = function(){
+    let exports = {};
+    for(let key in task.meta){
+      let exportData = task.meta[key];
+      if(typeof exportData === 'function'){
+        exports[key] = exportData();
+      } else {
+        exports[key] = exportData;
+      }
+    }
+    exports.bee = bee.meta.id;
+    return exports;
   };
 
   return task;

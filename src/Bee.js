@@ -18,7 +18,7 @@ module.exports = function Bee(Hive){
 
   // our meta object for data
   bee.meta = {};
-  bee.meta.hive = Hive;
+  //bee.meta.hive = Hive;
   bee.meta.id = uuid();
   bee.meta.hasStarted = false;
   bee.meta.class = 'base';
@@ -30,14 +30,16 @@ module.exports = function Bee(Hive){
   bee.meta.threads = function(){
     return Object.keys(bee.tasks).length;
   };
+
+  bee.meta.debugName = function(){
+    return bee.meta.class + ":" + bee.meta.mind;
+  };
   
   // holds the tasks object for the bee;
   // we may end out having more than one task based on timeouts and delays and such
   bee.tasks = {};
 
-  bee.meta.debugName = function(){
-    return bee.meta.class + ":" + bee.meta.mind;
-  };
+ 
 
   bee.on('logline', function(line){
     Hive.emit("logline", line);
@@ -96,7 +98,7 @@ module.exports = function Bee(Hive){
   };
 
   bee.taskStart = function(taskName){
-    let task = require('./Task')(taskName);
+    let task = require('./Task')(bee, taskName);
     bee.tasks[task.meta.id] = task;
     bee.emit.apply(bee, ['on:taskStart', bee.tasks[task.meta.id]]);
     task.run();
@@ -113,6 +115,19 @@ module.exports = function Bee(Hive){
     setTimeout(function(){
       bee.emit.apply(bee, ["on:taskComplete", task]);
     }, 5000);
+  };
+
+  bee.export = function(){
+    let exports = {};
+    for(let key in bee.meta){
+      let exportData = bee.meta[key];
+      if(typeof exportData === 'function'){
+        exports[key] = exportData();
+      } else {
+        exports[key] = exportData;
+      }
+    }
+    return exports;
   };
 
   // our private initializer

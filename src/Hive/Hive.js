@@ -8,6 +8,8 @@ module.exports = function Hive(){
 
   const debug = require('debug')('hive');
   const path = require('path');
+  const io = require('socket.io')(4202);  
+  
   let package = require(path.join(__dirname, '..', '..', 'package.json'));
   
   // start by making the module an event emitter
@@ -15,7 +17,7 @@ module.exports = function Hive(){
 
   hive.sockets = {};
 
-  let io = require('socket.io')(4202);  
+  
 
   // make our hive a logger
   makeLogger(hive);
@@ -63,6 +65,20 @@ module.exports = function Hive(){
     }
     return hiveExport;
   };
+
+  hive.gc = function(){
+    debug("we are exiting so do some garbage collection...");
+    for (let beeID in hive.bees){
+      let bee = hive.bees[beeID];
+      bee.gc();
+    }
+    for (let taskID in hive.tasks){
+      let taskInfo = hive.tasks[taskID];
+      taskInfo.task.gc();
+    }
+    hive.queen.gc();
+    process.exit(2);
+  };
   
   hive.blast = function(eventName,...args){
     for(let socketID in hive.sockets){
@@ -75,11 +91,12 @@ module.exports = function Hive(){
     debug("initializing the hive...");
     let options = {
       startAllDrones: false,
-      startDrones: ['writeEverySecond']
+      //startDrones: ['writeEverySecond']
     };
     hive.queen = require('../Queen')(hive, options);
     hive.cli = require('./Cli')(hive);
-    console.log(hive.meta.stdout);
+    //console.log(hive.meta.stdout);
+    process.on('SIGINT', hive.gc);
     return hive;
   };
 

@@ -33,6 +33,10 @@ module.exports = function Task(bee, taskName){
     }
     task.meta.runTime = endTime - task.meta.startTime;
   };
+  
+  task.gc = function(){
+
+  };
 
   task.export = function(){
     let exports = {};

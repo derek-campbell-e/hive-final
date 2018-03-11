@@ -97,6 +97,22 @@ module.exports = function Drone(Hive, Queen, MindFile){
 
   };
 
+  drone.gc = function(){
+    let isHz = drone.mind.hasOwnProperty('hz');
+    let isLater = drone.mind.hasOwnProperty('later');
+    let isCron = drone.mind.hasOwnProperty('cron');
+
+    if(isHz){
+      drone.taskTimer = clearInterval(drone.taskTimer);
+    }
+
+    if(isLater || isCron){
+      drone.taskTimer = drone.taskTimer.clear();
+    }
+
+    console.log("we are all clear!");
+  };
+
   drone.start = function(){
     debug("starting...");
     drone.meta.hasStarted = true;

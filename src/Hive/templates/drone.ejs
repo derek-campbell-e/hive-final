@@ -1,0 +1,15 @@
+module.exports = function <%- droneFunctionName %>(){
+  let mind = {};
+
+  mind.maxThreads = <%- maxThreads %>;
+
+  mind.<%- scheduleType %> = <%- scheduleValue %>
+  
+  mind.task = function(callback){
+    // do work in here
+    // drone is complete after calling the callback;
+    // use this.spawnWorker to spawn a worker by its name
+  };
+
+  return mind;
+};

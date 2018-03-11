@@ -63,6 +63,7 @@ module.exports = function Bee(Hive){
   bee.delegates.on.retire = function(){
     debug("i am being retired... the hive should know about my two-weeks");
     Hive.emit("on:beeRetire", this);
+    bee.gc();
   };
 
   bee.delegates.on.taskStart = function(task){
@@ -115,6 +116,12 @@ module.exports = function Bee(Hive){
     setTimeout(function(){
       bee.emit.apply(bee, ["on:taskComplete", task]);
     }, 5000);
+  };
+
+  // garbage collection, remove timers, etc
+  // each bee should impliment its own gc
+  bee.gc = function(){
+    console.log("EXIT");
   };
 
   bee.export = function(){

@@ -42,3 +42,87 @@ a854-d2911601 hive:default [10/Mar/2018:15:42:48 -0800] - new socket:  GmmUx2Mkp
 a854-d2911601 hive:default [10/Mar/2018:15:42:48 -0800] - received socket event: stats from: GmmUx2MkpKBFjzitAAAA 
 8216-360af0e8 hive:default [10/Mar/2018:15:44:21 -0800] - new socket:  _sdoRX9Oj1wNP9V2AAAA 
 8216-360af0e8 hive:default [10/Mar/2018:15:44:21 -0800] - received socket event: stats from: _sdoRX9Oj1wNP9V2AAAA 
+8216-360af0e8 hive:default [10/Mar/2018:20:22:11 -0800] - received socket event: disconnect from: _sdoRX9Oj1wNP9V2AAAA 
+8216-360af0e8 hive:default [10/Mar/2018:20:22:11 -0800] - socket _sdoRX9Oj1wNP9V2AAAA has disconnected reason: transport close 
+8216-360af0e8 hive:default [10/Mar/2018:20:22:12 -0800] - new socket:  bzk4c2JZYlohrBr7AAAB 
+8216-360af0e8 hive:default [10/Mar/2018:20:22:12 -0800] - received socket event: stats from: bzk4c2JZYlohrBr7AAAB 
+8216-360af0e8 hive:default [10/Mar/2018:20:40:08 -0800] - received socket event: disconnect from: bzk4c2JZYlohrBr7AAAB 
+8216-360af0e8 hive:default [10/Mar/2018:20:40:08 -0800] - socket bzk4c2JZYlohrBr7AAAB has disconnected reason: transport close 
+8216-360af0e8 hive:default [10/Mar/2018:20:40:09 -0800] - new socket:  JDfYx1EueplgXP3CAAAC 
+8216-360af0e8 hive:default [10/Mar/2018:20:40:09 -0800] - received socket event: stats from: JDfYx1EueplgXP3CAAAC 
+8216-360af0e8 hive:default [10/Mar/2018:20:48:00 -0800] - received socket event: disconnect from: JDfYx1EueplgXP3CAAAC 
+8216-360af0e8 hive:default [10/Mar/2018:20:48:00 -0800] - socket JDfYx1EueplgXP3CAAAC has disconnected reason: transport close 
+8216-360af0e8 hive:default [10/Mar/2018:20:48:01 -0800] - new socket:  z6xHgev8PkGzKnB9AAAD 
+8216-360af0e8 hive:default [10/Mar/2018:20:48:01 -0800] - received socket event: stats from: z6xHgev8PkGzKnB9AAAD 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:25 -0800] - received socket event: disconnect from: z6xHgev8PkGzKnB9AAAD 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:25 -0800] - socket z6xHgev8PkGzKnB9AAAD has disconnected reason: transport close 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:26 -0800] - new socket:  QpJVs2SWKMSLME5nAAAE 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:26 -0800] - received socket event: stats from: QpJVs2SWKMSLME5nAAAE 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:27 -0800] - received socket event: disconnect from: QpJVs2SWKMSLME5nAAAE 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:27 -0800] - socket QpJVs2SWKMSLME5nAAAE has disconnected reason: transport close 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:28 -0800] - new socket:  gj8T31xxIuFeI-emAAAF 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:28 -0800] - received socket event: stats from: gj8T31xxIuFeI-emAAAF 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:29 -0800] - received socket event: disconnect from: gj8T31xxIuFeI-emAAAF 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:29 -0800] - socket gj8T31xxIuFeI-emAAAF has disconnected reason: transport close 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:29 -0800] - new socket:  qNIaRPpwkzDPKmY4AAAG 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:29 -0800] - received socket event: stats from: qNIaRPpwkzDPKmY4AAAG 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:31 -0800] - received socket event: disconnect from: qNIaRPpwkzDPKmY4AAAG 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:31 -0800] - socket qNIaRPpwkzDPKmY4AAAG has disconnected reason: transport close 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:31 -0800] - new socket:  ep7N5P8VBMSn188WAAAH 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:31 -0800] - received socket event: stats from: ep7N5P8VBMSn188WAAAH 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:32 -0800] - received socket event: disconnect from: ep7N5P8VBMSn188WAAAH 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:32 -0800] - socket ep7N5P8VBMSn188WAAAH has disconnected reason: transport close 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:32 -0800] - new socket:  YN8GCvnC7fyV405ZAAAI 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:32 -0800] - received socket event: stats from: YN8GCvnC7fyV405ZAAAI 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:33 -0800] - received socket event: disconnect from: YN8GCvnC7fyV405ZAAAI 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:33 -0800] - socket YN8GCvnC7fyV405ZAAAI has disconnected reason: transport close 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:33 -0800] - new socket:  tuEUXkB6l_PQ2U47AAAJ 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:33 -0800] - received socket event: stats from: tuEUXkB6l_PQ2U47AAAJ 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:33 -0800] - received socket event: disconnect from: tuEUXkB6l_PQ2U47AAAJ 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:33 -0800] - socket tuEUXkB6l_PQ2U47AAAJ has disconnected reason: transport close 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:34 -0800] - new socket:  3uV9Od8mEviecsvFAAAK 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:34 -0800] - received socket event: stats from: 3uV9Od8mEviecsvFAAAK 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:34 -0800] - received socket event: disconnect from: 3uV9Od8mEviecsvFAAAK 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:34 -0800] - socket 3uV9Od8mEviecsvFAAAK has disconnected reason: transport close 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:34 -0800] - new socket:  ZIS9cDla170I5wutAAAL 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:34 -0800] - received socket event: stats from: ZIS9cDla170I5wutAAAL 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:35 -0800] - received socket event: disconnect from: ZIS9cDla170I5wutAAAL 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:35 -0800] - socket ZIS9cDla170I5wutAAAL has disconnected reason: transport close 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:35 -0800] - new socket:  wJOb2NP537Iv3St_AAAM 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:35 -0800] - received socket event: stats from: wJOb2NP537Iv3St_AAAM 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:36 -0800] - received socket event: disconnect from: wJOb2NP537Iv3St_AAAM 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:36 -0800] - socket wJOb2NP537Iv3St_AAAM has disconnected reason: transport close 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:36 -0800] - new socket:  J_9RULVtwl6eEG-lAAAN 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:36 -0800] - received socket event: stats from: J_9RULVtwl6eEG-lAAAN 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:36 -0800] - received socket event: disconnect from: J_9RULVtwl6eEG-lAAAN 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:36 -0800] - socket J_9RULVtwl6eEG-lAAAN has disconnected reason: transport close 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:36 -0800] - new socket:  nafJNd-UTSq8kDsCAAAO 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:36 -0800] - received socket event: stats from: nafJNd-UTSq8kDsCAAAO 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:37 -0800] - received socket event: disconnect from: nafJNd-UTSq8kDsCAAAO 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:37 -0800] - socket nafJNd-UTSq8kDsCAAAO has disconnected reason: transport close 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:37 -0800] - new socket:  7iezYhAvIHFhti6jAAAP 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:37 -0800] - received socket event: stats from: 7iezYhAvIHFhti6jAAAP 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:38 -0800] - received socket event: disconnect from: 7iezYhAvIHFhti6jAAAP 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:38 -0800] - socket 7iezYhAvIHFhti6jAAAP has disconnected reason: transport close 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:38 -0800] - new socket:  Z-lkFoiSS2PxiYGAAAAQ 
+8216-360af0e8 hive:default [10/Mar/2018:22:44:38 -0800] - received socket event: stats from: Z-lkFoiSS2PxiYGAAAAQ 
+5d89-0a387dcd drone:testDroneNotLoaded [11/Mar/2018:12:08:02 -0700] - hello WE FINALLY STARTED 
+5d89-0a387dcd drone:testDroneNotLoaded [11/Mar/2018:12:08:13 -0700] - hello WE FINALLY STARTED 
+c204-92da4377 drone:testDroneNotLoaded [11/Mar/2018:12:14:34 -0700] - hello WE FINALLY STARTED 
+c204-92da4377 drone:testDroneNotLoaded [11/Mar/2018:12:14:45 -0700] - hello WE FINALLY STARTED 
+c204-92da4377 drone:testDroneNotLoaded [11/Mar/2018:12:14:56 -0700] - hello WE FINALLY STARTED 
+4a6c-fc841cd1 drone:testDroneNotLoaded [11/Mar/2018:12:23:01 -0700] - hello WE FINALLY STARTED 
+4a6c-fc841cd1 drone:testDroneNotLoaded [11/Mar/2018:12:23:12 -0700] - hello WE FINALLY STARTED 
+4a6c-fc841cd1 drone:testDroneNotLoaded [11/Mar/2018:12:23:23 -0700] - hello WE FINALLY STARTED 
+765b-c0a5d3be drone:testDroneNotLoaded [11/Mar/2018:12:23:45 -0700] - hello WE FINALLY STARTED 
+765b-c0a5d3be drone:testDroneNotLoaded [11/Mar/2018:12:23:56 -0700] - hello WE FINALLY STARTED 
+7725-ff015d1c drone:testDroneNotLoaded [11/Mar/2018:12:24:56 -0700] - hello WE FINALLY STARTED 
+7725-ff015d1c drone:testDroneNotLoaded [11/Mar/2018:12:25:07 -0700] - hello WE FINALLY STARTED 
+7725-ff015d1c drone:testDroneNotLoaded [11/Mar/2018:12:25:18 -0700] - hello WE FINALLY STARTED 
+7725-ff015d1c drone:testDroneNotLoaded [11/Mar/2018:12:25:29 -0700] - hello WE FINALLY STARTED 
+d725-68a39675 drone:testDroneNotLoaded [11/Mar/2018:12:31:45 -0700] - hello WE FINALLY STARTED 
+8e1e-54bf93e9 drone:testDroneNotLoaded [11/Mar/2018:12:33:14 -0700] - hello WE FINALLY STARTED 
+40ec-fc3c44c5 drone:testDroneNotLoaded [11/Mar/2018:12:33:21 -0700] - hello WE FINALLY STARTED 
+778f-e15a3e3e drone:testDroneNotLoaded [11/Mar/2018:12:33:43 -0700] - hello WE FINALLY STARTED 
+1520-41946f3b drone:testDroneNotLoaded [11/Mar/2018:12:33:54 -0700] - hello WE FINALLY STARTED 
+3a06-f1a49af6 drone:testDroneNotLoaded [11/Mar/2018:12:34:03 -0700] - hello WE FINALLY STARTED 

@@ -1,0 +1,16 @@
+module.exports = function <%- workerFunctionName%>(){
+  let mind = {};
+  mind.isSync = <%- isSync %>;
+  mind.tasks = []; // reference tasks (in order you want executed) by name
+
+  // example
+  /*
+    mind.tasks = ['oneTask'];
+    mind.oneTask = function(...calledArguments, callback){
+      // do stuff with your args
+      callback();
+    };
+  */
+
+  return mind;
+};

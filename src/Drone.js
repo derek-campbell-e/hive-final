@@ -53,7 +53,7 @@ module.exports = function Drone(Hive, Queen, MindFile){
   };
 
   // will be bound each time for the task that is currently being run
-  drone.spawnWorker = function(workerMind, absolutePath){
+  drone.spawnWorker = function(workerMind, absolutePath, options){
     let taskID = this;
     let worker = Queen.spawnWorker(drone, workerMind, absolutePath);
     drone.workers[worker.meta.id] = {

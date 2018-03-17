@@ -2298,3 +2298,4 @@ c5cc-b4ab8b0b queen:default [16/Mar/2018:23:14:11 -0700] - loaded drone: droneIn
 aaad-aff9973a hive:default [16/Mar/2018:23:14:14 -0700] - starting drones... { options: { all: true }, drones: '*' } 
 dce7-f0203004 drone:testDroneNotLoaded [16/Mar/2018:23:14:15 -0700] - hello WE FINALLY STARTED 
 dce7-f0203004 drone:testDroneNotLoaded [16/Mar/2018:23:14:26 -0700] - hello WE FINALLY STARTED 
+dce7-f0203004 drone:testDroneNotLoaded [16/Mar/2018:23:14:37 -0700] - hello WE FINALLY STARTED 

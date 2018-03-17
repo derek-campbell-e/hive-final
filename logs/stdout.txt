@@ -2256,3 +2256,4 @@ e287-b895fda2 hive:default [16/Mar/2018:23:07:45 -0700] - starting drones... { o
 0a80-631fdd90 queen:default [16/Mar/2018:23:08:03 -0700] - loaded drone: droneInFolder 
 e287-b895fda2 hive:default [16/Mar/2018:23:08:07 -0700] - starting drones... { options: { all: true }, drones: '*' } 
 e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:08:08 -0700] - hello WE FINALLY STARTED 
+e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:08:19 -0700] - hello WE FINALLY STARTED 

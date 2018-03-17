@@ -2364,3 +2364,14 @@ d723-2a551d74 worker:cmd [16/Mar/2018:23:18:30 -0700] - <Buffer 42 72 61 6e 63 6
 449e-eb532b75 worker:cmd [16/Mar/2018:23:18:55 -0700] - <Buffer 5b 6d 61 73 74 65 72 20 35 37 63 30 39 36 34 5d 20 61 75 74 6f 63 6f 6d 6d 69 74 0a 20 32 20 66 69 6c 65 73 20 63 68 61 6e 67 65 64 2c 20 35 20 69 6e ... > 
 449e-eb532b75 worker:cmd [16/Mar/2018:23:18:58 -0700] - <Buffer 42 72 61 6e 63 68 20 6d 61 73 74 65 72 20 73 65 74 20 75 70 20 74 6f 20 74 72 61 63 6b 20 72 65 6d 6f 74 65 20 62 72 61 6e 63 68 20 6d 61 73 74 65 72 ... > 
 3306-4ecb12dc drone:testDroneNotLoaded [16/Mar/2018:23:19:02 -0700] - hello WE FINALLY STARTED 
+ab57-b21f6154 worker:cmd [16/Mar/2018:23:19:05 -0700] - <Buffer 5b 6d 61 73 74 65 72 20 34 33 36 34 62 30 62 5d 20 61 75 74 6f 63 6f 6d 6d 69 74 0a 20 32 20 66 69 6c 65 73 20 63 68 61 6e 67 65 64 2c 20 35 20 69 6e ... > 
+ab57-b21f6154 worker:cmd [16/Mar/2018:23:19:10 -0700] - <Buffer 42 72 61 6e 63 68 20 6d 61 73 74 65 72 20 73 65 74 20 75 70 20 74 6f 20 74 72 61 63 6b 20 72 65 6d 6f 74 65 20 62 72 61 6e 63 68 20 6d 61 73 74 65 72 ... > 
+c036-85f32094 queen:default [16/Mar/2018:23:19:13 -0700] - IM HEREEE 
+c036-85f32094 queen:default [16/Mar/2018:23:19:19 -0700] - trying to load the drones * 
+c036-85f32094 queen:default [16/Mar/2018:23:19:19 -0700] - loaded drone: autocommit 
+c036-85f32094 queen:default [16/Mar/2018:23:19:19 -0700] - loaded drone: testDroneNotLoaded 
+c036-85f32094 queen:default [16/Mar/2018:23:19:19 -0700] - loaded drone: writeEverySecond 
+c036-85f32094 queen:default [16/Mar/2018:23:19:20 -0700] - loaded drone: ableton 
+c036-85f32094 queen:default [16/Mar/2018:23:19:20 -0700] - loaded drone: droneInFolder 
+3291-d0ea8bfb hive:default [16/Mar/2018:23:19:23 -0700] - starting drones... { options: { all: true }, drones: '*' } 
+2e9d-e13a2e5e drone:testDroneNotLoaded [16/Mar/2018:23:19:24 -0700] - hello WE FINALLY STARTED 

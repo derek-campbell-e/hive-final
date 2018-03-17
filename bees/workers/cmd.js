@@ -7,8 +7,13 @@ module.exports = function CMDWorker(){
   mind.spawnCmd = function(command, callback){
     let commandArgs = stringArgv(command);
     let spawn = child_process.spawn(commandArgs[0], commandArgs.slice(1));
-    spawn.stderr.on('data', this.error);
-    spawn.stdout.on('data', this.log);
+    let worker = this;
+    spawn.stderr.on('data', function(data){
+      worker.error(data.toString());
+    });
+    spawn.stdout.on('data', function(data){
+      worker.log(data.toString());
+    });
     spawn.on('close', callback);
   };
   return mind;

@@ -2258,3 +2258,4 @@ e287-b895fda2 hive:default [16/Mar/2018:23:08:07 -0700] - starting drones... { o
 e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:08:08 -0700] - hello WE FINALLY STARTED 
 e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:08:19 -0700] - hello WE FINALLY STARTED 
 e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:08:30 -0700] - hello WE FINALLY STARTED 
+e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:08:41 -0700] - hello WE FINALLY STARTED 

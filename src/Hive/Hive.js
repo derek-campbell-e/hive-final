@@ -5,6 +5,7 @@ module.exports = function Hive(){
   const makeEmitter = common.makeEmitter;
   const delegateBinder = common.delegateBinder;
   const makeLogger = common.makeLogger;
+  const Table = require('cli-table');
 
   const debug = require('debug')('hive');
   const path = require('path');
@@ -64,6 +65,48 @@ module.exports = function Hive(){
       hiveExport.tasks[taskID] = taskInfo.task.export();
     }
     return hiveExport;
+  };
+
+  hive.renderStats = function(stats){
+    let fullStats = [];
+    let hiveTable = new Table({
+      head: ['Hive', 'ID']
+    });
+
+    hiveTable.push(['Hive', stats.hive]);
+    
+    let queenTable = new Table({
+      head: ['Queen', 'ID', 'Spawned At', 'STDOUT', 'STDERR']
+    });
+
+    queenTable.push([
+      stats.queen.debugName,stats.queen.id, stats.queen.spawnAt, stats.queen.stdout, stats.queen.stderr
+    ]);
+
+    let beesTable = new Table({
+      head: ['ID', 'BEE', 'MIND', 'Spawned At', 'STDOUT', 'STDERR']
+    });
+
+    for(let beeID in stats.bees){
+      let bee = stats.bees[beeID];
+      beesTable.push([bee.id, bee.class, bee.mind, bee.spawnAt, bee.stdout, bee.stderr]);
+    }
+
+    let tasksTable = new Table({
+      head: ['TASKID', 'NAME', 'RunTime', 'START', 'END']
+    });
+
+    for(let taskID in stats.tasks){
+      let task = stats.tasks[taskID];
+      tasksTable.push([task.id, task.name, task.runTime, task.startTime, task.endTime]);
+    }
+
+    fullStats.push(hiveTable.toString());
+    fullStats.push(queenTable.toString());
+    fullStats.push(beesTable.toString());
+    fullStats.push(tasksTable.toString());
+
+    return fullStats.join("\n");
   };
 
   hive.gc = function(){

@@ -14,9 +14,6 @@ module.exports = function Bee(Hive){
   // start by making the module an event emitter
   let bee = makeEmitter({});
 
-  // make our bee a logger
-  makeLogger(bee);
-
   // our meta object for data
   bee.meta = {};
   //bee.meta.hive = Hive;
@@ -27,7 +24,7 @@ module.exports = function Bee(Hive){
   bee.meta.spawnAt = -1;
   bee.meta.stdout = "";
   bee.meta.stderr = "";
-  bee.meta.maxLog = 50; //only want last 50 lines of logs and errors
+  bee.meta.maxLog = 10; //only want last 50 lines of logs and errors
   bee.meta.threads = function(){
     return Object.keys(bee.tasks).length;
   };
@@ -35,6 +32,9 @@ module.exports = function Bee(Hive){
   bee.meta.debugName = function(){
     return bee.meta.class + ":" + bee.meta.mind;
   };
+
+  // make our bee a logger
+  makeLogger(bee);
   
   // holds the tasks object for the bee;
   // we may end out having more than one task based on timeouts and delays and such
@@ -121,7 +121,6 @@ module.exports = function Bee(Hive){
     let taskID = this;
     let task = bee.tasks[taskID];
     task.stop();
-    bee.log(taskID);
     bee.timers.taskComplete = setTimeout(function(){
       bee.emit.apply(bee, ["on:taskComplete", task]);
     }, 5000);
@@ -155,6 +154,7 @@ module.exports = function Bee(Hive){
       } else {
         exports[key] = exportData;
       }
+      exports[key].__proto__ = bee.meta[key].__proto__;
     }
     return exports;
   };

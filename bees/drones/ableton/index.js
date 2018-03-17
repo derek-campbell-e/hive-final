@@ -1,7 +1,7 @@
 module.exports = function AbletonDrone(){
   const midi = require('midi');
   let mind = {};
-  mind.hz = 63;
+  mind.hz = 1000;
   //mind.maxThreads = 1;
 
   mind.port = new midi.output();

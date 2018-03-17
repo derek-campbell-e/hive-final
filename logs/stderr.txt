@@ -269,3 +269,10 @@ e8f4-de45e2ac worker:midi [15/Mar/2018:21:13:38 -0700] - Error: closeMidiPort; M
 4733-6f1a08ee worker:midi [15/Mar/2018:21:13:44 -0700] - Error: sendMidiMessage; Message: mind.port.sendMidiMessage is not a function 
 4733-6f1a08ee worker:midi [15/Mar/2018:21:13:44 -0700] - Error: closeMidiPort; Message: callback is not a function 
 4d9a-a47acba4 worker:midi [15/Mar/2018:21:14:22 -0700] - Error: sendMidiMessage; Message: mind.port.sendMidiMessage is not a function 
+8721-f2c9c7db worker:cmd [16/Mar/2018:22:54:34 -0700] - Error: spawnCmd; Message: "file" argument must be a non-empty string 
+9579-3d82857b worker:cmd [16/Mar/2018:22:56:13 -0700] - Error: spawnCmd; Message: "file" argument must be a non-empty string 
+9579-3d82857b worker:cmd [16/Mar/2018:22:56:13 -0700] - Error: spawnCmd; Message: "file" argument must be a non-empty string 
+9579-3d82857b worker:cmd [16/Mar/2018:22:56:13 -0700] - Error: spawnCmd; Message: "file" argument must be a non-empty string 
+3ce9-e36929a8 worker:cmd [16/Mar/2018:22:58:07 -0700] - Error: spawnCmd; Message: "file" argument must be a non-empty string 
+3ce9-e36929a8 worker:cmd [16/Mar/2018:22:58:07 -0700] - Error: spawnCmd; Message: "file" argument must be a non-empty string 
+3ce9-e36929a8 worker:cmd [16/Mar/2018:22:58:07 -0700] - Error: spawnCmd; Message: "file" argument must be a non-empty string 

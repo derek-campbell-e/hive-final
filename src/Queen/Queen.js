@@ -7,7 +7,7 @@ module.exports = function Queen(Hive, options){
   const defaultOptions = {};
   
   defaultOptions.loadAllDrones = true; // load all the drones from the bees/drones folder
-  defaultOptions.beeFolder = path.join(__dirname, '..', 'bees');
+  defaultOptions.beeFolder = path.join(__dirname, '..', '..', 'bees');
   defaultOptions.startDronesOnLoad = true;
   defaultOptions.loadDrones = []; // drones to load by default
   defaultOptions.startDrones = []; // drones to start by default
@@ -26,7 +26,7 @@ module.exports = function Queen(Hive, options){
     return exports;
   };
 
-  let queen = require('./Bee')(Hive);
+  let queen = require('../Bee')(Hive);
 
   // object for holding our drones
   queen.drones = {};
@@ -108,7 +108,7 @@ module.exports = function Queen(Hive, options){
         continue;
       }
       let droneMind = queen.droneMinds[droneMindKey];
-      let drone = require('./Drone')(Hive, queen, droneMind.path);
+      let drone = require('../Drone')(Hive, queen, droneMind.path);
       queen.drones[drone.meta.id] = drone;
       queen.droneMinds[droneMindKey].loaded = true;
       queen.droneMinds[droneMindKey].id = drone.meta.id;
@@ -173,7 +173,7 @@ module.exports = function Queen(Hive, options){
     if(absolutePath) {
       workerMindFile = workerMind;
     }
-    let worker = require('./Worker')(Hive, workerMindFile);
+    let worker = require('../Worker')(Hive, workerMindFile);
     queen.workers[worker.meta.id] = {
       drone: drone.meta.id,
     };
@@ -200,7 +200,7 @@ module.exports = function Queen(Hive, options){
       queen.loadDrones(mindMeta.mind);
     }
     let drone = queen.drones[mindMeta.id];
-    drone.start(function(){
+    drone.now(function(){
       callback.apply(this, arguments);
       if(args.options.once){
         drone.retire();
@@ -228,6 +228,7 @@ module.exports = function Queen(Hive, options){
 
   let init = function(){
     //queen.gatherDrones();
+    queen.log("IM HEREEE");
     queen.loadDroneMinds();
     queen.spawn();
     return queen;

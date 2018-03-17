@@ -109,8 +109,6 @@ module.exports = function Drone(Hive, Queen, MindFile){
     if(isLater || isCron){
       drone.taskTimer = drone.taskTimer.clear();
     }
-
-    console.log("we are all clear!");
   };
 
   drone.start = function(callback){
@@ -119,6 +117,14 @@ module.exports = function Drone(Hive, Queen, MindFile){
     drone.meta.hasStarted = true;
     drone.completionCallback = callback;
     drone.bindTask();
+  };
+
+  drone.now = function(callback){
+    callback = callback || function(){};
+    drone.meta.hasStarted = true;
+    drone.completionCallback = callback;
+    let bindedFunction = drone.createBindedFunction();
+    bindedFunction();
   };
 
   let init = function(){

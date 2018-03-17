@@ -33,7 +33,7 @@ module.exports = function MakeLogger(Module){
   };
 
  let trim = function(){
-    let maxLines = Module.meta.maxLines || 50;
+    let maxLines = Module.meta.maxLog || 50;
     let stdOutLines = Module.meta.stdout.split(/\n/g);
     let stdErrLines = Module.meta.stderr.split(/\n/g);
     

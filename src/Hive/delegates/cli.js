@@ -2,7 +2,9 @@ module.exports = function CliDelegates(Hive){
   let delegates = {};
 
   delegates.showStats = function(args, callback){
-    callback(Hive.getStats(args));
+    let stats = Hive.getStats(args);
+    let table = Hive.renderStats(stats);
+    callback(table, stats);
   };
 
   delegates.tailErrors = function(args, callback){

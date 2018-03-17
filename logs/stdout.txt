@@ -2264,3 +2264,36 @@ e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:09:03 -0700] - hello WE F
 e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:09:14 -0700] - hello WE FINALLY STARTED 
 e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:09:25 -0700] - hello WE FINALLY STARTED 
 e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:09:36 -0700] - hello WE FINALLY STARTED 
+e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:09:47 -0700] - hello WE FINALLY STARTED 
+e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:09:58 -0700] - hello WE FINALLY STARTED 
+e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:10:09 -0700] - hello WE FINALLY STARTED 
+e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:10:20 -0700] - hello WE FINALLY STARTED 
+e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:10:31 -0700] - hello WE FINALLY STARTED 
+e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:10:42 -0700] - hello WE FINALLY STARTED 
+e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:10:53 -0700] - hello WE FINALLY STARTED 
+e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:11:04 -0700] - hello WE FINALLY STARTED 
+e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:11:15 -0700] - hello WE FINALLY STARTED 
+e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:11:26 -0700] - hello WE FINALLY STARTED 
+e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:11:37 -0700] - hello WE FINALLY STARTED 
+e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:11:48 -0700] - hello WE FINALLY STARTED 
+e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:11:59 -0700] - hello WE FINALLY STARTED 
+e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:12:10 -0700] - hello WE FINALLY STARTED 
+e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:12:21 -0700] - hello WE FINALLY STARTED 
+e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:12:32 -0700] - hello WE FINALLY STARTED 
+e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:12:43 -0700] - hello WE FINALLY STARTED 
+e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:12:54 -0700] - hello WE FINALLY STARTED 
+e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:13:05 -0700] - hello WE FINALLY STARTED 
+e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:13:16 -0700] - hello WE FINALLY STARTED 
+e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:13:27 -0700] - hello WE FINALLY STARTED 
+e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:13:38 -0700] - hello WE FINALLY STARTED 
+e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:13:49 -0700] - hello WE FINALLY STARTED 
+e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:14:00 -0700] - hello WE FINALLY STARTED 
+c5cc-b4ab8b0b queen:default [16/Mar/2018:23:14:02 -0700] - IM HEREEE 
+c5cc-b4ab8b0b queen:default [16/Mar/2018:23:14:10 -0700] - trying to load the drones * 
+c5cc-b4ab8b0b queen:default [16/Mar/2018:23:14:10 -0700] - loaded drone: autocommit 
+c5cc-b4ab8b0b queen:default [16/Mar/2018:23:14:10 -0700] - loaded drone: testDroneNotLoaded 
+c5cc-b4ab8b0b queen:default [16/Mar/2018:23:14:10 -0700] - loaded drone: writeEverySecond 
+c5cc-b4ab8b0b queen:default [16/Mar/2018:23:14:11 -0700] - loaded drone: ableton 
+c5cc-b4ab8b0b queen:default [16/Mar/2018:23:14:11 -0700] - loaded drone: droneInFolder 
+aaad-aff9973a hive:default [16/Mar/2018:23:14:14 -0700] - starting drones... { options: { all: true }, drones: '*' } 
+dce7-f0203004 drone:testDroneNotLoaded [16/Mar/2018:23:14:15 -0700] - hello WE FINALLY STARTED 

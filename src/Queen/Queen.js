@@ -94,6 +94,7 @@ module.exports = function Queen(Hive, options){
   };
 
   queen.loadDrones = function(dronesToLoad){
+    dronesToLoad = dronesToLoad || [];
     queen.log("trying to load the drones", dronesToLoad);
     let dronesToLoadArray = [];
     

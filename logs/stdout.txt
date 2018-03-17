@@ -2240,3 +2240,19 @@ d078-8f15f39d queen:default [16/Mar/2018:23:01:15 -0700] - loaded drone: autocom
 8c84-c8d93a4d queen:default [16/Mar/2018:23:04:03 -0700] - { options: {}, bee: 'drone:autocommit' } 
 8c84-c8d93a4d queen:default [16/Mar/2018:23:04:03 -0700] - trying to load the drones autocommit 
 8c84-c8d93a4d queen:default [16/Mar/2018:23:04:03 -0700] - loaded drone: autocommit 
+200b-30315bac queen:default [16/Mar/2018:23:06:42 -0700] - IM HEREEE 
+7614-05c174a6 queen:default [16/Mar/2018:23:06:46 -0700] - IM HEREEE 
+7614-05c174a6 queen:default [16/Mar/2018:23:06:51 -0700] - trying to load the drones undefined 
+88fa-e54e1926 hive:default [16/Mar/2018:23:06:53 -0700] - listing drones... 
+88fa-e54e1926 hive:default [16/Mar/2018:23:06:58 -0700] - starting drones... { options: {} } 
+0a80-631fdd90 queen:default [16/Mar/2018:23:07:39 -0700] - IM HEREEE 
+0a80-631fdd90 queen:default [16/Mar/2018:23:07:42 -0700] - trying to load the drones [ [length]: 0 ] 
+e287-b895fda2 hive:default [16/Mar/2018:23:07:45 -0700] - starting drones... { options: {} } 
+0a80-631fdd90 queen:default [16/Mar/2018:23:08:02 -0700] - trying to load the drones * 
+0a80-631fdd90 queen:default [16/Mar/2018:23:08:02 -0700] - loaded drone: autocommit 
+0a80-631fdd90 queen:default [16/Mar/2018:23:08:02 -0700] - loaded drone: testDroneNotLoaded 
+0a80-631fdd90 queen:default [16/Mar/2018:23:08:02 -0700] - loaded drone: writeEverySecond 
+0a80-631fdd90 queen:default [16/Mar/2018:23:08:03 -0700] - loaded drone: ableton 
+0a80-631fdd90 queen:default [16/Mar/2018:23:08:03 -0700] - loaded drone: droneInFolder 
+e287-b895fda2 hive:default [16/Mar/2018:23:08:07 -0700] - starting drones... { options: { all: true }, drones: '*' } 
+e52f-139448ac drone:testDroneNotLoaded [16/Mar/2018:23:08:08 -0700] - hello WE FINALLY STARTED 

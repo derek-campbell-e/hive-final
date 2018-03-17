@@ -8,6 +8,7 @@ module.exports = function CMDWorker(){
     let commandArgs = stringArgv(command);
     let spawn = child_process.spawn(commandArgs[0], commandArgs.slice(1), {stdio: 'inherit'});
     spawn.on('close', callback);
+    
   };
   return mind;
 };

@@ -12,7 +12,7 @@ module.exports = {
   logFormatter: require('./logFormatter'),
   stdFormatter: require('./stdFormatter'),
   timestamp: require('./timestamp'),
-
+  renderer: require('./renderer'),
   // make a universally unique identifier
   uuid: require('./uuid')
 };

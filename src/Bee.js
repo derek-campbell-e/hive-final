@@ -5,6 +5,7 @@ module.exports = function Bee(Hive){
   const makeEmitter = common.makeEmitter;
   const delegateBinder = common.delegateBinder;
   const makeLogger = common.makeLogger;
+  const render = common.renderer;
 
   const moment = require('moment');
  
@@ -39,7 +40,11 @@ module.exports = function Bee(Hive){
   // we may end out having more than one task based on timeouts and delays and such
   bee.tasks = {};
 
- 
+  // hold an object for our timers,
+  // or setIntervals, setTimeouts
+  // close out these timers on gc
+  bee.timers = {};
+  bee.timers.taskComplete = null;
 
   bee.on('logline', function(line){
     Hive.emit("logline", line);
@@ -61,6 +66,8 @@ module.exports = function Bee(Hive){
   };
 
   bee.delegates.on.retire = function(){
+    bee.retireSpawn();
+    bee.gc();
     debug("i am being retired... the hive should know about my two-weeks");
     Hive.emit("on:beeRetire", this);
     bee.gc();
@@ -106,23 +113,38 @@ module.exports = function Bee(Hive){
     return task.meta.id;
   };
 
+  bee.completionCallback = function(){};
+
   // called when task is complete
   // this -> refers to taskID that has been completed
   bee.taskComplete = function(){
     let taskID = this;
     let task = bee.tasks[taskID];
     task.stop();
-
-    setTimeout(function(){
+    bee.log(taskID);
+    bee.timers.taskComplete = setTimeout(function(){
       bee.emit.apply(bee, ["on:taskComplete", task]);
     }, 5000);
+    bee.completionCallback.apply(bee, arguments);
+    bee.completionCallback = function(){};
   };
 
   // garbage collection, remove timers, etc
   // each bee should impliment its own gc
   bee.gc = function(){
-    console.log("EXIT");
+    for (let timerKey in bee.timers){
+      let timer = bee.timers[timerKey];
+      //if(typeof )
+    }
   };
+
+  bee.stopTimer = function(timer){
+    switch(typeof timer){
+      //case ''
+    }
+  };
+
+  bee.render = render;
 
   bee.export = function(){
     let exports = {};

@@ -113,9 +113,11 @@ module.exports = function Drone(Hive, Queen, MindFile){
     console.log("we are all clear!");
   };
 
-  drone.start = function(){
+  drone.start = function(callback){
+    callback = callback || function(){};
     debug("starting...");
     drone.meta.hasStarted = true;
+    drone.completionCallback = callback;
     drone.bindTask();
   };
 

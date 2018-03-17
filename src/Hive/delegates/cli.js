@@ -17,8 +17,25 @@ module.exports = function CliDelegates(Hive){
     if(args.options.all){
       args.drones = '*';
     }
-    hive.queen.startDrones(args.drones);
+    Hive.log("starting drones...", args);
+    Hive.queen.startDrones(args.drones);
     callback();
+  };
+
+  delegates.loadDrones = function(args, callback){
+    if(args.options.all){
+      args.drones = '*';
+    }
+    Hive.queen.loadDrones(args.drones);
+    callback();
+  };
+
+  delegates.listDrones = function(args, callback){
+    Hive.log("listing drones...");
+    Hive.queen.listDrones(function(minds){
+      callback(Hive.queen.render('list-drones', {minds: minds}), minds);
+    });
+    //callback();
   };
 
   delegates.showLogs = function(args, callback){
@@ -60,6 +77,23 @@ module.exports = function CliDelegates(Hive){
   delegates.stopTailErrors = function(args, callback){
     hive.off('errorline');
     callback();
+  };
+
+  delegates.runBee = function(args, callback){
+    Hive.queen.runBee(args, callback);
+  };
+
+  delegates.retireBees = function(args, callback){
+    let message = "Retired: \n";
+    let num = 0;
+    for(let beeIndex in args.bees){
+      let bee = args.bees[beeIndex];
+      message += Hive.queen.retireBee(bee);
+      message += "\n";
+      num++;
+    }
+    message += num + " bees retired!";
+    callback(message);
   };
 
   return delegates;

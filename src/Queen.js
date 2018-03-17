@@ -14,10 +14,25 @@ module.exports = function Queen(Hive, options){
   defaultOptions.maxTaskRuntime = 60 * 1000; // max runtime for tasks in ms, default is 1 minute
 
   options = require('extend')(true, {}, defaultOptions, options);
+
+  let mindFormatter = function(mindFile){
+    let exports = {};
+    exports.mind = path.basename(mindFile, '.js');
+    exports.meta = {};
+    exports.path = mindFile;
+    exports.loaded = false;
+    exports.running = false;
+    exports.id = "";
+    return exports;
+  };
+
   let queen = require('./Bee')(Hive);
 
   // object for holding our drones
   queen.drones = {};
+
+  // object for holding drone minds
+  queen.droneMinds = {};
 
   // object for holding our workers
   queen.workers = {};
@@ -79,30 +94,45 @@ module.exports = function Queen(Hive, options){
   };
 
   queen.loadDrones = function(dronesToLoad){
-    let droneMinds = [...dronesToLoad];
-    for(let droneMindIndex in droneMinds){
-      let droneMind = droneMinds[droneMindIndex];
-      let drone = require('./Drone')(Hive, queen, droneMind);
-      queen.drones[drone.meta.id] = drone;
+    queen.log("trying to load the drones", dronesToLoad);
+    let dronesToLoadArray = [];
+    
+    if(Array.isArray(dronesToLoad)){
+      dronesToLoadArray = [...dronesToLoad];
+    } else {
+      dronesToLoadArray.push(dronesToLoad);
     }
-    queen.startDrones();
+
+    for(let droneMindKey in queen.droneMinds){
+      if(dronesToLoadArray.indexOf(droneMindKey) === -1 && dronesToLoad !== '*') {
+        continue;
+      }
+      let droneMind = queen.droneMinds[droneMindKey];
+      let drone = require('./Drone')(Hive, queen, droneMind.path);
+      queen.drones[drone.meta.id] = drone;
+      queen.droneMinds[droneMindKey].loaded = true;
+      queen.droneMinds[droneMindKey].id = drone.meta.id;
+      queen.log("loaded drone:", drone.meta.mind);
+    }
   };
+
 
   queen.startDrones = function(startDrones){
     startDrones = startDrones || [];
+    let startDronesArray = [];
+    
+    if(Array.isArray(startDrones)){
+      startDronesArray = [...startDrones];
+    } else {
+      startDronesArray.push(startDrones);
+    }
+
     for(let droneID in queen.drones){
       let drone = queen.drones[droneID];
-      let isInStartDrones = options.startDrones.indexOf(drone.meta.mind) !== -1;
-      let ifShouldStartDronesOnLoad = options.startDronesOnLoad && options.startDrones.length === 0;
-      if(ifShouldStartDronesOnLoad || isInStartDrones){
+      if(startDrones === "*" || startDronesArray.indexOf(drone.meta.mind) !== -1){
         if(!drone.meta.hasStarted){
           drone.start();
         }
-        continue;
-      }
-      let isInStartDroneArguments = startDrones.indexOf(drone.meta.mind) !== -1 || startDrones === '*';
-      if(isInStartDroneArguments){
-        drone.start();
       }
     }
   };
@@ -112,6 +142,28 @@ module.exports = function Queen(Hive, options){
       debug("the queen knows about your two weeks..");
       queen.workers[bee.meta.id] = null;
       delete queen.workers[bee.meta.id];
+    });
+  };
+
+
+  queen.listDrones = function(callback){
+    callback = callback || function(){};
+    
+    queen.droneFinder([], function(droneMinds){
+      let minds = [];
+      for(let droneMindIndex in droneMinds){
+        minds.push(mindFormatter(droneMinds[droneMindIndex]));
+      }
+      callback(minds);
+    });
+  };
+
+  queen.loadDroneMinds = function(){
+    queen.droneFinder([], function(droneMinds){
+      droneMinds.forEach(function(droneMind){
+        let formattedMind = mindFormatter(droneMind);
+        queen.droneMinds[formattedMind.mind] = formattedMind;
+      });
     });
   };
 
@@ -129,8 +181,54 @@ module.exports = function Queen(Hive, options){
     return worker;
   };
 
+  queen.runBee = function(args, callback){
+    let beeParts = args.bee.split(":");
+    let beeClass = beeParts[0];
+    let beeMind = beeParts[1] || "default";
+    queen.log(args);
+    let droneMindRef = null;
+    for(let droneMind in queen.droneMinds){
+      if(droneMind.toLowerCase() === beeMind.toLowerCase()){
+        droneMindRef = droneMind;
+      }
+    }
+    if(!droneMindRef){
+      return;
+    }
+    let mindMeta = queen.droneMinds[droneMindRef];
+    if(!mindMeta.loaded){
+      queen.loadDrones(mindMeta.mind);
+    }
+    let drone = queen.drones[mindMeta.id];
+    drone.start(function(){
+      callback.apply(this, arguments);
+      if(args.options.once){
+        drone.retire();
+      }
+    });
+  };
+
+  queen.retireBee = function(bee){
+    let beeParts = bee.split(":");
+    let beeClass = beeParts[0];
+    let beeMind = beeParts[1] || "default";
+    let droneMindRef = null;
+    for(let droneMind in queen.droneMinds){
+      if(droneMind.toLowerCase() === beeMind.toLowerCase()){
+        droneMindRef = droneMind;
+      }
+    }
+    if(!droneMindRef){
+      return;
+    }
+    let mindMeta = queen.droneMinds[droneMindRef];
+    queen.drones[mindMeta.id].retire();
+    return mindMeta.mind;
+  };
+
   let init = function(){
-    queen.gatherDrones();
+    //queen.gatherDrones();
+    queen.loadDroneMinds();
     queen.spawn();
     return queen;
   };

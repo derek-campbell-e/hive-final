@@ -301,3 +301,5 @@ b58f-9c6c9452 worker:cmd [16/Mar/2018:23:15:34 -0700] - Error: spawnCmd; Message
 b58f-9c6c9452 worker:cmd [16/Mar/2018:23:15:34 -0700] - Error: spawnCmd; Message: The "listener" argument must be of type function 
 b58f-9c6c9452 worker:cmd [16/Mar/2018:23:15:34 -0700] - Error: spawnCmd; Message: The "listener" argument must be of type function 
 16f6-deedd453 worker:cmd [16/Mar/2018:23:15:44 -0700] - Error: spawnCmd; Message: The "listener" argument must be of type function 
+16f6-deedd453 worker:cmd [16/Mar/2018:23:15:44 -0700] - Error: spawnCmd; Message: The "listener" argument must be of type function 
+16f6-deedd453 worker:cmd [16/Mar/2018:23:15:44 -0700] - Error: spawnCmd; Message: The "listener" argument must be of type function 

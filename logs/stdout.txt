@@ -2305,3 +2305,12 @@ dce7-f0203004 drone:testDroneNotLoaded [16/Mar/2018:23:15:10 -0700] - hello WE F
 dce7-f0203004 drone:testDroneNotLoaded [16/Mar/2018:23:15:21 -0700] - hello WE FINALLY STARTED 
 dce7-f0203004 drone:testDroneNotLoaded [16/Mar/2018:23:15:32 -0700] - hello WE FINALLY STARTED 
 dce7-f0203004 drone:testDroneNotLoaded [16/Mar/2018:23:15:43 -0700] - hello WE FINALLY STARTED 
+1e01-b322f77e queen:default [16/Mar/2018:23:15:52 -0700] - IM HEREEE 
+1e01-b322f77e queen:default [16/Mar/2018:23:15:59 -0700] - trying to load the drones * 
+1e01-b322f77e queen:default [16/Mar/2018:23:15:59 -0700] - loaded drone: autocommit 
+1e01-b322f77e queen:default [16/Mar/2018:23:15:59 -0700] - loaded drone: testDroneNotLoaded 
+1e01-b322f77e queen:default [16/Mar/2018:23:15:59 -0700] - loaded drone: writeEverySecond 
+1e01-b322f77e queen:default [16/Mar/2018:23:16:00 -0700] - loaded drone: ableton 
+1e01-b322f77e queen:default [16/Mar/2018:23:16:00 -0700] - loaded drone: droneInFolder 
+da6f-d2991e14 hive:default [16/Mar/2018:23:16:05 -0700] - starting drones... { options: { all: true }, drones: '*' } 
+3306-4ecb12dc drone:testDroneNotLoaded [16/Mar/2018:23:16:06 -0700] - hello WE FINALLY STARTED 

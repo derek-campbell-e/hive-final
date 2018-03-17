@@ -289,3 +289,6 @@ e4c4-c12c6870 worker:cmd [16/Mar/2018:23:14:44 -0700] - Error: spawnCmd; Message
 7e19-4407f5c5 worker:cmd [16/Mar/2018:23:14:54 -0700] - Error: spawnCmd; Message: The "listener" argument must be of type function 
 7e19-4407f5c5 worker:cmd [16/Mar/2018:23:14:54 -0700] - Error: spawnCmd; Message: The "listener" argument must be of type function 
 5c77-b6cc7cc7 worker:cmd [16/Mar/2018:23:15:04 -0700] - Error: spawnCmd; Message: The "listener" argument must be of type function 
+5c77-b6cc7cc7 worker:cmd [16/Mar/2018:23:15:04 -0700] - Error: spawnCmd; Message: The "listener" argument must be of type function 
+5c77-b6cc7cc7 worker:cmd [16/Mar/2018:23:15:04 -0700] - Error: spawnCmd; Message: The "listener" argument must be of type function 
+ed0b-d396b542 worker:cmd [16/Mar/2018:23:15:14 -0700] - Error: spawnCmd; Message: The "listener" argument must be of type function 

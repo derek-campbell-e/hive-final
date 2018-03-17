@@ -277,3 +277,6 @@ e8f4-de45e2ac worker:midi [15/Mar/2018:21:13:38 -0700] - Error: closeMidiPort; M
 3ce9-e36929a8 worker:cmd [16/Mar/2018:22:58:07 -0700] - Error: spawnCmd; Message: "file" argument must be a non-empty string 
 3ce9-e36929a8 worker:cmd [16/Mar/2018:22:58:07 -0700] - Error: spawnCmd; Message: "file" argument must be a non-empty string 
 1a1a-baf596c1 worker:cmd [16/Mar/2018:23:14:24 -0700] - Error: spawnCmd; Message: The "listener" argument must be of type function 
+1a1a-baf596c1 worker:cmd [16/Mar/2018:23:14:24 -0700] - Error: spawnCmd; Message: The "listener" argument must be of type function 
+1a1a-baf596c1 worker:cmd [16/Mar/2018:23:14:24 -0700] - Error: spawnCmd; Message: The "listener" argument must be of type function 
+0cde-85390f09 worker:cmd [16/Mar/2018:23:14:34 -0700] - Error: spawnCmd; Message: The "listener" argument must be of type function 

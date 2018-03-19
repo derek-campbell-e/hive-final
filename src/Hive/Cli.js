@@ -28,4 +28,6 @@ module.exports = function CLI(Hive){
   vorpal.command("run <bee>").option("-o, --once", 'run once and retire the bee')
   .action(Hive.delegates.cli.runBee);
 
+  return vorpal;
+
 };

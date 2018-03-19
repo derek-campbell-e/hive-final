@@ -1,1 +1,1 @@
-module.exports = require('./Queen');
+module.exports = require('./_Queen');

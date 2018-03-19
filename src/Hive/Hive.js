@@ -18,8 +18,6 @@ module.exports = function Hive(){
 
   hive.sockets = {};
 
-  
-
   // make our hive a logger
   makeLogger(hive);
 
@@ -138,6 +136,10 @@ module.exports = function Hive(){
     };
     hive.queen = require('../Queen')(hive, options);
     hive.cli = require('./Cli')(hive);
+    setTimeout(function(){
+      hive.queen.spawnChild('drone', 'autocommit');
+    }, 2000);
+   
     //console.log(hive.meta.stdout);
     process.on('SIGINT', hive.gc);
     return hive;

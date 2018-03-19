@@ -4,7 +4,8 @@
   "description": "a better task scheduler",
   "main": "index.js",
   "scripts": {
-    "test": "DEBUG=*,-node* nodemon index.js",
+    "test": "DEBUG=*,-node*,-mocha* nodemon --exec \"mocha tests/**/*.js\" ",
+    "debug": "DEBUG=*,-node* nodemon index.js",
     "start": "nodemon index.js"
   },
   "author": "",
@@ -20,6 +21,7 @@
     "later": "^1.2.0",
     "midi": "^0.9.5",
     "moment": "^2.21.0",
+    "multi-glob": "^1.0.1",
     "node-cron": "^1.2.1",
     "socket.io": "^2.0.4",
     "string-argv": "0.0.2",

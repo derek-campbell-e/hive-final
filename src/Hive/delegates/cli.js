@@ -20,16 +20,14 @@ module.exports = function CliDelegates(Hive){
       args.drones = '*';
     }
     Hive.log("starting drones...", args);
-    Hive.queen.startDrones(args.drones);
-    callback();
+    callback(Hive.queen.startDrones(args.drones));
   };
 
   delegates.loadDrones = function(args, callback){
     if(args.options.all){
       args.drones = '*';
     }
-    Hive.queen.loadDrones(args.drones);
-    callback();
+    callback(Hive.queen.loadDrones(args.drones));
   };
 
   delegates.listDrones = function(args, callback){

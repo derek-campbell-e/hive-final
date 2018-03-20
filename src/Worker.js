@@ -1,4 +1,4 @@
-module.exports = function Worker(Hive, MindFile){
+module.exports = function Worker(Hive, Queen, MindFile){
   const debug = require('debug')('worker');
   let worker = require('./Bee')(Hive);
 

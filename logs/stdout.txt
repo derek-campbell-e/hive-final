@@ -61,3 +61,13 @@ f257-1b31d2f9 queen:default [19/Mar/2018:13:34:15 -0700] - IM HEREEE
 0a3e-56dcaf63 queen:default [19/Mar/2018:15:33:48 -0700] - IM HEREEE 
 319d-1f193ccc queen:default [19/Mar/2018:15:40:16 -0700] - IM HEREEE 
 ed64-27f59136 queen:default [19/Mar/2018:15:40:41 -0700] - IM HEREEE 
+285d-166429f0 hive:default [19/Mar/2018:17:54:16 -0700] - starting drones... { options: { all: true }, drones: '*' } 
+22a1-40565724 hive:default [19/Mar/2018:17:54:57 -0700] - starting drones... { options: { all: true }, drones: '*' } 
+3365-e78a20eb hive:default [19/Mar/2018:17:55:15 -0700] - starting drones... { options: { all: true }, drones: '*' } 
+3365-e78a20eb hive:default [19/Mar/2018:17:56:05 -0700] - starting drones... { options: { all: true }, drones: '*' } 
+c639-b4c0eeca hive:default [19/Mar/2018:17:56:45 -0700] - starting drones... { options: { all: true }, drones: '*' } 
+ca50-45e99db1 hive:default [19/Mar/2018:18:04:13 -0700] - starting drones... { options: { all: true }, drones: '*' } 
+7d4d-dae15ec6 hive:default [19/Mar/2018:18:06:23 -0700] - starting drones... { options: { all: true }, drones: '*' } 
+f7d2-5a7f488d hive:default [19/Mar/2018:18:10:02 -0700] - starting drones... { options: { all: true }, drones: '*' } 
+5f49-788020eb hive:default [19/Mar/2018:18:10:55 -0700] - starting drones... { options: { all: true }, drones: '*' } 
+000e-06143770 drone:testDroneNotLoaded [19/Mar/2018:18:10:56 -0700] - hello WE FINALLY STARTED 

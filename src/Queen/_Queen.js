@@ -23,6 +23,8 @@ module.exports = function Queen(Hive, options){
 
   queen.meta.class = 'queen';
 
+  // starts the bee with the specified class and specified mind
+  // probably only for drones at this moment
   queen.runChild = function(beeClass, mind, options){
     options = options || {};
     let ref = null;
@@ -42,23 +44,27 @@ module.exports = function Queen(Hive, options){
 
     if(!ref){
       debug("no class of that type...");
-      return;
+      return false;
     }
 
     if(!ref.hasOwnProperty(mind)){
       debug('no mind for that beeClass found...', beeClass, mind, ref);
-      return;
+      return false;
     }
 
     if(ref[mind].meta.isRunning && max > 0){
       debug("dont need to run it again, unless we're doing a single fire...");
-      return;
+      return false;
     }
 
     ref[mind].meta.isRunning = true;
-    
+    let drone = ref[mind].instance;
+    drone.start();
+    return true;
   };
 
+  // loads and spawns the bee with the specified class and specified mind
+  // used for both drones and workers, drones will have this method modifed to run inside their own task
   queen.spawnChild = function(beeClass, mind, options){
     options = options || {};
     let ref = null;
@@ -81,28 +87,98 @@ module.exports = function Queen(Hive, options){
 
     if(!ref){
       debug("no class of that type...");
-      return;
+      return false;
     }
 
     if(!ref.hasOwnProperty(mind)){
       debug('no mind for that beeClass found...', beeClass, mind, ref);
-      return;
+      return false;
     }
 
     if(ref[mind].meta.isLoaded && max > 0){
       debug(beeClass, mind, "has already been loaded...");
-      return;
+      return false;
     }
 
     if(!ref[mind].meta.isLoaded || max < 0){
       let bee = require(requirePath)(Hive, queen, ref[mind].meta.path, options);
       ref[mind].meta.isLoaded = true;
       ref[mind].instances[bee.meta.id] = bee;
-      return;
+      if(beeClass === 'drone' || beeClass === 'drones'){
+        ref[mind].instance = bee;
+      }
+      return bee;
     }
 
     debug("bee has not been loaded for some reason...");
+    return false;
   };
+
+  queen.spawnWorker = function(drone, mind, options){
+    return queen.spawnChild('worker', mind, options);
+  };
+
+  // loads the specified drones or '*' for all
+  // optional callback returns the number and which drones were loaded
+  // drones should not be loaded more than once, so if they are already loaded, you will have to check???
+  queen.loadDrones = function(drones, callback){
+    let dronesToLoad = drones || [];
+    callback = callback || function(){};
+    let loaded = [];
+
+    if(!Array.isArray(drones) && typeof drones !== "undefined"){
+      dronesToLoad = [drones];
+    }
+
+    dronesToLoad.forEach(function(droneMind, index){
+      dronesToLoad[index] = droneMind.toLowerCase();
+    });
+
+    for(let droneMind in queen.drones){
+      let lowerCaseDrone = droneMind.toLowerCase();
+      if(dronesToLoad.indexOf(lowerCaseDrone) === -1 && drones !== '*'){
+        continue;
+      }
+      if(queen.spawnChild('drone', droneMind)) {
+        loaded.push(droneMind);
+      }
+    }
+    let message = ["loaded", loaded.length, "drones!", loaded.join(", ")].join(" ");
+    debug(message);
+    callback(message);
+    return message;
+  };
+
+  queen.startDrones = function(drones, callback){
+    callback = callback || function(){};
+    let dronesToStart = drones || [];
+    let started = [];
+    
+    if(!Array.isArray(drones) && typeof drones !== "undefined"){
+      dronesToStart = [drones];
+    }
+
+    dronesToStart.forEach(function(droneMind, index){
+      dronesToStart[index] = droneMind.toLowerCase();
+    });
+
+    for(let droneMind in queen.drones){
+      let lowerCaseDrone = droneMind.toLowerCase();
+      if(dronesToStart.indexOf(lowerCaseDrone) === -1 && drones !== '*'){
+        continue;
+      }
+      if(queen.runChild('drone', droneMind)) {
+        started.push(droneMind);
+      }
+    }
+
+    let message = ["started", started.length, "drones!", started.join(", ")].join(" ");
+    debug(message);
+    callback(message);
+    return message;
+  };
+
+
 
   let init = function(){
     queen.spawn();

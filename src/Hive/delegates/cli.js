@@ -84,16 +84,7 @@ module.exports = function CliDelegates(Hive){
   };
 
   delegates.retireBees = function(args, callback){
-    let message = "Retired: \n";
-    let num = 0;
-    for(let beeIndex in args.bees){
-      let bee = args.bees[beeIndex];
-      message += Hive.queen.retireBee(bee);
-      message += "\n";
-      num++;
-    }
-    message += num + " bees retired!";
-    callback(message);
+    callback(Hive.queen.retireChildrenFromCLI(args.bees));
   };
 
   return delegates;

@@ -23,6 +23,77 @@ module.exports = function Queen(Hive, options){
 
   queen.meta.class = 'queen';
 
+  queen.retireChildrenFromCLI = function(bees){
+    if(Array.isArray(bees)){
+      bees.forEach(queen.retireChildFromCLI);
+    } else {
+      queen.retireChildFromCLI(bees);
+    }
+  };
+
+  queen.retireChildFromCLI = function(beeString){
+    let beeParts = beeString.split(":");
+    let beeClass = beeParts[0];
+    let beeMind = beeParts[1];
+    let bee = null;
+    if(beeParts.length === 1){
+      bee = queen.returnChildByID(beeString); // we're going to assume that if there isn't a colon, its by an id
+    } else {
+      bee = queen.returnChild(beeClass, beeMind);
+    }
+    if(bee){
+      if(Array.isArray(bee)){
+        bee.forEach(function(beeInstance){
+          beeInstance.retire();
+        });
+        return;
+      }
+      bee.retire();
+    }
+  };
+
+  // retire a bee, usually called from event listener, but we can do the same thing from our cli
+  queen.retireChild = function(bee){
+    debug(bee.meta.id, bee.meta.class, "has retired...");
+    let ref = null;
+    switch(bee.meta.class){
+      case 'worker':
+      case 'workers':
+        ref = queen.workers;
+        break;
+      case 'drone':
+      case 'drones':
+        ref = queen.drones;
+        break;
+    }
+
+    if(!ref){
+      debug("no reference to delete from...");
+      return;
+    }
+
+    if(!ref.hasOwnProperty(bee.meta.mind)){
+      debug(bee.meta.class, "with mind of", bee.meta.mind, "is not in the queens reference...");
+      return;
+    }
+
+    for(let instanceID in ref[bee.meta.mind].instances){
+      if(instanceID === bee.meta.id){
+        delete ref[bee.meta.mind][instanceID];
+        debug("deleting instance of", instanceID);
+      }
+    }
+
+    if(ref[bee.meta.mind].instance){
+      ref[bee.meta.mind].instance = null;
+    }
+  };
+
+  // any events we need to be aware about are here
+  queen.listenToChild = function(bee){
+    bee.once('on:retire', queen.retireChild);
+  };
+
   // starts the bee with the specified class and specified mind
   // probably only for drones at this moment
   queen.runChild = function(beeClass, mind, options){
@@ -107,6 +178,7 @@ module.exports = function Queen(Hive, options){
       if(beeClass === 'drone' || beeClass === 'drones'){
         ref[mind].instance = bee;
       }
+      queen.listenToChild(bee);
       return bee;
     }
 

@@ -8,7 +8,6 @@ module.exports = function AutoCommitDrone(){
         cmdWorker("git push -u origin master", callback);
       });
     });
-    //callback("HO");
   };
   return mind;
 };

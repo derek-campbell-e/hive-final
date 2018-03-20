@@ -3,8 +3,10 @@ module.exports = function Replicate(Hive){
   const glob = require('multi-glob').glob;
   const path = require('path');
   const fs = require('fs');
+  const io = require('socket.io-client');
 
   let repl = {};
+  let replicateSocket = null;
 
   let assets = {};
   assets.dirs = [];
@@ -23,6 +25,18 @@ module.exports = function Replicate(Hive){
 
   repl.connectToHive = function(){
     debug("done building assets so lets connect to the hive!");
+    replicateSocket = io('http://localhost:4204', {forceNew: true});
+    replicateSocket.once('connect', repl.notifyHiveOfTransaction);
+  };
+
+  repl.notifyHiveOfTransaction = function(){
+    replicateSocket.on("ready:replication", repl.startReplication);
+    replicateSocket.emit("begin:replication");
+  };
+
+  repl.startReplication = function(){
+    debug("STARTING TO REPLICATE");
+    replicateSocket.compress().emit("replication", assets);
   };
 
   repl.compileIntoAssets = function(files, callback){
@@ -75,6 +89,50 @@ module.exports = function Replicate(Hive){
         repl.compileIntoAssets(files, callback);
       }
     });
+  };
+
+  repl.replicateInto = function(assets, callback){
+    let folders = assets.dirs;
+    repl.createFolders(folders, function(){
+      repl.createFiles(assets.files, callback);
+    });
+  };
+
+  repl.createFiles = function(files, callback){
+    let basePath = Hive.queen.options.beeFolder;
+    let fileKeys = Object.keys(files);
+    let loop = function(){
+      let filename = fileKeys.shift();
+      if(typeof filename === 'undefined'){
+        callback();
+        return;
+      }
+      let fullFilePath = path.join(basePath, filename);
+      let fileData = files[filename];
+      fs.writeFile(fullFilePath, fileData, {flag: 'w+'}, function(error){
+        debug(fullFilePath, error, fileData.toString('utf-8'));
+        loop();
+      });
+    };
+    loop();
+  };
+
+  repl.createFolders = function(folders, callback){
+    let basePath = Hive.queen.options.beeFolder;
+    let foldersCopy = [...folders];
+    let loop = function(){
+      let folder = foldersCopy.shift();
+      if(typeof folder === "undefined"){
+        debug("folders are done, lets write the data");
+        callback();
+        return;
+      }
+      let fullFolderPath = path.join(basePath, folder);
+      fs.mkdir(fullFolderPath, function(error){
+        loop();
+      });
+    }
+    loop();
   };
 
   return repl;

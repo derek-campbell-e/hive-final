@@ -15,6 +15,18 @@ module.exports = function SocketDelegates(Hive, io){
   delegates.showStats = function(args, callback, socket){
     callback(Hive.getStats(args));
   };
+
+  delegates.prepareForReplication = function(socket){
+    Hive.log("received replication request");
+    socket.emit('ready:replication');
+  };
+
+  delegates.replication = function(replicationData, socket){
+    let replication = require('../../Replicate')(Hive);
+    replication.replicateInto(replicationData, function(){
+      socket.emit("complete:replication");
+    });
+  };
   
 
   delegates.onConnection = function(socket){
@@ -31,6 +43,8 @@ module.exports = function SocketDelegates(Hive, io){
 
   newSocketDelegates['stats'] = delegates.showStats;
   newSocketDelegates['disconnect'] = delegates.onDisconnect;
+  newSocketDelegates['begin:replication'] = delegates.prepareForReplication;
+  newSocketDelegates['replication'] = delegates.replication;
 
   // our initializer for our socket delegates
   let init = function(){

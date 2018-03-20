@@ -31,12 +31,18 @@ module.exports = function Replicate(Hive){
 
   repl.notifyHiveOfTransaction = function(){
     replicateSocket.on("ready:replication", repl.startReplication);
+    replicateSocket.on("complete:replication", repl.completeReplication);
     replicateSocket.emit("begin:replication");
   };
 
   repl.startReplication = function(){
     debug("STARTING TO REPLICATE");
     replicateSocket.compress().emit("replication", assets);
+  };
+
+  repl.completeReplication = function(){
+    debug("we are done replicating so close the socket!");
+    replicateSocket.close();
   };
 
   repl.compileIntoAssets = function(files, callback){

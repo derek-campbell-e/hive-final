@@ -15,6 +15,7 @@ module.exports = function Queen(Hive, options){
   options = require('extend')(true, {}, defaultOptions, options);
 
   let queen = require('../Bee')(Hive);
+  queen.options = options;
 
   let locator = require('./locator')(queen, options);
 

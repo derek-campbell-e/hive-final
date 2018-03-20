@@ -132,15 +132,9 @@ module.exports = function Hive(){
     debug("initializing the hive...");
     let options = {
       startAllDrones: false,
-      //startDrones: ['writeEverySecond']
     };
     hive.queen = require('../Queen')(hive, options);
     hive.cli = require('./Cli')(hive);
-    setTimeout(function(){
-      hive.queen.spawnChild('drone', 'autocommit');
-    }, 2000);
-   
-    //console.log(hive.meta.stdout);
     process.on('SIGINT', hive.gc);
     return hive;
   };

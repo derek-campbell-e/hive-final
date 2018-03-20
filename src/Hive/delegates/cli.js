@@ -87,5 +87,12 @@ module.exports = function CliDelegates(Hive){
     callback(Hive.queen.retireChildrenFromCLI(args.bees));
   };
 
+  delegates.replicate = function(args, callback){
+    Hive.log("begin replication...");
+    let replicate = require('../../Replicate')(Hive);
+    replicate.replicateToHive(args, callback);
+    callback();
+  };
+
   return delegates;
 };

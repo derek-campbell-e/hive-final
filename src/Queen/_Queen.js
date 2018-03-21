@@ -251,7 +251,10 @@ module.exports = function Queen(Hive, options){
     return message;
   };
 
-
+  queen.reloadBees = function(){
+    queen.locateDrones();
+    queen.locateWorkers();
+  };
 
   let init = function(){
     queen.spawn();

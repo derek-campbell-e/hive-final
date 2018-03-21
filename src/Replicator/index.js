@@ -1,11 +1,16 @@
-module.exports = function Replicate(Hive){
+module.exports = function Replicator(Hive){
   const debug = require('debug')('replicate');
   const glob = require('multi-glob').glob;
   const path = require('path');
   const fs = require('fs');
   const io = require('socket.io-client');
 
-  let repl = {};
+  const common = require('../common');
+
+  let repl = common.commonObject();
+  repl.meta.class = 'replicator';
+  repl.meta.mind = 'default';
+
   let replicateSocket = null;
 
   let assets = {};
@@ -18,20 +23,21 @@ module.exports = function Replicate(Hive){
     assets.files = {};
   };
 
-  repl.replicateToHive = function(){
+  repl.replicateToHive = function(args, callback){
+    repl.log("starting replication...");
     resetAssets();
-    repl.buildAssets(repl.connectToHive);
+    repl.buildAssets(repl.connectToHive.bind(repl, args, callback));
   };
 
-  repl.connectToHive = function(){
+  repl.connectToHive = function(args, callback){
     debug("done building assets so lets connect to the hive!");
-    replicateSocket = io('http://localhost:4204', {forceNew: true});
-    replicateSocket.once('connect', repl.notifyHiveOfTransaction);
+    replicateSocket = io(args.host, {forceNew: true});
+    replicateSocket.once('connect', repl.notifyHiveOfTransaction.bind(repl, args, callback));
   };
 
-  repl.notifyHiveOfTransaction = function(){
+  repl.notifyHiveOfTransaction = function(args, callback){
     replicateSocket.on("ready:replication", repl.startReplication);
-    replicateSocket.on("complete:replication", repl.completeReplication);
+    replicateSocket.on("complete:replication", repl.completeReplication.bind(repl, args, callback));
     replicateSocket.emit("begin:replication");
   };
 
@@ -40,9 +46,11 @@ module.exports = function Replicate(Hive){
     replicateSocket.compress().emit("replication", assets);
   };
 
-  repl.completeReplication = function(){
+  repl.completeReplication = function(args, callback){
     debug("we are done replicating so close the socket!");
     replicateSocket.close();
+    Hive.queen.reloadBees();
+    callback("REPLICATION COMPLETED");
   };
 
   repl.compileIntoAssets = function(files, callback){
@@ -116,7 +124,6 @@ module.exports = function Replicate(Hive){
       let fullFilePath = path.join(basePath, filename);
       let fileData = files[filename];
       fs.writeFile(fullFilePath, fileData, {flag: 'w+'}, function(error){
-        debug(fullFilePath, error, fileData.toString('utf-8'));
         loop();
       });
     };

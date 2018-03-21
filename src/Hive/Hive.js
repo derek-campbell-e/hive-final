@@ -1,5 +1,10 @@
-module.exports = function Hive(){
+module.exports = function Hive(options){
   // our common tools
+  const defaultOptions = {};
+  defaultOptions.port = process.env.PORT || 4202;
+
+  options = require('extend')(true, {}, defaultOptions, options);
+
   const common = require('../common');
   const uuid = common.uuid;
   const makeEmitter = common.makeEmitter;
@@ -9,7 +14,7 @@ module.exports = function Hive(){
 
   const debug = require('debug')('hive');
   const path = require('path');
-  const io = require('socket.io')(4202);  
+  const io = require('socket.io')(options.port);  
   
   let package = require(path.join(__dirname, '..', '..', 'package.json'));
   

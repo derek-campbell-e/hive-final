@@ -12,12 +12,7 @@ module.exports = function Bee(Hive){
   let debug = require('debug')('bee');
 
   // start by making the module an event emitter
-  let bee = makeEmitter({});
-
-  // our meta object for data
-  bee.meta = {};
-  //bee.meta.hive = Hive;
-  bee.meta.id = uuid();
+  let bee = common.commonObject();
   bee.meta.hasStarted = false;
   bee.meta.class = 'base';
   bee.meta.mind = 'default';

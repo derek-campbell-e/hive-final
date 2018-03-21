@@ -14,5 +14,6 @@ module.exports = {
   timestamp: require('./timestamp'),
   renderer: require('./renderer'),
   // make a universally unique identifier
-  uuid: require('./uuid')
+  uuid: require('./uuid'),
+  commonObject: require('./commonObject')
 };

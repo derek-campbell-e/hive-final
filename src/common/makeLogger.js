@@ -12,6 +12,8 @@ module.exports = function MakeLogger(Module){
   logpaths.stdout = path.join(__dirname, '..', '..', 'logs/stdout.txt');
   logpaths.stderr = path.join(__dirname, '..', '..', 'logs/stderr.txt');
 
+  if(typeof Module.emit === "undefined"){ Module.emit = function(){} };
+
   logger.makeLogLine = function(){
     return logFormatter(Module, stdFormatter.apply(Module, arguments))
   };

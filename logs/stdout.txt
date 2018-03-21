@@ -112,3 +112,111 @@ ea66-a64db853 hive:default [20/Mar/2018:00:14:27 -0700] - begin replication...
 2ce9-ac128514 hive:default [20/Mar/2018:00:18:03 -0700] - begin replication... 
 a16e-6e9b09d4 hive:default [20/Mar/2018:00:21:31 -0700] - begin replication... 
 a16e-6e9b09d4 hive:default [20/Mar/2018:00:21:47 -0700] - begin replication... 
+0414-150a8817 hive:default [20/Mar/2018:18:52:47 -0700] - begin replication... 
+0414-150a8817 hive:default [20/Mar/2018:18:52:47 -0700] - new socket:  hRIwAbO6nSepVjZyAAAA 
+0414-150a8817 hive:default [20/Mar/2018:18:52:47 -0700] - received socket event: begin:replication from: hRIwAbO6nSepVjZyAAAA 
+0414-150a8817 hive:default [20/Mar/2018:18:52:47 -0700] - received replication request 
+0414-150a8817 hive:default [20/Mar/2018:18:52:48 -0700] - received socket event: replication from: hRIwAbO6nSepVjZyAAAA 
+0414-150a8817 hive:default [20/Mar/2018:18:52:48 -0700] - received socket event: disconnect from: hRIwAbO6nSepVjZyAAAA 
+0414-150a8817 hive:default [20/Mar/2018:18:52:48 -0700] - socket hRIwAbO6nSepVjZyAAAA has disconnected reason: client namespace disconnect 
+0414-150a8817 hive:default [20/Mar/2018:18:53:08 -0700] - begin replication... 
+0414-150a8817 hive:default [20/Mar/2018:18:53:08 -0700] - new socket:  8g_zF2iMjXOlJemzAAAB 
+0414-150a8817 hive:default [20/Mar/2018:18:53:08 -0700] - received socket event: begin:replication from: 8g_zF2iMjXOlJemzAAAB 
+0414-150a8817 hive:default [20/Mar/2018:18:53:08 -0700] - received replication request 
+0414-150a8817 hive:default [20/Mar/2018:18:53:08 -0700] - received socket event: replication from: 8g_zF2iMjXOlJemzAAAB 
+0414-150a8817 hive:default [20/Mar/2018:18:53:08 -0700] - received socket event: disconnect from: 8g_zF2iMjXOlJemzAAAB 
+0414-150a8817 hive:default [20/Mar/2018:18:53:08 -0700] - socket 8g_zF2iMjXOlJemzAAAB has disconnected reason: client namespace disconnect 
+8208-667959fe hive:default [20/Mar/2018:18:57:33 -0700] - begin replication... 
+73e7-fc33b524 hive:default [20/Mar/2018:18:57:33 -0700] - new socket:  AGMy4oMTC1IbTYybAAAA 
+73e7-fc33b524 hive:default [20/Mar/2018:18:57:33 -0700] - received socket event: begin:replication from: AGMy4oMTC1IbTYybAAAA 
+73e7-fc33b524 hive:default [20/Mar/2018:18:57:33 -0700] - received replication request 
+73e7-fc33b524 hive:default [20/Mar/2018:18:57:34 -0700] - received socket event: replication from: AGMy4oMTC1IbTYybAAAA 
+73e7-fc33b524 hive:default [20/Mar/2018:18:57:34 -0700] - received socket event: disconnect from: AGMy4oMTC1IbTYybAAAA 
+73e7-fc33b524 hive:default [20/Mar/2018:18:57:34 -0700] - socket AGMy4oMTC1IbTYybAAAA has disconnected reason: client namespace disconnect 
+1055-4fabb159 hive:default [20/Mar/2018:18:58:12 -0700] - begin replication... 
+fb1e-fe32b7fc hive:default [20/Mar/2018:18:58:12 -0700] - new socket:  _nPwCpyLNHBeS94xAAAA 
+fb1e-fe32b7fc hive:default [20/Mar/2018:18:58:12 -0700] - received socket event: begin:replication from: _nPwCpyLNHBeS94xAAAA 
+fb1e-fe32b7fc hive:default [20/Mar/2018:18:58:12 -0700] - received replication request 
+fb1e-fe32b7fc hive:default [20/Mar/2018:18:58:12 -0700] - received socket event: replication from: _nPwCpyLNHBeS94xAAAA 
+fb1e-fe32b7fc hive:default [20/Mar/2018:18:58:13 -0700] - received socket event: disconnect from: _nPwCpyLNHBeS94xAAAA 
+fb1e-fe32b7fc hive:default [20/Mar/2018:18:58:13 -0700] - socket _nPwCpyLNHBeS94xAAAA has disconnected reason: client namespace disconnect 
+1055-4fabb159 hive:default [20/Mar/2018:18:59:00 -0700] - begin replication... 
+2eef-c1cbedbf hive:default [20/Mar/2018:18:59:00 -0700] - new socket:  UEVN_TV_xo9vyAPEAAAA 
+2eef-c1cbedbf hive:default [20/Mar/2018:18:59:00 -0700] - received socket event: begin:replication from: UEVN_TV_xo9vyAPEAAAA 
+2eef-c1cbedbf hive:default [20/Mar/2018:18:59:00 -0700] - received replication request 
+2eef-c1cbedbf hive:default [20/Mar/2018:18:59:01 -0700] - received socket event: replication from: UEVN_TV_xo9vyAPEAAAA 
+2eef-c1cbedbf hive:default [20/Mar/2018:18:59:01 -0700] - received socket event: disconnect from: UEVN_TV_xo9vyAPEAAAA 
+2eef-c1cbedbf hive:default [20/Mar/2018:18:59:01 -0700] - socket UEVN_TV_xo9vyAPEAAAA has disconnected reason: client namespace disconnect 
+1055-4fabb159 hive:default [20/Mar/2018:18:59:12 -0700] - begin replication... 
+e786-03206e86 hive:default [20/Mar/2018:18:59:12 -0700] - new socket:  Gaj8R45QxhBBoJtvAAAA 
+e786-03206e86 hive:default [20/Mar/2018:18:59:12 -0700] - received socket event: begin:replication from: Gaj8R45QxhBBoJtvAAAA 
+e786-03206e86 hive:default [20/Mar/2018:18:59:12 -0700] - received replication request 
+e786-03206e86 hive:default [20/Mar/2018:18:59:12 -0700] - received socket event: replication from: Gaj8R45QxhBBoJtvAAAA 
+e786-03206e86 hive:default [20/Mar/2018:18:59:12 -0700] - received socket event: disconnect from: Gaj8R45QxhBBoJtvAAAA 
+e786-03206e86 hive:default [20/Mar/2018:18:59:12 -0700] - socket Gaj8R45QxhBBoJtvAAAA has disconnected reason: client namespace disconnect 
+1055-4fabb159 hive:default [20/Mar/2018:18:59:43 -0700] - begin replication... 
+1d70-401eb195 hive:default [20/Mar/2018:18:59:43 -0700] - new socket:  eH4VE84EPKB-nCdoAAAA 
+1d70-401eb195 hive:default [20/Mar/2018:18:59:43 -0700] - received socket event: begin:replication from: eH4VE84EPKB-nCdoAAAA 
+1d70-401eb195 hive:default [20/Mar/2018:18:59:43 -0700] - received replication request 
+1d70-401eb195 hive:default [20/Mar/2018:18:59:44 -0700] - received socket event: replication from: eH4VE84EPKB-nCdoAAAA 
+1d70-401eb195 hive:default [20/Mar/2018:18:59:44 -0700] - received socket event: disconnect from: eH4VE84EPKB-nCdoAAAA 
+1d70-401eb195 hive:default [20/Mar/2018:18:59:44 -0700] - socket eH4VE84EPKB-nCdoAAAA has disconnected reason: client namespace disconnect 
+1055-4fabb159 hive:default [20/Mar/2018:19:00:30 -0700] - begin replication... 
+88ad-160531c8 hive:default [20/Mar/2018:19:00:30 -0700] - new socket:  0kDVEwot3iOX6uYBAAAA 
+88ad-160531c8 hive:default [20/Mar/2018:19:00:30 -0700] - received socket event: begin:replication from: 0kDVEwot3iOX6uYBAAAA 
+88ad-160531c8 hive:default [20/Mar/2018:19:00:30 -0700] - received replication request 
+88ad-160531c8 hive:default [20/Mar/2018:19:00:30 -0700] - received socket event: replication from: 0kDVEwot3iOX6uYBAAAA 
+88ad-160531c8 hive:default [20/Mar/2018:19:00:30 -0700] - received socket event: disconnect from: 0kDVEwot3iOX6uYBAAAA 
+88ad-160531c8 hive:default [20/Mar/2018:19:00:30 -0700] - socket 0kDVEwot3iOX6uYBAAAA has disconnected reason: client namespace disconnect 
+1055-4fabb159 hive:default [20/Mar/2018:19:02:46 -0700] - begin replication... 
+88ad-160531c8 hive:default [20/Mar/2018:19:02:46 -0700] - new socket:  bhlM-bgWeMmLN6iKAAAB 
+88ad-160531c8 hive:default [20/Mar/2018:19:02:46 -0700] - received socket event: begin:replication from: bhlM-bgWeMmLN6iKAAAB 
+88ad-160531c8 hive:default [20/Mar/2018:19:02:46 -0700] - received replication request 
+88ad-160531c8 hive:default [20/Mar/2018:19:02:46 -0700] - received socket event: replication from: bhlM-bgWeMmLN6iKAAAB 
+88ad-160531c8 hive:default [20/Mar/2018:19:02:46 -0700] - received socket event: disconnect from: bhlM-bgWeMmLN6iKAAAB 
+88ad-160531c8 hive:default [20/Mar/2018:19:02:46 -0700] - socket bhlM-bgWeMmLN6iKAAAB has disconnected reason: client namespace disconnect 
+894a-6bed686f hive:default [20/Mar/2018:19:04:03 -0700] - begin replication... 
+0c83-150df9c5 hive:default [20/Mar/2018:19:04:03 -0700] - new socket:  7d12DFknMAUHRtwhAAAA 
+0c83-150df9c5 hive:default [20/Mar/2018:19:04:03 -0700] - received socket event: begin:replication from: 7d12DFknMAUHRtwhAAAA 
+0c83-150df9c5 hive:default [20/Mar/2018:19:04:03 -0700] - received replication request 
+0c83-150df9c5 hive:default [20/Mar/2018:19:04:03 -0700] - received socket event: replication from: 7d12DFknMAUHRtwhAAAA 
+0c83-150df9c5 hive:default [20/Mar/2018:19:04:03 -0700] - received socket event: disconnect from: 7d12DFknMAUHRtwhAAAA 
+0c83-150df9c5 hive:default [20/Mar/2018:19:04:03 -0700] - socket 7d12DFknMAUHRtwhAAAA has disconnected reason: client namespace disconnect 
+2aae-0eac28a7 hive:default [20/Mar/2018:19:15:37 -0700] - begin replication... 
+b0e8-367dcf3c hive:default [20/Mar/2018:19:16:55 -0700] - begin replication... 
+undefined replicator:default [20/Mar/2018:19:16:55 -0700] - starting replication... 
+5e8d-48292af5 hive:default [20/Mar/2018:19:17:24 -0700] - begin replication... 
+undefined replicator:default [20/Mar/2018:19:17:24 -0700] - starting replication... 
+0c83-150df9c5 hive:default [20/Mar/2018:19:17:24 -0700] - new socket:  L0_ZP9Yg4B0cV3zPAAAB 
+0c83-150df9c5 hive:default [20/Mar/2018:19:17:24 -0700] - received socket event: begin:replication from: L0_ZP9Yg4B0cV3zPAAAB 
+0c83-150df9c5 hive:default [20/Mar/2018:19:17:24 -0700] - received replication request 
+0c83-150df9c5 hive:default [20/Mar/2018:19:17:24 -0700] - received socket event: replication from: L0_ZP9Yg4B0cV3zPAAAB 
+0c83-150df9c5 hive:default [20/Mar/2018:19:17:24 -0700] - received socket event: disconnect from: L0_ZP9Yg4B0cV3zPAAAB 
+0c83-150df9c5 hive:default [20/Mar/2018:19:17:24 -0700] - socket L0_ZP9Yg4B0cV3zPAAAB has disconnected reason: client namespace disconnect 
+1a8c-f136a750 hive:default [20/Mar/2018:19:17:45 -0700] - begin replication... 
+21f0-b9b49222 replicator:default [20/Mar/2018:19:17:45 -0700] - starting replication... 
+0c83-150df9c5 hive:default [20/Mar/2018:19:17:45 -0700] - new socket:  cZUbRBmQfyFLAEiIAAAC 
+0c83-150df9c5 hive:default [20/Mar/2018:19:17:45 -0700] - received socket event: begin:replication from: cZUbRBmQfyFLAEiIAAAC 
+0c83-150df9c5 hive:default [20/Mar/2018:19:17:45 -0700] - received replication request 
+0c83-150df9c5 hive:default [20/Mar/2018:19:17:45 -0700] - received socket event: replication from: cZUbRBmQfyFLAEiIAAAC 
+0c83-150df9c5 hive:default [20/Mar/2018:19:17:45 -0700] - received socket event: disconnect from: cZUbRBmQfyFLAEiIAAAC 
+0c83-150df9c5 hive:default [20/Mar/2018:19:17:45 -0700] - socket cZUbRBmQfyFLAEiIAAAC has disconnected reason: client namespace disconnect 
+9d1c-aba73aa5 hive:default [20/Mar/2018:19:20:22 -0700] - begin replication... 
+1c2c-03d5e9c5 replicator:default [20/Mar/2018:19:20:22 -0700] - starting replication... 
+0c83-150df9c5 hive:default [20/Mar/2018:19:20:22 -0700] - new socket:  8PPRJDS5X4w7B0e6AAAD 
+0c83-150df9c5 hive:default [20/Mar/2018:19:20:22 -0700] - received socket event: begin:replication from: 8PPRJDS5X4w7B0e6AAAD 
+0c83-150df9c5 hive:default [20/Mar/2018:19:20:22 -0700] - received replication request 
+0c83-150df9c5 hive:default [20/Mar/2018:19:20:22 -0700] - received socket event: replication from: 8PPRJDS5X4w7B0e6AAAD 
+0c83-150df9c5 hive:default [20/Mar/2018:19:20:22 -0700] - received socket event: disconnect from: 8PPRJDS5X4w7B0e6AAAD 
+0c83-150df9c5 hive:default [20/Mar/2018:19:20:22 -0700] - socket 8PPRJDS5X4w7B0e6AAAD has disconnected reason: client namespace disconnect 
+b457-24c51dba hive:default [20/Mar/2018:19:25:03 -0700] - begin replication... 
+3023-503fbbf6 hive:default [20/Mar/2018:19:25:43 -0700] - begin replication... 
+e924-c8d94ec8 replicator:default [20/Mar/2018:19:25:43 -0700] - starting replication... 
+0c83-150df9c5 hive:default [20/Mar/2018:19:25:43 -0700] - new socket:  uZ9c9F76A28PPbtJAAAE 
+0c83-150df9c5 hive:default [20/Mar/2018:19:25:43 -0700] - received socket event: begin:replication from: uZ9c9F76A28PPbtJAAAE 
+0c83-150df9c5 hive:default [20/Mar/2018:19:25:43 -0700] - received replication request 
+0c83-150df9c5 hive:default [20/Mar/2018:19:25:43 -0700] - received socket event: replication from: uZ9c9F76A28PPbtJAAAE 
+0c83-150df9c5 hive:default [20/Mar/2018:19:25:43 -0700] - received socket event: disconnect from: uZ9c9F76A28PPbtJAAAE 
+0c83-150df9c5 hive:default [20/Mar/2018:19:25:43 -0700] - socket uZ9c9F76A28PPbtJAAAE has disconnected reason: client namespace disconnect 
+de99-2651ccab hive:default [20/Mar/2018:19:26:55 -0700] - starting drones... { options: { all: true }, drones: '*' } 
+9408-df8aad38 drone:testDroneNotLoaded [20/Mar/2018:19:26:56 -0700] - hello WE FINALLY STARTED 

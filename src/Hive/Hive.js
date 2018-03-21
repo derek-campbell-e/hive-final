@@ -6,10 +6,7 @@ module.exports = function Hive(options){
   options = require('extend')(true, {}, defaultOptions, options);
 
   const common = require('../common');
-  const uuid = common.uuid;
-  const makeEmitter = common.makeEmitter;
   const delegateBinder = common.delegateBinder;
-  const makeLogger = common.makeLogger;
   const Table = require('cli-table');
 
   const debug = require('debug')('hive');
@@ -19,25 +16,18 @@ module.exports = function Hive(options){
   let package = require(path.join(__dirname, '..', '..', 'package.json'));
   
   // start by making the module an event emitter
-  let hive = makeEmitter({});
+  let hive = common.commonObject();
 
   hive.sockets = {};
-
-  // make our hive a logger
-  makeLogger(hive);
 
   // our cli object
   // might make this private??
   hive.cli = null;
 
   // our meta object for data
-  hive.meta = {};
-  hive.meta.id = uuid();
   hive.meta.version = package.version;
   hive.meta.class = 'hive';
   hive.meta.mind = 'default';
-  hive.meta.stdout = "";
-  hive.meta.stderr = "";
 
   // our object for bee awareness
   hive.bees = {};

@@ -32,6 +32,7 @@ Let's say you need a complex task done every 5 minutes. Even better if you've al
     };
 ```
 Calling `run drone:complexTaskDrone` will fire your `Drone` immediately displaying in the console the arguments/result from the `callback`.
+
 Otherwise, results will be logged in `./logs/results.txt`
 
 ## Hive
@@ -39,12 +40,14 @@ The hive's job is to keep track of things like your bees, your tasks, and also s
 
 ### CLI Usage
 Enter your hive with the following command `hive [PORT=4202]`
+
 This will start your hive if it isn't running already and enter the CLI. 
 From here you have the following commands at your disposal. *
 \* **prepending `hive` to these commands runs them without entering the CLI**
 
 #### Hive Commands
 `stats` or `ps` - show current stats like active bees, tasks, stdout/stderr, and metrics
+
 `repl <host> <port> [options] [bees...]` - replicates current `beeFolder` from current hive to hive located at `<host>` and `<port>`
 
 #### Drones & Workers
@@ -52,14 +55,21 @@ From here you have the following commands at your disposal. *
 
 #### Drone Commands
 `load drones [-a, --all] [drones...]` - load drones into the `Queen` for running later. Drones do not start until you command them to.
+
 `start drones [-a, --all] [-f, --fire-now] [drones...]` - start the drones specified or all. Optional argument to fire their task immediately.
+
 `run drone:<name>` - run a drone from your `beeFolder` by `<name>`. Once task is complete, output is rendered to console. The `Drone` is retired if not already started. If already running on it's schedule then a new thread is immediately started not affecting the schedule.
+
 `ls drones` - show the list of drones found / loaded / and running as told by the `Queen`.
+
 `ps drones` - show stats activity for all drones as told by the `Queen`.
+
 `ps drone:<mind>` or `ps <beeID>` - show detailed activity for the drone.
 
 #### Worker Commands
 `ls workers` - show the list of workers found / loaded / and running as told by the `Queen` and spawned by the `Drones`
+
 `ps workers` - show stats activity for all workers as told by the `Queen`.
+
 `ps worker:<mind>` or `ps <beeID>` - show detailed activity for the worker.
 

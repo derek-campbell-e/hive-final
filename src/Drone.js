@@ -66,12 +66,19 @@ module.exports = function Drone(Hive, Queen, MindFile){
   // creates a function with a (this) object referring to drone
   // and callback
   drone.createBindedFunction = function(){
+    let spawnWorker = function(){
+      return this.spawnWorker.apply(this, arguments);
+    }.bind(drone);
     let func = function droneTask(callback){
       if(drone.delegates.threads.shouldStartThread()){
         let taskID = drone.taskStart(drone.meta.taskName());
         callback = callback.bind(taskID);
         drone.spawnWorker = drone.spawnWorker.bind(taskID);
-        drone.mind.task.apply(drone, [callback]);
+        let droneExport = drone.exportForMind();
+        droneExport.spawnWorker = spawnWorker;
+        droneExport.worker = spawnWorker;
+
+        drone.mind.task.apply(droneExport, [callback]);
       }
     }.bind(drone, drone.taskComplete);
     return func;

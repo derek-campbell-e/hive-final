@@ -154,6 +154,14 @@ module.exports = function Bee(Hive){
     return exports;
   };
 
+  bee.exportForMind = function(){
+    let exports = {};
+    exports.meta = bee.export();
+    exports.log = bee.log;
+    exports.error = bee.error;
+    return exports;
+  };
+
   // our private initializer
   let init = function(){
     debug("initializing a new bee...");

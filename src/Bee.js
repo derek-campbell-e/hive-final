@@ -50,17 +50,20 @@ module.exports = function Bee(Hive){
   });
 
   // our delegate methods
+  let delegates = {};
+  delegates.on = {};
+
   bee.delegates = {};
   bee.delegates.on = {};
 
-  bee.delegates.on.spawn = function(){
+  delegates.on.spawn = function(){
     debug = require('debug')(bee.meta.debugName());
     bee.meta.spawnAt = moment().format('x');
     debug("i am being spawned... better let the hive know");
     Hive.emit("on:beeSpawn", this);
   };
 
-  bee.delegates.on.retire = function(){
+  delegates.on.retire = function(){
     bee.retireSpawn();
     bee.gc();
     debug("i am being retired... the hive should know about my two-weeks");
@@ -68,11 +71,11 @@ module.exports = function Bee(Hive){
     bee.gc();
   };
 
-  bee.delegates.on.taskStart = function(task){
+  delegates.on.taskStart = function(task){
     Hive.emit('on:taskStart', bee, task);
   };
 
-  bee.delegates.on.taskComplete = function(task){
+  delegates.on.taskComplete = function(task){
     bee.retireSpawn();
     Hive.emit('on:taskComplete', bee, task);
     bee.tasks[task.meta.id] = null;
@@ -165,7 +168,9 @@ module.exports = function Bee(Hive){
   // our private initializer
   let init = function(){
     debug("initializing a new bee...");
-    delegateBinder(bee);
+    for(let delegateKey in delegates.on){
+      bee.on('on:'+delegateKey, delegates.on[delegateKey]);
+    }
     return bee;
   };
 

@@ -18,7 +18,7 @@ module.exports = function Hive(options){
   // start by making the module an event emitter
   let hive = common.commonObject();
 
-  hive.sockets = {};
+  //hive.sockets = {};
   var sockets = {};
 
   // our cli object

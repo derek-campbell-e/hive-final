@@ -1,4 +1,4 @@
-module.exports = function SocketDelegates(Hive, io){
+module.exports = function SocketDelegates(Hive, io, sockets){
   let delegates = {};
   let newSocketDelegates = {};
   
@@ -31,14 +31,14 @@ module.exports = function SocketDelegates(Hive, io){
 
   delegates.onConnection = function(socket){
     Hive.log("new socket: ", socket.id);
-    Hive.sockets[socket.id] = socket;
+    sockets[socket.id] = socket;
     delegates.bindNewSocket(socket);
   };
 
   delegates.onDisconnect = function(reason, socket){
     Hive.log("socket", socket.id, "has disconnected", "reason:", reason);
-    Hive.sockets[socket.id] = null;
-    delete Hive.sockets[socket.id];
+    sockets[socket.id] = null;
+    delete sockets[socket.id];
   };
 
   newSocketDelegates['stats'] = delegates.showStats;

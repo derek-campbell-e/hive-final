@@ -19,6 +19,7 @@ module.exports = function Hive(options){
   let hive = common.commonObject();
 
   hive.sockets = {};
+  var sockets = {};
 
   // our cli object
   // might make this private??
@@ -40,7 +41,7 @@ module.exports = function Hive(options){
 
   // our delegates
   hive.delegates = {};
-  hive.delegates.socket = require('./delegates/socket')(hive, io);
+  hive.delegates.socket = require('./delegates/socket')(hive, io, sockets);
   hive.delegates.cli = require('./delegates/cli')(hive);
   hive.delegates.on = require('./delegates/on')(hive);
 

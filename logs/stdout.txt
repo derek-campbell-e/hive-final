@@ -313,3 +313,4 @@ a4eb-7d6785cc hive:default [20/Mar/2018:19:49:33 -0700] - starting drones... { o
 5183-2116f33b drone:testDroneNotLoaded [20/Mar/2018:19:50:24 -0700] - hello WE FINALLY STARTED 
 5183-2116f33b drone:testDroneNotLoaded [20/Mar/2018:19:50:35 -0700] - hello WE FINALLY STARTED 
 5183-2116f33b drone:testDroneNotLoaded [20/Mar/2018:19:50:46 -0700] - hello WE FINALLY STARTED 
+e2b8-e4a91a36 hive:default [21/Mar/2018:21:17:17 -0700] - listing drones... 

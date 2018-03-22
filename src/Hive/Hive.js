@@ -18,8 +18,8 @@ module.exports = function Hive(options){
   // start by making the module an event emitter
   let hive = common.commonObject();
 
-  //hive.sockets = {};
-  var sockets = {};
+  // our private socket variable
+  let sockets = {};
 
   // our cli object
   // might make this private??
@@ -39,11 +39,27 @@ module.exports = function Hive(options){
   // our object for tasks
   hive.tasks = {};
 
-  // our delegates
-  hive.delegates = {};
-  hive.delegates.socket = require('./delegates/socket')(hive, io, sockets);
-  hive.delegates.cli = require('./delegates/cli')(hive);
-  hive.delegates.on = require('./delegates/on')(hive);
+  // our private delegates
+  let delegates = {};
+  delegates.socket = require('./delegates/socket')(hive, io, sockets);
+  delegates.cli = require('./delegates/cli')(hive);
+  delegates.on = require('./delegates/on')(hive);
+
+  hive.isValidDelegate = function(delegateKey, delegateFunction){
+    if(delegates.hasOwnProperty(delegateKey) && delegates[delegateKey].hasOwnProperty(delegateFunction)){
+      return delegates[delegateKey][delegateFunction];
+    }
+    return false;
+  };
+
+  hive.runDelegate = function(delegateKey, delegateFunctionKey, ...delegateArguments){
+    hive.log("attempting to run delegate function", delegateKey, delegateFunctionKey);
+    let delegateFunction = hive.isValidDelegate(delegateKey, delegateFunctionKey);
+    if(delegateFunction){
+      delegateFunction.apply(hive, delegateArguments);
+    }
+    return false;
+  };
 
   hive.getStats = function(args){
     let hiveExport = {};

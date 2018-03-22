@@ -318,3 +318,34 @@ e2b8-e4a91a36 hive:default [21/Mar/2018:21:17:17 -0700] - listing drones...
 f98e-cddc8bb9 replicator:default [21/Mar/2018:21:22:25 -0700] - starting replication... 
 eb8e-e3f8a128 hive:default [21/Mar/2018:21:25:11 -0700] - begin replication... 
 8846-9469ccbb replicator:default [21/Mar/2018:21:25:11 -0700] - starting replication... 
+874e-f321d848 hive:default [21/Mar/2018:21:53:11 -0700] - attempting to run delegate function cli ps 
+f041-dd00106c hive:default [21/Mar/2018:21:53:37 -0700] - attempting to run delegate function cli pss 
+5b6a-c4ae24cf hive:default [21/Mar/2018:22:24:22 -0700] - unrecognized delegate funcation attempted cli { options: {} } 
+b1d9-00ad258c hive:default [21/Mar/2018:22:24:47 -0700] - attempting to run delegate function cli ps 
+4fed-1f36deb9 hive:default [21/Mar/2018:22:24:53 -0700] - unrecognized delegate funcation attempted cli pss 
+20f2-6a32328c hive:default [21/Mar/2018:22:32:39 -0700] - unrecognized delegate funcation attempted cli pss 
+c41c-585f33ac hive:default [21/Mar/2018:22:32:45 -0700] - attempting to run delegate function cli ps 
+c41c-585f33ac hive:default [21/Mar/2018:22:32:57 -0700] - attempting to run delegate function cli replicate 
+c41c-585f33ac hive:default [21/Mar/2018:22:32:57 -0700] - begin replication... 
+6406-7aa13d02 replicator:default [21/Mar/2018:22:32:58 -0700] - starting replication... 
+f878-6337ce10 hive:default [21/Mar/2018:22:33:10 -0700] - attempting to run delegate function cli loadDrones 
+2e21-01f95cd5 hive:default [21/Mar/2018:22:34:20 -0700] - attempting to run delegate function cli loadDrones 
+8fd5-5b6d48af hive:default [21/Mar/2018:22:34:47 -0700] - attempting to run delegate function cli loadDrones 
+8fd5-5b6d48af hive:default [21/Mar/2018:22:34:58 -0700] - attempting to run delegate function cli runBee 
+7507-737bdd14 hive:default [21/Mar/2018:22:35:36 -0700] - attempting to run delegate function cli loadDrones 
+7507-737bdd14 hive:default [21/Mar/2018:22:35:38 -0700] - attempting to run delegate function cli showStats 
+7507-737bdd14 hive:default [21/Mar/2018:22:35:44 -0700] - attempting to run delegate function cli retireBees 
+7507-737bdd14 hive:default [21/Mar/2018:22:35:46 -0700] - attempting to run delegate function cli showStats 
+8293-c0085af9 hive:default [21/Mar/2018:22:41:28 -0700] - attempting to run delegate function cli ps 
+8293-c0085af9 hive:default [21/Mar/2018:22:41:31 -0700] - attempting to run delegate function cli loadDrones 
+8293-c0085af9 hive:default [21/Mar/2018:22:41:43 -0700] - attempting to run delegate function cli startDrones 
+8293-c0085af9 hive:default [21/Mar/2018:22:41:43 -0700] - starting drones... { options: {},   drones: [ 'ableton', 'testDroneNotLoaded', [length]: 2 ] } 
+376d-6e896d2b drone:testDroneNotLoaded [21/Mar/2018:22:41:44 -0700] - hello WE FINALLY STARTED 
+376d-6e896d2b drone:testDroneNotLoaded [21/Mar/2018:22:41:55 -0700] - hello WE FINALLY STARTED 
+8293-c0085af9 hive:default [21/Mar/2018:22:41:58 -0700] - attempting to run delegate function cli ps 
+8293-c0085af9 hive:default [21/Mar/2018:22:42:01 -0700] - attempting to run delegate function cli showStats 
+376d-6e896d2b drone:testDroneNotLoaded [21/Mar/2018:22:42:06 -0700] - hello WE FINALLY STARTED 
+376d-6e896d2b drone:testDroneNotLoaded [21/Mar/2018:22:42:17 -0700] - hello WE FINALLY STARTED 
+8293-c0085af9 hive:default [21/Mar/2018:22:42:21 -0700] - attempting to run delegate function cli showStats 
+376d-6e896d2b drone:testDroneNotLoaded [21/Mar/2018:22:42:28 -0700] - hello WE FINALLY STARTED 
+376d-6e896d2b drone:testDroneNotLoaded [21/Mar/2018:22:42:39 -0700] - hello WE FINALLY STARTED 

@@ -2,12 +2,12 @@ module.exports = function OnDelegates(Hive){
   let delegates = {};
 
   delegates.beeSpawn = function(bee){
-    Hive.bees[bee.meta.id] = bee;
+    Hive.bees[bee.id] = bee;
   };
 
   delegates.beeRetire = function(bee){
-    Hive.bees[bee.meta.id] = null;
-    delete Hive.bees[bee.meta.id];
+    Hive.bees[bee.id] = null;
+    delete Hive.bees[bee.id];
   };
 
   delegates.taskStart = function(bee, task){

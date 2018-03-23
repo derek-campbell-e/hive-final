@@ -88,7 +88,7 @@ module.exports = function CliDelegates(Hive){
   };
 
   delegates.ps = function(args, callback){
-    callback(Hive.getStats());
+    Hive.meta.ps(args, callback);
   };
 
   delegates.replicate = function(args, callback){

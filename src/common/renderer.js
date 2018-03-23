@@ -9,5 +9,6 @@ module.exports = function Renderer(template, data){
   } catch (error){
     templateString = "";
   }
+  templateString = templateString.replace(/\t/g, "\t");
   return ejs.render(templateString, data);
 };

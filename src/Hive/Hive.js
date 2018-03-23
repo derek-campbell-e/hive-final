@@ -16,7 +16,7 @@ module.exports = function Hive(options){
   let package = require(path.join(__dirname, '..', '..', 'package.json'));
   
   // start by making the module an event emitter
-  let hive = common.commonObject();
+  let hive = new common.commonObject();
 
   // our private socket variable
   let sockets = {};
@@ -63,35 +63,41 @@ module.exports = function Hive(options){
 
   hive.getStats = function(args){
     let hiveExport = {};
-    hiveExport.hive = hive.meta.id;
+    hiveExport.hive = {id: hive.meta.id, port: options.port};
     hiveExport.bees = {};
-    hiveExport.queen = hive.queen.export();
+    //hiveExport.queen = hive.queen.refresh();
     hiveExport.tasks = {};
+    console.log(hive.meta.ps());
     for(let beeID in hive.bees){
-      hiveExport.bees[beeID] = hive.bees[beeID].export();
+      hiveExport.bees[beeID] = hive.bees[beeID].refresh();
     }
     for(let taskID in hive.tasks){
       let taskInfo = hive.tasks[taskID];
-      hiveExport.tasks[taskID] = taskInfo.task.export();
+      hiveExport.tasks[taskID] = taskInfo.task.refresh();
     }
     return hiveExport;
   };
 
+
   hive.renderStats = function(stats){
     let fullStats = [];
     let hiveTable = new Table({
-      head: ['Hive', 'ID']
+      head: ['Hive', 'ID', 'PORT']
     });
 
-    hiveTable.push(['Hive', stats.hive]);
+    hiveTable.push(['Hive', stats.hive.id, stats.hive.port]);
     
+    /*
     let queenTable = new Table({
       head: ['Queen', 'ID', 'Spawned At', 'STDOUT', 'STDERR']
     });
 
+
+
     queenTable.push([
       stats.queen.debugName,stats.queen.id, stats.queen.spawnAt, stats.queen.stdout, stats.queen.stderr
     ]);
+    */
 
     let beesTable = new Table({
       head: ['ID', 'BEE', 'MIND', 'Spawned At', 'STDOUT', 'STDERR']
@@ -112,7 +118,7 @@ module.exports = function Hive(options){
     }
 
     fullStats.push(hiveTable.toString());
-    fullStats.push(queenTable.toString());
+    //fullStats.push(queenTable.toString());
     fullStats.push(beesTable.toString());
     fullStats.push(tasksTable.toString());
 

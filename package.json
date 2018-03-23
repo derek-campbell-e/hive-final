@@ -24,6 +24,7 @@
     "node-cron": "^1.2.1",
     "socket.io": "^2.0.4",
     "string-argv": "0.0.2",
+    "text-table": "^0.2.0",
     "vorpal": "^1.12.0"
   }
 }

@@ -12,7 +12,7 @@ module.exports = function Bee(Hive){
   let debug = require('debug')('bee');
 
   // start by making the module an event emitter
-  let bee = common.commonObject();
+  let bee = new common.commonObject();
   bee.meta.hasStarted = false;
   bee.meta.class = 'base';
   bee.meta.mind = 'default';
@@ -60,7 +60,7 @@ module.exports = function Bee(Hive){
     debug = require('debug')(bee.meta.debugName());
     bee.meta.spawnAt = moment().format('x');
     debug("i am being spawned... better let the hive know");
-    Hive.emit("on:beeSpawn", this);
+    Hive.emit("on:beeSpawn", this.export());
   };
 
   delegates.on.retire = function(){
@@ -154,6 +154,7 @@ module.exports = function Bee(Hive){
       }
       exports[key].__proto__ = bee.meta[key].__proto__;
     }
+    exports.refresh = bee.export;
     return exports;
   };
 

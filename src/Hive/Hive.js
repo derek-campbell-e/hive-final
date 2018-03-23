@@ -1,7 +1,14 @@
 module.exports = function Hive(options){
+  const path = require('path');
   // our common tools
   const defaultOptions = {};
   defaultOptions.port = process.env.PORT || 4202;
+  defaultOptions.loadAllDrones = true; // load all the drones from the bees/drones folder
+  defaultOptions.beeFolder = path.join(__dirname, '..', '..', 'bees');
+  defaultOptions.startDronesOnLoad = true;
+  defaultOptions.loadDrones = []; // drones to load by default
+  defaultOptions.startDrones = []; // drones to start by default
+  defaultOptions.maxTaskRuntime = 60 * 1000; // max runtime for tasks in ms, default is 1 minute
 
   options = require('extend')(true, {}, defaultOptions, options);
 
@@ -10,13 +17,14 @@ module.exports = function Hive(options){
   const Table = require('cli-table');
 
   const debug = require('debug')('hive');
-  const path = require('path');
   const io = require('socket.io')(options.port);  
   
   let package = require(path.join(__dirname, '..', '..', 'package.json'));
   
   // start by making the module an event emitter
   let hive = new common.commonObject();
+
+  hive.options = options;
 
   // our private socket variable
   let sockets = {};
@@ -33,8 +41,7 @@ module.exports = function Hive(options){
   // our object for bee awareness
   hive.bees = {};
 
-  // a special place for our queen
-  hive.queen = null;
+  let queen = null;
 
   // our object for tasks
   hive.tasks = {};
@@ -53,10 +60,11 @@ module.exports = function Hive(options){
   };
 
   hive.runDelegate = function(delegateKey, delegateFunctionKey, ...delegateArguments){
+    let cli = this;
     hive.log("attempting to run delegate function", delegateKey, delegateFunctionKey);
     let delegateFunction = hive.isValidDelegate(delegateKey, delegateFunctionKey);
     if(delegateFunction){
-      delegateFunction.apply(hive, delegateArguments);
+      delegateFunction.apply(cli, delegateArguments);
     }
     return false;
   };
@@ -67,7 +75,6 @@ module.exports = function Hive(options){
     hiveExport.bees = {};
     //hiveExport.queen = hive.queen.refresh();
     hiveExport.tasks = {};
-    console.log(hive.meta.ps());
     for(let beeID in hive.bees){
       hiveExport.bees[beeID] = hive.bees[beeID].refresh();
     }
@@ -78,7 +85,6 @@ module.exports = function Hive(options){
     return hiveExport;
   };
 
-
   hive.renderStats = function(stats){
     let fullStats = [];
     let hiveTable = new Table({
@@ -87,18 +93,6 @@ module.exports = function Hive(options){
 
     hiveTable.push(['Hive', stats.hive.id, stats.hive.port]);
     
-    /*
-    let queenTable = new Table({
-      head: ['Queen', 'ID', 'Spawned At', 'STDOUT', 'STDERR']
-    });
-
-
-
-    queenTable.push([
-      stats.queen.debugName,stats.queen.id, stats.queen.spawnAt, stats.queen.stdout, stats.queen.stderr
-    ]);
-    */
-
     let beesTable = new Table({
       head: ['ID', 'BEE', 'MIND', 'Spawned At', 'STDOUT', 'STDERR']
     });
@@ -118,7 +112,6 @@ module.exports = function Hive(options){
     }
 
     fullStats.push(hiveTable.toString());
-    //fullStats.push(queenTable.toString());
     fullStats.push(beesTable.toString());
     fullStats.push(tasksTable.toString());
 
@@ -135,23 +128,20 @@ module.exports = function Hive(options){
       let taskInfo = hive.tasks[taskID];
       taskInfo.task.gc();
     }
-    hive.queen.gc();
+    queen.gc();
     process.exit(2);
   };
-  
-  hive.blast = function(eventName,...args){
-    for(let socketID in hive.sockets){
-      let socket = hive.sockets[socketID];
-      socket.emit.apply(socket, [eventName, ...args]);
-    }
-  };
 
+  hive.reload = function(){
+    queen.reloadBees();
+  };
+  
   let init = function(){
     debug("initializing the hive...");
     let options = {
       startAllDrones: false,
     };
-    hive.queen = require('../Queen')(hive, options);
+    queen = require('../Queen')(hive, options);
     hive.cli = require('./Cli')(hive);
     process.on('SIGINT', hive.gc);
     return hive;

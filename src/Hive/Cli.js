@@ -4,7 +4,7 @@ module.exports = function CLI(Hive){
   let delegateAction = function(delegateFunction, args, callback){
     let delegateKey = 'cli';
     if(Hive.isValidDelegate(delegateKey, delegateFunction)){
-      return Hive.runDelegate(delegateKey, delegateFunction, args, callback);
+      return Hive.runDelegate.call(vorpal, delegateKey, delegateFunction, args, callback);
     }
     Hive.log("unrecognized delegate funcation attempted", delegateKey, delegateFunction);
     callback('an error occured processing your request');

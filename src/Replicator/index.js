@@ -23,16 +23,22 @@ module.exports = function Replicator(Hive){
     assets.files = {};
   };
 
+  let delegates = require('./delegates')(repl);
+
   repl.replicateToHive = function(args, callback){
-    repl.log("starting replication...");
+    let cli = this;
+    let message = "starting to replicate to hive: " + args.host;
+    this.log(message);
+    repl.log(message);
     resetAssets();
-    repl.buildAssets(repl.connectToHive.bind(repl, args, callback));
+    repl.connectToHive.call(cli, args, callback);
   };
 
   repl.connectToHive = function(args, callback){
-    debug("done building assets so lets connect to the hive!");
+    let cli = this;
     replicateSocket = io(args.host, {forceNew: true});
-    replicateSocket.once('connect', repl.notifyHiveOfTransaction.bind(repl, args, callback));
+    replicateSocket.once('connect', delegates.onConnectionSuccess.bind(cli, args, callback));
+    replicateSocket.once('connect_error', delegates.onConnectionFailed.bind(cli, args, callback));
   };
 
   repl.notifyHiveOfTransaction = function(args, callback){
@@ -43,13 +49,16 @@ module.exports = function Replicator(Hive){
 
   repl.startReplication = function(){
     debug("STARTING TO REPLICATE");
-    replicateSocket.compress().emit("replication", assets);
+    repl.log("building assets...");
+    repl.buildAssets(function(){
+      replicateSocket.compress().emit("replication", assets);
+    });
   };
 
   repl.completeReplication = function(args, callback){
     debug("we are done replicating so close the socket!");
     replicateSocket.close();
-    Hive.queen.reloadBees();
+    Hive.reload();
     callback("REPLICATION COMPLETED");
   };
 
@@ -72,7 +81,7 @@ module.exports = function Replicator(Hive){
     fs.stat(file, function(error, stats){
       let isDirectory = stats.isDirectory();
       let isFile = stats.isFile();
-      let relativePath = path.relative(Hive.queen.options.beeFolder, file);
+      let relativePath = path.relative(Hive.options.beeFolder, file);
 
       if(isDirectory){
         assets.dirs.push(relativePath);
@@ -95,7 +104,7 @@ module.exports = function Replicator(Hive){
     callback = callback || function(){};
     debug("building assets...");
     let globOptions = {};
-    globOptions.cwd = Hive.queen.options.beeFolder;
+    globOptions.cwd = Hive.options.beeFolder;
     globOptions.absolute = true;
     globOptions.realpath = true;
     glob(['**/*'], globOptions, function(error, files){
@@ -113,7 +122,7 @@ module.exports = function Replicator(Hive){
   };
 
   repl.createFiles = function(files, callback){
-    let basePath = Hive.queen.options.beeFolder;
+    let basePath = Hive.options.beeFolder;
     let fileKeys = Object.keys(files);
     let loop = function(){
       let filename = fileKeys.shift();
@@ -131,7 +140,7 @@ module.exports = function Replicator(Hive){
   };
 
   repl.createFolders = function(folders, callback){
-    let basePath = Hive.queen.options.beeFolder;
+    let basePath = Hive.options.beeFolder;
     let foldersCopy = [...folders];
     let loop = function(){
       let folder = foldersCopy.shift();

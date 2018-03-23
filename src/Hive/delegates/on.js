@@ -11,7 +11,7 @@ module.exports = function OnDelegates(Hive){
   };
 
   delegates.taskStart = function(bee, task){
-    Hive.tasks[task.meta.id] = {
+    Hive.tasks[task.id] = {
       task: task,
       bee: bee.meta.id
     };

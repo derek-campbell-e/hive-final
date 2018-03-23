@@ -22,7 +22,7 @@ module.exports = function SocketDelegates(Hive, io, sockets){
   };
 
   delegates.replication = function(replicationData, socket){
-    let replication = require('../../Replicate')(Hive);
+    let replication = require('../../Replicator')(Hive);
     replication.replicateInto(replicationData, function(){
       socket.emit("complete:replication");
     });

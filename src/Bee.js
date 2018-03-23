@@ -72,7 +72,7 @@ module.exports = function Bee(Hive){
   };
 
   delegates.on.taskStart = function(task){
-    Hive.emit('on:taskStart', bee, task);
+    Hive.emit('on:taskStart', bee, task.export());
   };
 
   delegates.on.taskComplete = function(task){
@@ -154,6 +154,8 @@ module.exports = function Bee(Hive){
       }
       exports[key].__proto__ = bee.meta[key].__proto__;
     }
+    exports.ps = bee.meta.ps;
+    exports.gc = bee.gc;
     exports.refresh = bee.export;
     return exports;
   };

@@ -94,7 +94,7 @@ module.exports = function CliDelegates(Hive){
   delegates.replicate = function(args, callback){
     Hive.log("begin replication...");
     let replicator = require('../../Replicator')(Hive);
-    replicator.replicateToHive(args, callback);
+    replicator.replicateToHive.call(this, args, callback);
   };
 
   return delegates;

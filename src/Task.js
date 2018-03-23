@@ -48,6 +48,7 @@ module.exports = function Task(bee, taskName){
         exports[key] = exportData;
       }
     }
+    exports.refresh = task.export;
     exports.bee = bee.meta.id;
     return exports;
   };

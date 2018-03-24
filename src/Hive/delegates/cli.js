@@ -27,7 +27,8 @@ module.exports = function CliDelegates(Hive){
     if(args.options.all){
       args.drones = '*';
     }
-    callback(Hive.queen.loadDrones(args.drones));
+    //callback(Hive.queen.loadDrones(args.drones));
+    Hive.emit('loadDrones', args.drones, callback);
   };
 
   delegates.listDrones = function(args, callback){
@@ -84,7 +85,8 @@ module.exports = function CliDelegates(Hive){
   };
 
   delegates.retireBees = function(args, callback){
-    callback(Hive.queen.retireChildrenFromCLI(args.bees));
+    //callback(Hive.queen.retireChildrenFromCLI(args.bees));
+    Hive.emit('retireBees', args.bees, callback);
   };
 
   delegates.ps = function(args, callback){

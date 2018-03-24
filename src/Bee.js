@@ -67,7 +67,7 @@ module.exports = function Bee(Hive){
     bee.retireSpawn();
     bee.gc();
     debug("i am being retired... the hive should know about my two-weeks");
-    Hive.emit("on:beeRetire", this);
+    Hive.emit("on:beeRetire", this.export());
     bee.gc();
   };
 

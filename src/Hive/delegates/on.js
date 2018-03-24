@@ -6,6 +6,7 @@ module.exports = function OnDelegates(Hive){
   };
 
   delegates.beeRetire = function(bee){
+    console.log(bee);
     Hive.bees[bee.id] = null;
     delete Hive.bees[bee.id];
   };

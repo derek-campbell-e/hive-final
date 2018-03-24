@@ -24,12 +24,13 @@ module.exports = function Queen(Hive, options){
 
   queen.meta.class = 'queen';
 
-  queen.retireChildrenFromCLI = function(bees){
+  queen.retireChildrenFromCLI = function(bees, callback){
     if(Array.isArray(bees)){
       bees.forEach(queen.retireChildFromCLI);
     } else {
       queen.retireChildFromCLI(bees);
     }
+    callback("retired: "+ bees.join(" "));
   };
 
   queen.retireChildFromCLI = function(beeString){
@@ -42,6 +43,7 @@ module.exports = function Queen(Hive, options){
     } else {
       bee = queen.returnChild(beeClass, beeMind);
     }
+    console.log(bee);
     if(bee){
       if(Array.isArray(bee)){
         bee.forEach(function(beeInstance){
@@ -251,12 +253,18 @@ module.exports = function Queen(Hive, options){
     return message;
   };
 
+  let bind = function(){
+    Hive.on('loadDrones', queen.loadDrones);
+    Hive.on('retireBees', queen.retireChildrenFromCLI);
+  };
+
   queen.reloadBees = function(){
     queen.locateDrones();
     queen.locateWorkers();
   };
 
   let init = function(){
+    bind();
     queen.spawn();
     queen.locateDrones();
     queen.locateWorkers();

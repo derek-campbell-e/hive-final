@@ -350,3 +350,40 @@ a9e8-0c6bba0f replicator:default [23/Mar/2018:15:57:39 -0700] - building assets.
 f649-7fbd871a hive:default [23/Mar/2018:15:57:39 -0700] - received socket event: replication from: UTGNEEQTIH8QMGUuAAAA 
 f649-7fbd871a hive:default [23/Mar/2018:15:57:39 -0700] - received socket event: disconnect from: UTGNEEQTIH8QMGUuAAAA 
 f649-7fbd871a hive:default [23/Mar/2018:15:57:39 -0700] - socket UTGNEEQTIH8QMGUuAAAA has disconnected reason: client namespace disconnect 
+0a9b-421d2a29 hive:default [24/Mar/2018:00:40:44 -0700] - attempting to run delegate function cli ps 
+0a9b-421d2a29 hive:default [24/Mar/2018:00:40:46 -0700] - attempting to run delegate function cli ps 
+0a9b-421d2a29 hive:default [24/Mar/2018:00:40:52 -0700] - attempting to run delegate function cli ps 
+0a9b-421d2a29 hive:default [24/Mar/2018:00:42:16 -0700] - attempting to run delegate function cli loadDrones 
+ea60-e12fb9b9 hive:default [24/Mar/2018:00:44:42 -0700] - attempting to run delegate function cli loadDrones 
+97e8-ad5a2268 hive:default [24/Mar/2018:00:46:31 -0700] - attempting to run delegate function cli loadDrones 
+c450-2ceb5213 hive:default [24/Mar/2018:00:47:12 -0700] - attempting to run delegate function cli loadDrones 
+3182-7ca43076 hive:default [24/Mar/2018:00:51:52 -0700] - attempting to run delegate function cli loadDrones 
+3182-7ca43076 hive:default [24/Mar/2018:00:51:55 -0700] - attempting to run delegate function cli startDrones 
+3182-7ca43076 hive:default [24/Mar/2018:00:51:55 -0700] - starting drones... { options: {}, drones: [ 'ableton', [length]: 1 ] } 
+3412-f59814b0 hive:default [24/Mar/2018:00:52:03 -0700] - attempting to run delegate function cli loadDrones 
+3412-f59814b0 hive:default [24/Mar/2018:00:52:06 -0700] - attempting to run delegate function cli showStats 
+3412-f59814b0 hive:default [24/Mar/2018:00:52:15 -0700] - attempting to run delegate function cli retireBees 
+3647-86d8b134 hive:default [24/Mar/2018:00:52:27 -0700] - attempting to run delegate function cli loadDrones 
+3647-86d8b134 hive:default [24/Mar/2018:00:52:28 -0700] - attempting to run delegate function cli showStats 
+3647-86d8b134 hive:default [24/Mar/2018:00:52:33 -0700] - attempting to run delegate function cli retireBees 
+d618-e113e107 hive:default [24/Mar/2018:00:53:21 -0700] - attempting to run delegate function cli loadDrones 
+d618-e113e107 hive:default [24/Mar/2018:00:53:23 -0700] - attempting to run delegate function cli showStats 
+d618-e113e107 hive:default [24/Mar/2018:00:53:30 -0700] - attempting to run delegate function cli retireBees 
+d618-e113e107 hive:default [24/Mar/2018:00:53:32 -0700] - attempting to run delegate function cli showStats 
+d618-e113e107 hive:default [24/Mar/2018:00:54:06 -0700] - attempting to run delegate function cli retireBees 
+d618-e113e107 hive:default [24/Mar/2018:00:54:09 -0700] - attempting to run delegate function cli showStats 
+d618-e113e107 hive:default [24/Mar/2018:00:54:10 -0700] - attempting to run delegate function cli showStats 
+d618-e113e107 hive:default [24/Mar/2018:00:54:10 -0700] - attempting to run delegate function cli showStats 
+bdb0-f009fba5 hive:default [24/Mar/2018:00:54:40 -0700] - attempting to run delegate function cli loadDrones 
+bdb0-f009fba5 hive:default [24/Mar/2018:00:54:44 -0700] - attempting to run delegate function cli retireBees 
+43e7-85beaf17 hive:default [24/Mar/2018:00:55:06 -0700] - attempting to run delegate function cli loadDrones 
+43e7-85beaf17 hive:default [24/Mar/2018:00:55:10 -0700] - attempting to run delegate function cli retireBees 
+43e7-85beaf17 hive:default [24/Mar/2018:00:55:33 -0700] - attempting to run delegate function cli showStats 
+8a56-7d404de5 hive:default [24/Mar/2018:00:55:54 -0700] - attempting to run delegate function cli loadDrones 
+8a56-7d404de5 hive:default [24/Mar/2018:00:55:58 -0700] - attempting to run delegate function cli retireBees 
+8a56-7d404de5 hive:default [24/Mar/2018:00:56:05 -0700] - attempting to run delegate function cli showStats 
+4d32-614eb794 hive:default [24/Mar/2018:00:56:33 -0700] - attempting to run delegate function cli loadDrones 
+4d32-614eb794 hive:default [24/Mar/2018:00:56:41 -0700] - attempting to run delegate function cli retireBees 
+87c7-f4c7b774 hive:default [24/Mar/2018:00:57:12 -0700] - attempting to run delegate function cli loadDrones 
+87c7-f4c7b774 hive:default [24/Mar/2018:00:57:20 -0700] - attempting to run delegate function cli retireBees 
+87c7-f4c7b774 hive:default [24/Mar/2018:00:57:22 -0700] - attempting to run delegate function cli showStats 

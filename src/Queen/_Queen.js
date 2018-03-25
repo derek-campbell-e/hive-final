@@ -43,7 +43,6 @@ module.exports = function Queen(Hive, options){
     } else {
       bee = queen.returnChild(beeClass, beeMind);
     }
-    console.log(bee);
     if(bee){
       if(Array.isArray(bee)){
         bee.forEach(function(beeInstance){
@@ -256,6 +255,7 @@ module.exports = function Queen(Hive, options){
   let bind = function(){
     Hive.on('loadDrones', queen.loadDrones);
     Hive.on('retireBees', queen.retireChildrenFromCLI);
+    Hive.on('startDrones', queen.startDrones);
   };
 
   queen.reloadBees = function(){

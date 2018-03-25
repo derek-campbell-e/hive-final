@@ -50,6 +50,7 @@ module.exports = function Task(bee, taskName){
     }
     exports.refresh = task.export;
     exports.bee = bee.meta.id;
+    exports.gc = task.gc;
     return exports;
   };
 

@@ -1,389 +1,98 @@
-0bfa-c9df3bf8 hive:default [23/Mar/2018:13:32:37 -0700] - attempting to run delegate function cli replicate 
-0bfa-c9df3bf8 hive:default [23/Mar/2018:13:32:37 -0700] - begin replication... 
-6966-9952cff2 replicator:default [23/Mar/2018:13:32:37 -0700] - starting replication... 
-6966-9952cff2 replicator:default [23/Mar/2018:13:32:37 -0700] - cannot connect to host: localhost:4231 
-8709-53194f62 hive:default [23/Mar/2018:13:32:51 -0700] - attempting to run delegate function cli replicate 
-8709-53194f62 hive:default [23/Mar/2018:13:32:51 -0700] - begin replication... 
-14c0-cc060b1b replicator:default [23/Mar/2018:13:32:51 -0700] - starting replication... 
-bf9c-bdc7a9be hive:default [23/Mar/2018:13:33:36 -0700] - attempting to run delegate function cli replicate 
-bf9c-bdc7a9be hive:default [23/Mar/2018:13:33:36 -0700] - begin replication... 
-ab43-eeeb7b4c replicator:default [23/Mar/2018:13:33:36 -0700] - starting replication... 
-ab43-eeeb7b4c replicator:default [23/Mar/2018:13:33:36 -0700] - cannot connect to host: localhost:4231 
-42a3-6b6bb777 hive:default [23/Mar/2018:13:44:08 -0700] - attempting to run delegate function cli replicate 
-42a3-6b6bb777 hive:default [23/Mar/2018:13:44:08 -0700] - begin replication... 
-045c-b6e5f684 replicator:default [23/Mar/2018:13:44:08 -0700] - starting replication... 
-c18b-bd27fd8d hive:default [23/Mar/2018:13:49:58 -0700] - attempting to run delegate function cli replicate 
-c18b-bd27fd8d hive:default [23/Mar/2018:13:49:58 -0700] - begin replication... 
-b3ec-d76a3288 replicator:default [23/Mar/2018:13:49:58 -0700] - starting replication... 
-c18b-bd27fd8d hive:default [23/Mar/2018:13:50:05 -0700] - attempting to run delegate function cli replicate 
-c18b-bd27fd8d hive:default [23/Mar/2018:13:50:05 -0700] - begin replication... 
-1877-3d987504 replicator:default [23/Mar/2018:13:50:05 -0700] - starting replication... 
-c18b-bd27fd8d hive:default [23/Mar/2018:13:50:10 -0700] - attempting to run delegate function cli replicate 
-c18b-bd27fd8d hive:default [23/Mar/2018:13:50:10 -0700] - begin replication... 
-9e40-fc680215 replicator:default [23/Mar/2018:13:50:10 -0700] - starting replication... 
-44a0-6a14cfea hive:default [23/Mar/2018:13:50:25 -0700] - attempting to run delegate function cli showStats 
-65a3-3ea1af6a hive:default [23/Mar/2018:13:50:33 -0700] - attempting to run delegate function cli showStats 
-ce74-2e2dc68e hive:default [23/Mar/2018:13:50:37 -0700] - attempting to run delegate function cli showStats 
-ce74-2e2dc68e hive:default [23/Mar/2018:13:50:45 -0700] - attempting to run delegate function cli replicate 
-ce74-2e2dc68e hive:default [23/Mar/2018:13:50:45 -0700] - begin replication... 
-d236-004df612 replicator:default [23/Mar/2018:13:50:45 -0700] - starting replication... 
-ce74-2e2dc68e hive:default [23/Mar/2018:13:50:55 -0700] - attempting to run delegate function cli replicate 
-ce74-2e2dc68e hive:default [23/Mar/2018:13:50:55 -0700] - begin replication... 
-9a2c-539cac68 replicator:default [23/Mar/2018:13:50:55 -0700] - starting replication... 
-65a3-3ea1af6a hive:default [23/Mar/2018:13:50:55 -0700] - new socket:  VpO6Ld191GmzyExRAAAA 
-65a3-3ea1af6a hive:default [23/Mar/2018:13:50:55 -0700] - received socket event: begin:replication from: VpO6Ld191GmzyExRAAAA 
-65a3-3ea1af6a hive:default [23/Mar/2018:13:50:55 -0700] - received replication request 
-65a3-3ea1af6a hive:default [23/Mar/2018:13:50:55 -0700] - received socket event: replication from: VpO6Ld191GmzyExRAAAA 
-6b56-4dfd947d hive:default [23/Mar/2018:13:53:50 -0700] - attempting to run delegate function cli replicate 
-6b56-4dfd947d hive:default [23/Mar/2018:13:53:50 -0700] - begin replication... 
-c5cf-fa8ce35e replicator:default [23/Mar/2018:13:53:50 -0700] - starting replication... 
-67b2-df3ea842 hive:default [23/Mar/2018:13:53:50 -0700] - new socket:  QgA5wrGMf4fY-z4gAAAA 
-67b2-df3ea842 hive:default [23/Mar/2018:13:53:50 -0700] - received socket event: begin:replication from: QgA5wrGMf4fY-z4gAAAA 
-67b2-df3ea842 hive:default [23/Mar/2018:13:53:50 -0700] - received replication request 
-67b2-df3ea842 hive:default [23/Mar/2018:13:53:50 -0700] - received socket event: replication from: QgA5wrGMf4fY-z4gAAAA 
-223a-c2466eff hive:default [23/Mar/2018:13:54:31 -0700] - attempting to run delegate function cli showStats 
-223a-c2466eff hive:default [23/Mar/2018:13:54:40 -0700] - attempting to run delegate function cli replicate 
-223a-c2466eff hive:default [23/Mar/2018:13:54:40 -0700] - begin replication... 
-3be3-c9d0cb23 replicator:default [23/Mar/2018:13:54:40 -0700] - starting replication... 
-5ad6-d2867493 hive:default [23/Mar/2018:13:54:40 -0700] - new socket:  t58g2mK6Gfl7bhYtAAAA 
-5ad6-d2867493 hive:default [23/Mar/2018:13:54:40 -0700] - received socket event: begin:replication from: t58g2mK6Gfl7bhYtAAAA 
-5ad6-d2867493 hive:default [23/Mar/2018:13:54:40 -0700] - received replication request 
-5ad6-d2867493 hive:default [23/Mar/2018:13:54:40 -0700] - received socket event: replication from: t58g2mK6Gfl7bhYtAAAA 
-ba1a-abd86e5e hive:default [23/Mar/2018:13:55:47 -0700] - attempting to run delegate function cli replicate 
-ba1a-abd86e5e hive:default [23/Mar/2018:13:55:47 -0700] - begin replication... 
-e8dd-8ebdf930 replicator:default [23/Mar/2018:13:55:47 -0700] - starting replication... 
-2dc9-0a462c5e hive:default [23/Mar/2018:13:55:47 -0700] - new socket:  2jzRQK2BVe0kVRsQAAAA 
-2dc9-0a462c5e hive:default [23/Mar/2018:13:55:47 -0700] - received socket event: begin:replication from: 2jzRQK2BVe0kVRsQAAAA 
-2dc9-0a462c5e hive:default [23/Mar/2018:13:55:47 -0700] - received replication request 
-2dc9-0a462c5e hive:default [23/Mar/2018:13:55:47 -0700] - received socket event: replication from: 2jzRQK2BVe0kVRsQAAAA 
-3862-ffaf8ab9 hive:default [23/Mar/2018:14:25:50 -0700] - attempting to run delegate function cli replicate 
-3862-ffaf8ab9 hive:default [23/Mar/2018:14:25:50 -0700] - begin replication... 
-9fad-22c3052f replicator:default [23/Mar/2018:14:25:50 -0700] - starting replication... 
-13eb-252f23d6 hive:default [23/Mar/2018:14:25:50 -0700] - new socket:  UDhTLuKe7U8Lig7gAAAA 
-13eb-252f23d6 hive:default [23/Mar/2018:14:25:50 -0700] - received socket event: begin:replication from: UDhTLuKe7U8Lig7gAAAA 
-13eb-252f23d6 hive:default [23/Mar/2018:14:25:50 -0700] - received replication request 
-13eb-252f23d6 hive:default [23/Mar/2018:14:25:50 -0700] - received socket event: replication from: UDhTLuKe7U8Lig7gAAAA 
-3e9b-506b924e hive:default [23/Mar/2018:14:26:47 -0700] - attempting to run delegate function cli replicate 
-3e9b-506b924e hive:default [23/Mar/2018:14:26:47 -0700] - begin replication... 
-1b98-6f8ce469 replicator:default [23/Mar/2018:14:26:47 -0700] - starting replication... 
-58bc-29260bc8 hive:default [23/Mar/2018:14:27:11 -0700] - attempting to run delegate function cli replicate 
-58bc-29260bc8 hive:default [23/Mar/2018:14:27:11 -0700] - begin replication... 
-ec9d-1a37692d replicator:default [23/Mar/2018:14:27:11 -0700] - starting replication... 
-5eec-24d03599 hive:default [23/Mar/2018:14:27:44 -0700] - attempting to run delegate function cli replicate 
-5eec-24d03599 hive:default [23/Mar/2018:14:27:44 -0700] - begin replication... 
-7b7a-346ff1b0 replicator:default [23/Mar/2018:14:27:44 -0700] - starting replication... 
-5eec-24d03599 hive:default [23/Mar/2018:14:27:55 -0700] - attempting to run delegate function cli replicate 
-5eec-24d03599 hive:default [23/Mar/2018:14:27:55 -0700] - begin replication... 
-69b9-bba241d6 replicator:default [23/Mar/2018:14:27:55 -0700] - starting replication... 
-816b-4143a066 hive:default [23/Mar/2018:14:27:55 -0700] - new socket:  hIAINtdUkC5jlViBAAAA 
-816b-4143a066 hive:default [23/Mar/2018:14:27:55 -0700] - received socket event: begin:replication from: hIAINtdUkC5jlViBAAAA 
-816b-4143a066 hive:default [23/Mar/2018:14:27:55 -0700] - received replication request 
-816b-4143a066 hive:default [23/Mar/2018:14:27:55 -0700] - received socket event: replication from: hIAINtdUkC5jlViBAAAA 
-fe22-ccf4528f hive:default [23/Mar/2018:14:32:34 -0700] - attempting to run delegate function cli replicate 
-fe22-ccf4528f hive:default [23/Mar/2018:14:32:34 -0700] - begin replication... 
-e715-337d14ae replicator:default [23/Mar/2018:14:32:34 -0700] - starting replication... 
-c017-01347906 hive:default [23/Mar/2018:14:33:24 -0700] - attempting to run delegate function cli replicate 
-c017-01347906 hive:default [23/Mar/2018:14:33:24 -0700] - begin replication... 
-0c1f-08beea50 replicator:default [23/Mar/2018:14:33:24 -0700] - starting replication... 
-ef96-bf296495 hive:default [23/Mar/2018:14:33:37 -0700] - attempting to run delegate function cli replicate 
-ef96-bf296495 hive:default [23/Mar/2018:14:33:37 -0700] - begin replication... 
-c3e9-75fd4742 replicator:default [23/Mar/2018:14:33:37 -0700] - starting replication... 
-cbf8-0511cf34 hive:default [23/Mar/2018:14:35:21 -0700] - attempting to run delegate function cli replicate 
-cbf8-0511cf34 hive:default [23/Mar/2018:14:35:21 -0700] - begin replication... 
-5082-82b19faa replicator:default [23/Mar/2018:14:35:21 -0700] - starting replication... 
-32f0-63e8ad2a hive:default [23/Mar/2018:14:35:29 -0700] - attempting to run delegate function cli replicate 
-32f0-63e8ad2a hive:default [23/Mar/2018:14:35:29 -0700] - begin replication... 
-ac6a-f1ac1995 replicator:default [23/Mar/2018:14:35:29 -0700] - starting replication... 
-bcc7-44f35734 hive:default [23/Mar/2018:14:35:47 -0700] - attempting to run delegate function cli replicate 
-bcc7-44f35734 hive:default [23/Mar/2018:14:35:47 -0700] - begin replication... 
-bdeb-bf77e5c1 replicator:default [23/Mar/2018:14:35:48 -0700] - starting replication... 
-51a0-e01a4f89 hive:default [23/Mar/2018:14:35:48 -0700] - new socket:  jpliSVjbXCj2trGAAAAA 
-51a0-e01a4f89 hive:default [23/Mar/2018:14:35:48 -0700] - received socket event: begin:replication from: jpliSVjbXCj2trGAAAAA 
-51a0-e01a4f89 hive:default [23/Mar/2018:14:35:48 -0700] - received replication request 
-51a0-e01a4f89 hive:default [23/Mar/2018:14:35:48 -0700] - received socket event: replication from: jpliSVjbXCj2trGAAAAA 
-bdeb-bf77e5c1 replicator:default [23/Mar/2018:14:35:49 -0700] - cannot connect to host: http://localhost:4202 
-d16a-8192def6 hive:default [23/Mar/2018:14:36:03 -0700] - attempting to run delegate function cli replicate 
-d16a-8192def6 hive:default [23/Mar/2018:14:36:03 -0700] - begin replication... 
-910d-fa3fa10b replicator:default [23/Mar/2018:14:36:03 -0700] - starting replication... 
-ea8d-8325e160 hive:default [23/Mar/2018:14:36:03 -0700] - new socket:  eVs8_b_wnfscrmeKAAAA 
-ea8d-8325e160 hive:default [23/Mar/2018:14:36:03 -0700] - received socket event: begin:replication from: eVs8_b_wnfscrmeKAAAA 
-ea8d-8325e160 hive:default [23/Mar/2018:14:36:03 -0700] - received replication request 
-ea8d-8325e160 hive:default [23/Mar/2018:14:36:03 -0700] - received socket event: replication from: eVs8_b_wnfscrmeKAAAA 
-3aa8-a584f0f4 hive:default [23/Mar/2018:14:36:44 -0700] - attempting to run delegate function cli replicate 
-3aa8-a584f0f4 hive:default [23/Mar/2018:14:36:44 -0700] - begin replication... 
-53ed-ad1d8748 replicator:default [23/Mar/2018:14:36:44 -0700] - starting replication... 
-e604-b749011b hive:default [23/Mar/2018:14:36:44 -0700] - new socket:  4XwVLrXwRFl4SWrNAAAA 
-e604-b749011b hive:default [23/Mar/2018:14:36:44 -0700] - received socket event: begin:replication from: 4XwVLrXwRFl4SWrNAAAA 
-e604-b749011b hive:default [23/Mar/2018:14:36:44 -0700] - received replication request 
-e604-b749011b hive:default [23/Mar/2018:14:36:45 -0700] - received socket event: replication from: 4XwVLrXwRFl4SWrNAAAA 
-e604-b749011b hive:default [23/Mar/2018:14:36:45 -0700] - received socket event: disconnect from: 4XwVLrXwRFl4SWrNAAAA 
-e604-b749011b hive:default [23/Mar/2018:14:36:45 -0700] - socket 4XwVLrXwRFl4SWrNAAAA has disconnected reason: client namespace disconnect 
-3fdb-5303313f hive:default [23/Mar/2018:14:37:28 -0700] - attempting to run delegate function cli replicate 
-3fdb-5303313f hive:default [23/Mar/2018:14:37:28 -0700] - begin replication... 
-8cf7-1606038b replicator:default [23/Mar/2018:14:37:28 -0700] - starting replication... 
-4482-4cb5e35e hive:default [23/Mar/2018:14:37:28 -0700] - new socket:  GYR5WA1vO4B2ouuuAAAA 
-4482-4cb5e35e hive:default [23/Mar/2018:14:37:28 -0700] - received socket event: begin:replication from: GYR5WA1vO4B2ouuuAAAA 
-4482-4cb5e35e hive:default [23/Mar/2018:14:37:28 -0700] - received replication request 
-4482-4cb5e35e hive:default [23/Mar/2018:14:37:28 -0700] - received socket event: replication from: GYR5WA1vO4B2ouuuAAAA 
-4482-4cb5e35e hive:default [23/Mar/2018:14:37:28 -0700] - received socket event: disconnect from: GYR5WA1vO4B2ouuuAAAA 
-4482-4cb5e35e hive:default [23/Mar/2018:14:37:28 -0700] - socket GYR5WA1vO4B2ouuuAAAA has disconnected reason: client namespace disconnect 
-6784-68bebec0 hive:default [23/Mar/2018:15:21:24 -0700] - attempting to run delegate function cli showStats 
-53c5-744c66dd hive:default [23/Mar/2018:15:28:43 -0700] - attempting to run delegate function cli replicate 
-53c5-744c66dd hive:default [23/Mar/2018:15:28:43 -0700] - begin replication... 
-4e27-d888f9b2 replicator:default [23/Mar/2018:15:28:43 -0700] - starting replication... 
-281e-f0366549 hive:default [23/Mar/2018:15:29:23 -0700] - attempting to run delegate function cli replicate 
-281e-f0366549 hive:default [23/Mar/2018:15:29:23 -0700] - begin replication... 
-2ba1-ecdd38fe replicator:default [23/Mar/2018:15:29:23 -0700] - starting replication... 
-d97c-2454d3fd hive:default [23/Mar/2018:15:29:49 -0700] - attempting to run delegate function cli replicate 
-d97c-2454d3fd hive:default [23/Mar/2018:15:29:49 -0700] - begin replication... 
-13f6-4b271472 replicator:default [23/Mar/2018:15:29:49 -0700] - starting replication... 
-5ff2-e76b14f3 hive:default [23/Mar/2018:15:29:49 -0700] - new socket:  a6PzOVk-GSbq7PB4AAAA 
-5ff2-e76b14f3 hive:default [23/Mar/2018:15:29:49 -0700] - received socket event: begin:replication from: a6PzOVk-GSbq7PB4AAAA 
-5ff2-e76b14f3 hive:default [23/Mar/2018:15:29:49 -0700] - received replication request 
-13f6-4b271472 replicator:default [23/Mar/2018:15:29:49 -0700] - building assets... 
-13f6-4b271472 replicator:default [23/Mar/2018:15:29:49 -0700] - DONE 
-5ff2-e76b14f3 hive:default [23/Mar/2018:15:29:49 -0700] - received socket event: replication from: a6PzOVk-GSbq7PB4AAAA 
-5ff2-e76b14f3 hive:default [23/Mar/2018:15:29:49 -0700] - received socket event: disconnect from: a6PzOVk-GSbq7PB4AAAA 
-5ff2-e76b14f3 hive:default [23/Mar/2018:15:29:49 -0700] - socket a6PzOVk-GSbq7PB4AAAA has disconnected reason: client namespace disconnect 
-d288-1062c204 hive:default [23/Mar/2018:15:30:35 -0700] - attempting to run delegate function cli replicate 
-d288-1062c204 hive:default [23/Mar/2018:15:30:35 -0700] - begin replication... 
-7889-39f28982 replicator:default [23/Mar/2018:15:30:35 -0700] - starting replication to hive: http://localhost:5666 
-9f59-50bd7595 hive:default [23/Mar/2018:15:30:35 -0700] - new socket:  NBJrCJFY7y9IT-qqAAAA 
-9f59-50bd7595 hive:default [23/Mar/2018:15:30:35 -0700] - received socket event: begin:replication from: NBJrCJFY7y9IT-qqAAAA 
-9f59-50bd7595 hive:default [23/Mar/2018:15:30:35 -0700] - received replication request 
-7889-39f28982 replicator:default [23/Mar/2018:15:30:35 -0700] - building assets... 
-7889-39f28982 replicator:default [23/Mar/2018:15:30:35 -0700] - DONE 
-9f59-50bd7595 hive:default [23/Mar/2018:15:30:35 -0700] - received socket event: replication from: NBJrCJFY7y9IT-qqAAAA 
-9f59-50bd7595 hive:default [23/Mar/2018:15:30:35 -0700] - received socket event: disconnect from: NBJrCJFY7y9IT-qqAAAA 
-9f59-50bd7595 hive:default [23/Mar/2018:15:30:35 -0700] - socket NBJrCJFY7y9IT-qqAAAA has disconnected reason: client namespace disconnect 
-0597-e7d4b5a0 hive:default [23/Mar/2018:15:35:03 -0700] - attempting to run delegate function cli replicate 
-0597-e7d4b5a0 hive:default [23/Mar/2018:15:35:03 -0700] - begin replication... 
-82f1-7e75661d replicator:default [23/Mar/2018:15:35:03 -0700] - starting replication to hive: http://localhost:5667 
-ef4b-94fc6182 hive:default [23/Mar/2018:15:37:01 -0700] - attempting to run delegate function cli replicate 
-ef4b-94fc6182 hive:default [23/Mar/2018:15:37:01 -0700] - begin replication... 
-1d31-df403b9a replicator:default [23/Mar/2018:15:37:01 -0700] - starting replication to hive: http://localhost:5667 
-ac06-dbf114dc hive:default [23/Mar/2018:15:38:39 -0700] - attempting to run delegate function cli replicate 
-ac06-dbf114dc hive:default [23/Mar/2018:15:38:39 -0700] - begin replication... 
-740a-9d21dbc5 replicator:default [23/Mar/2018:15:38:39 -0700] - starting replication to hive: http://localhost:5667 
-d8ee-2402f8a7 hive:default [23/Mar/2018:15:38:54 -0700] - attempting to run delegate function cli replicate 
-d8ee-2402f8a7 hive:default [23/Mar/2018:15:38:54 -0700] - begin replication... 
-d7f2-f0ce1d56 replicator:default [23/Mar/2018:15:38:54 -0700] - starting replication to hive: http://localhost:5667 
-14ec-73d365c9 hive:default [23/Mar/2018:15:39:06 -0700] - attempting to run delegate function cli replicate 
-14ec-73d365c9 hive:default [23/Mar/2018:15:39:06 -0700] - begin replication... 
-2b49-3d2c36bb replicator:default [23/Mar/2018:15:39:06 -0700] - starting replication to hive: http://localhost:5666 
-b5b2-bbea7d34 hive:default [23/Mar/2018:15:39:06 -0700] - new socket:  aVRb6JMGYyeep-cDAAAA 
-b5b2-bbea7d34 hive:default [23/Mar/2018:15:39:06 -0700] - received socket event: begin:replication from: aVRb6JMGYyeep-cDAAAA 
-b5b2-bbea7d34 hive:default [23/Mar/2018:15:39:06 -0700] - received replication request 
-2b49-3d2c36bb replicator:default [23/Mar/2018:15:39:06 -0700] - building assets... 
-2b49-3d2c36bb replicator:default [23/Mar/2018:15:39:06 -0700] - DONE 
-b5b2-bbea7d34 hive:default [23/Mar/2018:15:39:06 -0700] - received socket event: replication from: aVRb6JMGYyeep-cDAAAA 
-b5b2-bbea7d34 hive:default [23/Mar/2018:15:39:06 -0700] - received socket event: disconnect from: aVRb6JMGYyeep-cDAAAA 
-b5b2-bbea7d34 hive:default [23/Mar/2018:15:39:06 -0700] - socket aVRb6JMGYyeep-cDAAAA has disconnected reason: client namespace disconnect 
-8932-d88bb642 hive:default [23/Mar/2018:15:39:24 -0700] - attempting to run delegate function cli replicate 
-8932-d88bb642 hive:default [23/Mar/2018:15:39:24 -0700] - begin replication... 
-8c4f-a4069b74 replicator:default [23/Mar/2018:15:39:24 -0700] - starting replication to hive: http://localhost:5666 
-6e4e-d6aef0bb hive:default [23/Mar/2018:15:39:24 -0700] - new socket:  ZILBgEn8e6EteTthAAAA 
-6e4e-d6aef0bb hive:default [23/Mar/2018:15:39:30 -0700] - received socket event: disconnect from: ZILBgEn8e6EteTthAAAA 
-6e4e-d6aef0bb hive:default [23/Mar/2018:15:39:30 -0700] - socket ZILBgEn8e6EteTthAAAA has disconnected reason: transport close 
-d8fa-6be64257 hive:default [23/Mar/2018:15:39:54 -0700] - attempting to run delegate function cli replicate 
-d8fa-6be64257 hive:default [23/Mar/2018:15:39:54 -0700] - begin replication... 
-5b28-2f9897c2 replicator:default [23/Mar/2018:15:39:54 -0700] - starting replication to hive: http://localhost:5667 
-a4f1-400c3ebd hive:default [23/Mar/2018:15:40:08 -0700] - attempting to run delegate function cli replicate 
-a4f1-400c3ebd hive:default [23/Mar/2018:15:40:08 -0700] - begin replication... 
-210a-5d02de55 replicator:default [23/Mar/2018:15:40:08 -0700] - starting replication to hive: http://localhost:5666 
-6e4e-d6aef0bb hive:default [23/Mar/2018:15:40:08 -0700] - new socket:  YiqRIX3kjyed5hZaAAAB 
-9bed-1cf394e2 hive:default [23/Mar/2018:15:40:19 -0700] - attempting to run delegate function cli replicate 
-9bed-1cf394e2 hive:default [23/Mar/2018:15:40:19 -0700] - begin replication... 
-2da3-001ab760 replicator:default [23/Mar/2018:15:40:19 -0700] - starting replication to hive: http://localhost:5666 
-4656-cf72993c hive:default [23/Mar/2018:15:40:19 -0700] - new socket:  jgcNUrqkEFGuja1IAAAA 
-4656-cf72993c hive:default [23/Mar/2018:15:40:19 -0700] - received socket event: begin:replication from: jgcNUrqkEFGuja1IAAAA 
-4656-cf72993c hive:default [23/Mar/2018:15:40:19 -0700] - received replication request 
-2da3-001ab760 replicator:default [23/Mar/2018:15:40:19 -0700] - building assets... 
-2da3-001ab760 replicator:default [23/Mar/2018:15:40:19 -0700] - DONE 
-4656-cf72993c hive:default [23/Mar/2018:15:40:20 -0700] - received socket event: replication from: jgcNUrqkEFGuja1IAAAA 
-4656-cf72993c hive:default [23/Mar/2018:15:40:20 -0700] - received socket event: disconnect from: jgcNUrqkEFGuja1IAAAA 
-4656-cf72993c hive:default [23/Mar/2018:15:40:20 -0700] - socket jgcNUrqkEFGuja1IAAAA has disconnected reason: client namespace disconnect 
-eea7-f9271626 hive:default [23/Mar/2018:15:44:25 -0700] - attempting to run delegate function cli replicate 
-eea7-f9271626 hive:default [23/Mar/2018:15:44:25 -0700] - begin replication... 
-bb50-00c77927 replicator:default [23/Mar/2018:15:44:25 -0700] - starting replication to hive: http://localhost:5667 
-b1ac-797b1846 hive:default [23/Mar/2018:15:45:06 -0700] - attempting to run delegate function cli replicate 
-b1ac-797b1846 hive:default [23/Mar/2018:15:45:06 -0700] - begin replication... 
-8460-7e7dd27c replicator:default [23/Mar/2018:15:45:06 -0700] - starting replication to hive: http://localhost:5667 
-8460-7e7dd27c replicator:default [23/Mar/2018:15:45:06 -0700] - Count not connect to hive: http://localhost:5667 
-b1ac-797b1846 hive:default [23/Mar/2018:15:45:09 -0700] - attempting to run delegate function cli replicate 
-b1ac-797b1846 hive:default [23/Mar/2018:15:45:09 -0700] - begin replication... 
-daa6-55e9a98c replicator:default [23/Mar/2018:15:45:09 -0700] - starting replication to hive: http://localhost:5666 
-34fb-0a66ffa4 hive:default [23/Mar/2018:15:45:09 -0700] - new socket:  aYLjKYKRSFs5L2bSAAAA 
-34fb-0a66ffa4 hive:default [23/Mar/2018:15:45:09 -0700] - received socket event: begin:replication from: aYLjKYKRSFs5L2bSAAAA 
-34fb-0a66ffa4 hive:default [23/Mar/2018:15:45:09 -0700] - received replication request 
-daa6-55e9a98c replicator:default [23/Mar/2018:15:45:09 -0700] - building assets... 
-daa6-55e9a98c replicator:default [23/Mar/2018:15:45:09 -0700] - DONE 
-34fb-0a66ffa4 hive:default [23/Mar/2018:15:45:09 -0700] - received socket event: replication from: aYLjKYKRSFs5L2bSAAAA 
-34fb-0a66ffa4 hive:default [23/Mar/2018:15:45:09 -0700] - received socket event: disconnect from: aYLjKYKRSFs5L2bSAAAA 
-34fb-0a66ffa4 hive:default [23/Mar/2018:15:45:09 -0700] - socket aYLjKYKRSFs5L2bSAAAA has disconnected reason: client namespace disconnect 
-58e8-277d1705 hive:default [23/Mar/2018:15:45:14 -0700] - attempting to run delegate function cli replicate 
-58e8-277d1705 hive:default [23/Mar/2018:15:45:14 -0700] - begin replication... 
-ebef-dab1a97d replicator:default [23/Mar/2018:15:45:14 -0700] - starting replication to hive: http://localhost:5666 
-4fda-e9f78a89 hive:default [23/Mar/2018:15:45:14 -0700] - new socket:  zXOIBsjWixjL_LxfAAAA 
-4fda-e9f78a89 hive:default [23/Mar/2018:15:45:14 -0700] - received socket event: begin:replication from: zXOIBsjWixjL_LxfAAAA 
-4fda-e9f78a89 hive:default [23/Mar/2018:15:45:14 -0700] - received replication request 
-ebef-dab1a97d replicator:default [23/Mar/2018:15:45:14 -0700] - building assets... 
-ebef-dab1a97d replicator:default [23/Mar/2018:15:45:14 -0700] - DONE 
-4fda-e9f78a89 hive:default [23/Mar/2018:15:45:14 -0700] - received socket event: replication from: zXOIBsjWixjL_LxfAAAA 
-4fda-e9f78a89 hive:default [23/Mar/2018:15:45:14 -0700] - received socket event: disconnect from: zXOIBsjWixjL_LxfAAAA 
-4fda-e9f78a89 hive:default [23/Mar/2018:15:45:14 -0700] - socket zXOIBsjWixjL_LxfAAAA has disconnected reason: client namespace disconnect 
-36af-de88097b hive:default [23/Mar/2018:15:49:33 -0700] - attempting to run delegate function cli replicate 
-36af-de88097b hive:default [23/Mar/2018:15:49:33 -0700] - begin replication... 
-02ae-576c1c14 replicator:default [23/Mar/2018:15:49:33 -0700] - starting replication to hive: http://localhost:5666 
-af1d-6f42fbd7 hive:default [23/Mar/2018:15:49:33 -0700] - new socket:  QWcHZ204ATJuZBqGAAAA 
-af1d-6f42fbd7 hive:default [23/Mar/2018:15:49:33 -0700] - received socket event: begin:replication from: QWcHZ204ATJuZBqGAAAA 
-af1d-6f42fbd7 hive:default [23/Mar/2018:15:49:33 -0700] - received replication request 
-02ae-576c1c14 replicator:default [23/Mar/2018:15:49:33 -0700] - building assets... 
-af1d-6f42fbd7 hive:default [23/Mar/2018:15:49:33 -0700] - received socket event: replication from: QWcHZ204ATJuZBqGAAAA 
-af1d-6f42fbd7 hive:default [23/Mar/2018:15:49:33 -0700] - received socket event: disconnect from: QWcHZ204ATJuZBqGAAAA 
-af1d-6f42fbd7 hive:default [23/Mar/2018:15:49:33 -0700] - socket QWcHZ204ATJuZBqGAAAA has disconnected reason: client namespace disconnect 
-9aee-af578d2c hive:default [23/Mar/2018:15:50:19 -0700] - attempting to run delegate function cli replicate 
-9aee-af578d2c hive:default [23/Mar/2018:15:50:19 -0700] - begin replication... 
-885a-44cc491f replicator:default [23/Mar/2018:15:50:19 -0700] - AYOO 
-885a-44cc491f replicator:default [23/Mar/2018:15:50:19 -0700] - starting replication to hive: http://localhost:5666 
-3f33-ccfe0295 hive:default [23/Mar/2018:15:50:19 -0700] - new socket:  NHckSk7lHznCw507AAAA 
-3f33-ccfe0295 hive:default [23/Mar/2018:15:50:19 -0700] - received socket event: begin:replication from: NHckSk7lHznCw507AAAA 
-3f33-ccfe0295 hive:default [23/Mar/2018:15:50:19 -0700] - received replication request 
-885a-44cc491f replicator:default [23/Mar/2018:15:50:19 -0700] - building assets... 
-3f33-ccfe0295 hive:default [23/Mar/2018:15:50:19 -0700] - received socket event: replication from: NHckSk7lHznCw507AAAA 
-3f33-ccfe0295 hive:default [23/Mar/2018:15:50:19 -0700] - received socket event: disconnect from: NHckSk7lHznCw507AAAA 
-3f33-ccfe0295 hive:default [23/Mar/2018:15:50:19 -0700] - socket NHckSk7lHznCw507AAAA has disconnected reason: client namespace disconnect 
-6ee4-3a0f2f92 hive:default [23/Mar/2018:15:50:53 -0700] - attempting to run delegate function cli replicate 
-6ee4-3a0f2f92 hive:default [23/Mar/2018:15:50:53 -0700] - begin replication... 
-6ee4-3a0f2f92 hive:default [23/Mar/2018:15:50:53 -0700] - AYOO 
-1ea7-7b6c1cef replicator:default [23/Mar/2018:15:50:53 -0700] - starting replication to hive: http://localhost:5666 
-089c-a9f67bb3 hive:default [23/Mar/2018:15:50:53 -0700] - new socket:  rMXYhuk-ZvlQr6DsAAAA 
-089c-a9f67bb3 hive:default [23/Mar/2018:15:50:53 -0700] - received socket event: begin:replication from: rMXYhuk-ZvlQr6DsAAAA 
-089c-a9f67bb3 hive:default [23/Mar/2018:15:50:53 -0700] - received replication request 
-1ea7-7b6c1cef replicator:default [23/Mar/2018:15:50:53 -0700] - building assets... 
-089c-a9f67bb3 hive:default [23/Mar/2018:15:50:53 -0700] - received socket event: replication from: rMXYhuk-ZvlQr6DsAAAA 
-089c-a9f67bb3 hive:default [23/Mar/2018:15:50:53 -0700] - received socket event: disconnect from: rMXYhuk-ZvlQr6DsAAAA 
-089c-a9f67bb3 hive:default [23/Mar/2018:15:50:53 -0700] - socket rMXYhuk-ZvlQr6DsAAAA has disconnected reason: client namespace disconnect 
-6636-9f1775e7 hive:default [23/Mar/2018:15:51:09 -0700] - attempting to run delegate function cli replicate 
-6636-9f1775e7 hive:default [23/Mar/2018:15:51:09 -0700] - begin replication... 
-6636-9f1775e7 hive:default [23/Mar/2018:15:51:09 -0700] - AAAA 
-6636-9f1775e7 hive:default [23/Mar/2018:15:51:09 -0700] - AYOO 
-06d0-30247a5d replicator:default [23/Mar/2018:15:51:09 -0700] - starting replication to hive: http://localhost:5666 
-2a9c-63dc97d4 hive:default [23/Mar/2018:15:51:09 -0700] - new socket:  F7ld6Ks2oRkKOWyHAAAA 
-2a9c-63dc97d4 hive:default [23/Mar/2018:15:51:09 -0700] - received socket event: begin:replication from: F7ld6Ks2oRkKOWyHAAAA 
-2a9c-63dc97d4 hive:default [23/Mar/2018:15:51:09 -0700] - received replication request 
-06d0-30247a5d replicator:default [23/Mar/2018:15:51:09 -0700] - building assets... 
-2a9c-63dc97d4 hive:default [23/Mar/2018:15:51:09 -0700] - received socket event: replication from: F7ld6Ks2oRkKOWyHAAAA 
-2a9c-63dc97d4 hive:default [23/Mar/2018:15:51:09 -0700] - received socket event: disconnect from: F7ld6Ks2oRkKOWyHAAAA 
-2a9c-63dc97d4 hive:default [23/Mar/2018:15:51:09 -0700] - socket F7ld6Ks2oRkKOWyHAAAA has disconnected reason: client namespace disconnect 
-76a7-3ab013ae hive:default [23/Mar/2018:15:52:16 -0700] - attempting to run delegate function cli replicate 
-76a7-3ab013ae hive:default [23/Mar/2018:15:52:16 -0700] - begin replication... 
-76a7-3ab013ae hive:default [23/Mar/2018:15:52:16 -0700] - AYOO 
-0665-040bd620 replicator:default [23/Mar/2018:15:52:16 -0700] - starting replication to hive: http://localhost:5666 
-14c4-07b7fb96 hive:default [23/Mar/2018:15:52:16 -0700] - new socket:  pLaMcfHovlGO19cGAAAA 
-14c4-07b7fb96 hive:default [23/Mar/2018:15:52:16 -0700] - received socket event: begin:replication from: pLaMcfHovlGO19cGAAAA 
-14c4-07b7fb96 hive:default [23/Mar/2018:15:52:16 -0700] - received replication request 
-0665-040bd620 replicator:default [23/Mar/2018:15:52:16 -0700] - building assets... 
-14c4-07b7fb96 hive:default [23/Mar/2018:15:52:16 -0700] - received socket event: replication from: pLaMcfHovlGO19cGAAAA 
-14c4-07b7fb96 hive:default [23/Mar/2018:15:52:16 -0700] - received socket event: disconnect from: pLaMcfHovlGO19cGAAAA 
-14c4-07b7fb96 hive:default [23/Mar/2018:15:52:16 -0700] - socket pLaMcfHovlGO19cGAAAA has disconnected reason: client namespace disconnect 
-5acc-6d4325f9 hive:default [23/Mar/2018:15:52:35 -0700] - ASDSD 
-5acc-6d4325f9 hive:default [23/Mar/2018:15:52:35 -0700] - attempting to run delegate function cli replicate 
-5acc-6d4325f9 hive:default [23/Mar/2018:15:52:35 -0700] - begin replication... 
-5acc-6d4325f9 hive:default [23/Mar/2018:15:52:35 -0700] - AYOO 
-45a8-60f37779 replicator:default [23/Mar/2018:15:52:35 -0700] - starting replication to hive: http://localhost:5666 
-f793-e42819c9 hive:default [23/Mar/2018:15:52:35 -0700] - new socket:  Sztxwsehg5_vf-LOAAAA 
-f793-e42819c9 hive:default [23/Mar/2018:15:52:35 -0700] - received socket event: begin:replication from: Sztxwsehg5_vf-LOAAAA 
-f793-e42819c9 hive:default [23/Mar/2018:15:52:35 -0700] - received replication request 
-45a8-60f37779 replicator:default [23/Mar/2018:15:52:35 -0700] - building assets... 
-f793-e42819c9 hive:default [23/Mar/2018:15:52:35 -0700] - received socket event: replication from: Sztxwsehg5_vf-LOAAAA 
-f793-e42819c9 hive:default [23/Mar/2018:15:52:35 -0700] - received socket event: disconnect from: Sztxwsehg5_vf-LOAAAA 
-f793-e42819c9 hive:default [23/Mar/2018:15:52:35 -0700] - socket Sztxwsehg5_vf-LOAAAA has disconnected reason: client namespace disconnect 
-9a8c-41d7f427 hive:default [23/Mar/2018:15:52:51 -0700] - attempting to run delegate function cli replicate 
-9a8c-41d7f427 hive:default [23/Mar/2018:15:52:51 -0700] - begin replication... 
-9a8c-41d7f427 hive:default [23/Mar/2018:15:52:51 -0700] - AYOO 
-44a8-12f9884d replicator:default [23/Mar/2018:15:52:51 -0700] - starting replication to hive: http://localhost:5666 
-63db-26363247 hive:default [23/Mar/2018:15:52:51 -0700] - new socket:  dU3UAbkrHn9pbNa6AAAA 
-63db-26363247 hive:default [23/Mar/2018:15:52:51 -0700] - received socket event: begin:replication from: dU3UAbkrHn9pbNa6AAAA 
-63db-26363247 hive:default [23/Mar/2018:15:52:51 -0700] - received replication request 
-44a8-12f9884d replicator:default [23/Mar/2018:15:52:51 -0700] - building assets... 
-63db-26363247 hive:default [23/Mar/2018:15:52:51 -0700] - received socket event: replication from: dU3UAbkrHn9pbNa6AAAA 
-63db-26363247 hive:default [23/Mar/2018:15:52:51 -0700] - received socket event: disconnect from: dU3UAbkrHn9pbNa6AAAA 
-63db-26363247 hive:default [23/Mar/2018:15:52:51 -0700] - socket dU3UAbkrHn9pbNa6AAAA has disconnected reason: client namespace disconnect 
-e4e5-bdad55eb hive:default [23/Mar/2018:15:53:53 -0700] - attempting to run delegate function cli replicate 
-e4e5-bdad55eb hive:default [23/Mar/2018:15:53:53 -0700] - begin replication... 
-bfec-3aeadfec replicator:default [23/Mar/2018:15:53:53 -0700] - starting replication to hive: http://localhost:5666 
-6718-55df6e9e hive:default [23/Mar/2018:15:53:53 -0700] - new socket:  m9wOOR9DsZBNoNPDAAAA 
-6718-55df6e9e hive:default [23/Mar/2018:15:53:53 -0700] - received socket event: begin:replication from: m9wOOR9DsZBNoNPDAAAA 
-6718-55df6e9e hive:default [23/Mar/2018:15:53:53 -0700] - received replication request 
-bfec-3aeadfec replicator:default [23/Mar/2018:15:53:53 -0700] - building assets... 
-6718-55df6e9e hive:default [23/Mar/2018:15:53:53 -0700] - received socket event: replication from: m9wOOR9DsZBNoNPDAAAA 
-6718-55df6e9e hive:default [23/Mar/2018:15:53:53 -0700] - received socket event: disconnect from: m9wOOR9DsZBNoNPDAAAA 
-6718-55df6e9e hive:default [23/Mar/2018:15:53:53 -0700] - socket m9wOOR9DsZBNoNPDAAAA has disconnected reason: client namespace disconnect 
-b7d7-0be92225 hive:default [23/Mar/2018:15:55:44 -0700] - attempting to run delegate function cli replicate 
-b7d7-0be92225 hive:default [23/Mar/2018:15:55:44 -0700] - begin replication... 
-f7cc-a48a1a35 replicator:default [23/Mar/2018:15:55:44 -0700] - starting replication to hive: http://localhost:5666 
-bbe4-dc9700c8 hive:default [23/Mar/2018:15:55:44 -0700] - new socket:  07uLDz24VQzDOrq9AAAA 
-bbe4-dc9700c8 hive:default [23/Mar/2018:15:55:44 -0700] - received socket event: begin:replication from: 07uLDz24VQzDOrq9AAAA 
-bbe4-dc9700c8 hive:default [23/Mar/2018:15:55:44 -0700] - received replication request 
-f7cc-a48a1a35 replicator:default [23/Mar/2018:15:55:44 -0700] - building assets... 
-bbe4-dc9700c8 hive:default [23/Mar/2018:15:55:44 -0700] - received socket event: replication from: 07uLDz24VQzDOrq9AAAA 
-bbe4-dc9700c8 hive:default [23/Mar/2018:15:55:44 -0700] - received socket event: disconnect from: 07uLDz24VQzDOrq9AAAA 
-bbe4-dc9700c8 hive:default [23/Mar/2018:15:55:44 -0700] - socket 07uLDz24VQzDOrq9AAAA has disconnected reason: client namespace disconnect 
-c69e-68ae2638 hive:default [23/Mar/2018:15:56:20 -0700] - attempting to run delegate function cli replicate 
-c69e-68ae2638 hive:default [23/Mar/2018:15:56:20 -0700] - begin replication... 
-19db-56b81b31 replicator:default [23/Mar/2018:15:56:20 -0700] - starting to replicate to hive: http://localhost:5666 
-1241-004838c0 hive:default [23/Mar/2018:15:56:20 -0700] - new socket:  GOuusG4qWgzdxbCBAAAA 
-1241-004838c0 hive:default [23/Mar/2018:15:56:20 -0700] - received socket event: begin:replication from: GOuusG4qWgzdxbCBAAAA 
-1241-004838c0 hive:default [23/Mar/2018:15:56:20 -0700] - received replication request 
-19db-56b81b31 replicator:default [23/Mar/2018:15:56:20 -0700] - building assets... 
-1241-004838c0 hive:default [23/Mar/2018:15:56:20 -0700] - received socket event: replication from: GOuusG4qWgzdxbCBAAAA 
-1241-004838c0 hive:default [23/Mar/2018:15:56:20 -0700] - received socket event: disconnect from: GOuusG4qWgzdxbCBAAAA 
-1241-004838c0 hive:default [23/Mar/2018:15:56:20 -0700] - socket GOuusG4qWgzdxbCBAAAA has disconnected reason: client namespace disconnect 
-0c93-cfb38148 hive:default [23/Mar/2018:15:57:39 -0700] - attempting to run delegate function cli replicate 
-0c93-cfb38148 hive:default [23/Mar/2018:15:57:39 -0700] - begin replication... 
-a9e8-0c6bba0f replicator:default [23/Mar/2018:15:57:39 -0700] - starting to replicate to hive: http://localhost:5666 
-f649-7fbd871a hive:default [23/Mar/2018:15:57:39 -0700] - new socket:  UTGNEEQTIH8QMGUuAAAA 
-f649-7fbd871a hive:default [23/Mar/2018:15:57:39 -0700] - received socket event: begin:replication from: UTGNEEQTIH8QMGUuAAAA 
-f649-7fbd871a hive:default [23/Mar/2018:15:57:39 -0700] - received replication request 
-a9e8-0c6bba0f replicator:default [23/Mar/2018:15:57:39 -0700] - building assets... 
-f649-7fbd871a hive:default [23/Mar/2018:15:57:39 -0700] - received socket event: replication from: UTGNEEQTIH8QMGUuAAAA 
-f649-7fbd871a hive:default [23/Mar/2018:15:57:39 -0700] - received socket event: disconnect from: UTGNEEQTIH8QMGUuAAAA 
-f649-7fbd871a hive:default [23/Mar/2018:15:57:39 -0700] - socket UTGNEEQTIH8QMGUuAAAA has disconnected reason: client namespace disconnect 
-0a9b-421d2a29 hive:default [24/Mar/2018:00:40:44 -0700] - attempting to run delegate function cli ps 
-0a9b-421d2a29 hive:default [24/Mar/2018:00:40:46 -0700] - attempting to run delegate function cli ps 
-0a9b-421d2a29 hive:default [24/Mar/2018:00:40:52 -0700] - attempting to run delegate function cli ps 
-0a9b-421d2a29 hive:default [24/Mar/2018:00:42:16 -0700] - attempting to run delegate function cli loadDrones 
-ea60-e12fb9b9 hive:default [24/Mar/2018:00:44:42 -0700] - attempting to run delegate function cli loadDrones 
-97e8-ad5a2268 hive:default [24/Mar/2018:00:46:31 -0700] - attempting to run delegate function cli loadDrones 
-c450-2ceb5213 hive:default [24/Mar/2018:00:47:12 -0700] - attempting to run delegate function cli loadDrones 
-3182-7ca43076 hive:default [24/Mar/2018:00:51:52 -0700] - attempting to run delegate function cli loadDrones 
-3182-7ca43076 hive:default [24/Mar/2018:00:51:55 -0700] - attempting to run delegate function cli startDrones 
-3182-7ca43076 hive:default [24/Mar/2018:00:51:55 -0700] - starting drones... { options: {}, drones: [ 'ableton', [length]: 1 ] } 
-3412-f59814b0 hive:default [24/Mar/2018:00:52:03 -0700] - attempting to run delegate function cli loadDrones 
-3412-f59814b0 hive:default [24/Mar/2018:00:52:06 -0700] - attempting to run delegate function cli showStats 
-3412-f59814b0 hive:default [24/Mar/2018:00:52:15 -0700] - attempting to run delegate function cli retireBees 
-3647-86d8b134 hive:default [24/Mar/2018:00:52:27 -0700] - attempting to run delegate function cli loadDrones 
-3647-86d8b134 hive:default [24/Mar/2018:00:52:28 -0700] - attempting to run delegate function cli showStats 
-3647-86d8b134 hive:default [24/Mar/2018:00:52:33 -0700] - attempting to run delegate function cli retireBees 
-d618-e113e107 hive:default [24/Mar/2018:00:53:21 -0700] - attempting to run delegate function cli loadDrones 
-d618-e113e107 hive:default [24/Mar/2018:00:53:23 -0700] - attempting to run delegate function cli showStats 
-d618-e113e107 hive:default [24/Mar/2018:00:53:30 -0700] - attempting to run delegate function cli retireBees 
-d618-e113e107 hive:default [24/Mar/2018:00:53:32 -0700] - attempting to run delegate function cli showStats 
-d618-e113e107 hive:default [24/Mar/2018:00:54:06 -0700] - attempting to run delegate function cli retireBees 
-d618-e113e107 hive:default [24/Mar/2018:00:54:09 -0700] - attempting to run delegate function cli showStats 
-d618-e113e107 hive:default [24/Mar/2018:00:54:10 -0700] - attempting to run delegate function cli showStats 
-d618-e113e107 hive:default [24/Mar/2018:00:54:10 -0700] - attempting to run delegate function cli showStats 
-bdb0-f009fba5 hive:default [24/Mar/2018:00:54:40 -0700] - attempting to run delegate function cli loadDrones 
-bdb0-f009fba5 hive:default [24/Mar/2018:00:54:44 -0700] - attempting to run delegate function cli retireBees 
-43e7-85beaf17 hive:default [24/Mar/2018:00:55:06 -0700] - attempting to run delegate function cli loadDrones 
-43e7-85beaf17 hive:default [24/Mar/2018:00:55:10 -0700] - attempting to run delegate function cli retireBees 
-43e7-85beaf17 hive:default [24/Mar/2018:00:55:33 -0700] - attempting to run delegate function cli showStats 
-8a56-7d404de5 hive:default [24/Mar/2018:00:55:54 -0700] - attempting to run delegate function cli loadDrones 
-8a56-7d404de5 hive:default [24/Mar/2018:00:55:58 -0700] - attempting to run delegate function cli retireBees 
-8a56-7d404de5 hive:default [24/Mar/2018:00:56:05 -0700] - attempting to run delegate function cli showStats 
-4d32-614eb794 hive:default [24/Mar/2018:00:56:33 -0700] - attempting to run delegate function cli loadDrones 
-4d32-614eb794 hive:default [24/Mar/2018:00:56:41 -0700] - attempting to run delegate function cli retireBees 
-87c7-f4c7b774 hive:default [24/Mar/2018:00:57:12 -0700] - attempting to run delegate function cli loadDrones 
-87c7-f4c7b774 hive:default [24/Mar/2018:00:57:20 -0700] - attempting to run delegate function cli retireBees 
-87c7-f4c7b774 hive:default [24/Mar/2018:00:57:22 -0700] - attempting to run delegate function cli showStats 
+6f97-960e9f2c hive:default [24/Mar/2018:11:57:34 -0700] - attempting to run delegate function on beeSpawn 
+331f-4b986b14 hive:default [24/Mar/2018:11:58:40 -0700] - attempting to run delegate function on beeSpawn 
+331f-4b986b14 hive:default [24/Mar/2018:11:58:49 -0700] - attempting to run delegate function cli remote 
+331f-4b986b14 hive:default [24/Mar/2018:11:58:49 -0700] - attempting to remote into: 4202 
+97c6-a051ee77 hive:default [24/Mar/2018:12:00:28 -0700] - attempting to run delegate function on beeSpawn 
+982e-f42158bb hive:default [24/Mar/2018:12:00:28 -0700] - attempting to run delegate function on beeSpawn 
+982e-f42158bb hive:default [24/Mar/2018:12:00:32 -0700] - attempting to run delegate function cli remote 
+982e-f42158bb hive:default [24/Mar/2018:12:00:32 -0700] - attempting to remote into: 4204 
+c0ef-3cea42b8 hive:default [24/Mar/2018:12:00:35 -0700] - attempting to run delegate function on beeSpawn 
+f0c4-68b61460 hive:default [24/Mar/2018:12:00:35 -0700] - attempting to run delegate function on beeSpawn 
+08cd-f89cf53d hive:default [24/Mar/2018:12:01:13 -0700] - attempting to run delegate function on beeSpawn 
+8915-3e64c04c hive:default [24/Mar/2018:12:01:13 -0700] - attempting to run delegate function on beeSpawn 
+08cd-f89cf53d hive:default [24/Mar/2018:12:01:16 -0700] - attempting to run delegate function cli remote 
+08cd-f89cf53d hive:default [24/Mar/2018:12:01:16 -0700] - attempting to remote into: 4202 
+2396-6a3fc667 hive:default [24/Mar/2018:12:01:48 -0700] - attempting to run delegate function on beeSpawn 
+073d-3cf72c25 hive:default [24/Mar/2018:12:01:48 -0700] - attempting to run delegate function on beeSpawn 
+073d-3cf72c25 hive:default [24/Mar/2018:12:01:51 -0700] - attempting to run delegate function cli remote 
+073d-3cf72c25 hive:default [24/Mar/2018:12:01:51 -0700] - attempting to remote into: 4204 
+5831-0a613c47 hive:default [24/Mar/2018:12:02:07 -0700] - attempting to run delegate function on beeSpawn 
+46c3-48f3c244 hive:default [24/Mar/2018:12:02:07 -0700] - attempting to run delegate function on beeSpawn 
+5831-0a613c47 hive:default [24/Mar/2018:12:02:09 -0700] - attempting to run delegate function cli remote 
+5831-0a613c47 hive:default [24/Mar/2018:12:02:09 -0700] - attempting to remote into: 4202 
+feb1-43c9c259 hive:default [24/Mar/2018:12:02:29 -0700] - attempting to run delegate function on beeSpawn 
+c34b-6a78a950 hive:default [24/Mar/2018:12:02:29 -0700] - attempting to run delegate function on beeSpawn 
+feb1-43c9c259 hive:default [24/Mar/2018:12:02:35 -0700] - attempting to run delegate function cli remote 
+feb1-43c9c259 hive:default [24/Mar/2018:12:02:35 -0700] - attempting to remote into: 4202 
+d049-beb7c40b hive:default [24/Mar/2018:12:02:57 -0700] - attempting to run delegate function on beeSpawn 
+80f7-da538291 hive:default [24/Mar/2018:12:02:57 -0700] - attempting to run delegate function on beeSpawn 
+d049-beb7c40b hive:default [24/Mar/2018:12:03:00 -0700] - attempting to run delegate function cli remote 
+d049-beb7c40b hive:default [24/Mar/2018:12:03:00 -0700] - attempting to remote into: 4202 
+9cb9-12e2fc71 hive:default [24/Mar/2018:12:03:43 -0700] - attempting to run delegate function on beeSpawn 
+d060-538a6989 hive:default [24/Mar/2018:12:03:43 -0700] - attempting to run delegate function on beeSpawn 
+9cb9-12e2fc71 hive:default [24/Mar/2018:12:03:47 -0700] - attempting to run delegate function cli remote 
+9cb9-12e2fc71 hive:default [24/Mar/2018:12:03:47 -0700] - attempting to remote into: 4202 
+e7a2-a07264ba hive:default [24/Mar/2018:12:04:08 -0700] - attempting to run delegate function on beeSpawn 
+089e-cb371a6b hive:default [24/Mar/2018:12:04:08 -0700] - attempting to run delegate function on beeSpawn 
+e7a2-a07264ba hive:default [24/Mar/2018:12:04:11 -0700] - attempting to run delegate function cli remote 
+e7a2-a07264ba hive:default [24/Mar/2018:12:04:11 -0700] - attempting to remote into: 4204 
+4887-bc98c68f hive:default [24/Mar/2018:12:04:20 -0700] - attempting to run delegate function on beeSpawn 
+ef34-d7c01ced hive:default [24/Mar/2018:12:04:20 -0700] - attempting to run delegate function on beeSpawn 
+a522-d203e092 hive:default [24/Mar/2018:12:06:00 -0700] - attempting to run delegate function on beeSpawn 
+081e-e5ba47ff hive:default [24/Mar/2018:12:06:00 -0700] - attempting to run delegate function on beeSpawn 
+a522-d203e092 hive:default [24/Mar/2018:12:06:14 -0700] - unrecognized delegate funcation attempted cli remoteMode 
+a522-d203e092 hive:default [24/Mar/2018:12:06:16 -0700] - unrecognized delegate funcation attempted cli remoteMode 
+a522-d203e092 hive:default [24/Mar/2018:12:06:17 -0700] - unrecognized delegate funcation attempted cli remoteMode 
+a522-d203e092 hive:default [24/Mar/2018:12:06:18 -0700] - unrecognized delegate funcation attempted cli remoteMode 
+a522-d203e092 hive:default [24/Mar/2018:12:06:18 -0700] - unrecognized delegate funcation attempted cli remoteMode 
+a522-d203e092 hive:default [24/Mar/2018:12:06:18 -0700] - unrecognized delegate funcation attempted cli remoteMode 
+a522-d203e092 hive:default [24/Mar/2018:12:06:19 -0700] - unrecognized delegate funcation attempted cli remoteMode 
+a522-d203e092 hive:default [24/Mar/2018:12:06:19 -0700] - unrecognized delegate funcation attempted cli remoteMode 
+a522-d203e092 hive:default [24/Mar/2018:12:06:19 -0700] - unrecognized delegate funcation attempted cli remoteMode 
+a522-d203e092 hive:default [24/Mar/2018:12:06:19 -0700] - unrecognized delegate funcation attempted cli remoteMode 
+a522-d203e092 hive:default [24/Mar/2018:12:06:19 -0700] - unrecognized delegate funcation attempted cli remoteMode 
+a522-d203e092 hive:default [24/Mar/2018:12:06:20 -0700] - unrecognized delegate funcation attempted cli remoteMode 
+a522-d203e092 hive:default [24/Mar/2018:12:06:20 -0700] - unrecognized delegate funcation attempted cli remoteMode 
+d1ad-f7f050f6 hive:default [24/Mar/2018:12:07:36 -0700] - attempting to run delegate function on beeSpawn 
+b125-a023b569 hive:default [24/Mar/2018:12:07:36 -0700] - attempting to run delegate function on beeSpawn 
+b125-a023b569 hive:default [24/Mar/2018:12:07:40 -0700] - attempting to run delegate function cli remoteMode 
+b125-a023b569 hive:default [24/Mar/2018:12:07:41 -0700] - attempting to run delegate function cli remoteMode 
+b125-a023b569 hive:default [24/Mar/2018:12:07:41 -0700] - attempting to run delegate function cli remoteMode 
+b125-a023b569 hive:default [24/Mar/2018:12:07:42 -0700] - attempting to run delegate function cli remoteMode 
+b125-a023b569 hive:default [24/Mar/2018:12:07:42 -0700] - attempting to run delegate function cli remoteMode 
+b125-a023b569 hive:default [24/Mar/2018:12:07:42 -0700] - attempting to run delegate function cli remoteMode 
+b125-a023b569 hive:default [24/Mar/2018:12:07:42 -0700] - attempting to run delegate function cli remoteMode 
+b125-a023b569 hive:default [24/Mar/2018:12:07:43 -0700] - attempting to run delegate function cli remoteMode 
+b125-a023b569 hive:default [24/Mar/2018:12:07:43 -0700] - attempting to run delegate function cli remoteMode 
+b125-a023b569 hive:default [24/Mar/2018:12:07:43 -0700] - attempting to run delegate function cli remoteMode 
+b125-a023b569 hive:default [24/Mar/2018:12:07:43 -0700] - attempting to run delegate function cli remoteMode 
+b125-a023b569 hive:default [24/Mar/2018:12:07:43 -0700] - attempting to run delegate function cli remoteMode 
+b125-a023b569 hive:default [24/Mar/2018:12:07:43 -0700] - attempting to run delegate function cli remoteMode 
+b125-a023b569 hive:default [24/Mar/2018:12:07:44 -0700] - attempting to run delegate function cli remoteMode 
+b125-a023b569 hive:default [24/Mar/2018:12:07:44 -0700] - attempting to run delegate function cli remoteMode 
+b125-a023b569 hive:default [24/Mar/2018:12:07:44 -0700] - attempting to run delegate function cli remoteMode 
+b125-a023b569 hive:default [24/Mar/2018:12:07:44 -0700] - attempting to run delegate function cli remoteMode 
+dc29-0a110d0c hive:default [24/Mar/2018:12:50:04 -0700] - new socket:  7B1Eq1mAvS0mvF4YAAAA 
+dc29-0a110d0c hive:default [24/Mar/2018:12:50:07 -0700] - received socket event: disconnect from: 7B1Eq1mAvS0mvF4YAAAA 
+dc29-0a110d0c hive:default [24/Mar/2018:12:50:07 -0700] - socket 7B1Eq1mAvS0mvF4YAAAA has disconnected reason: transport close 
+125b-59b8a605 hive:default [24/Mar/2018:12:58:28 -0700] - new socket:  _fDNK6-pp2hOt_27AAAA 
+125b-59b8a605 hive:default [24/Mar/2018:12:58:39 -0700] - received socket event: disconnect from: _fDNK6-pp2hOt_27AAAA 
+125b-59b8a605 hive:default [24/Mar/2018:12:58:39 -0700] - socket _fDNK6-pp2hOt_27AAAA has disconnected reason: transport close 
+4a80-65139962 hive:default [24/Mar/2018:12:59:01 -0700] - new socket:  uo83P_w85Am2IFUaAAAA 
+15de-be4a7dbf hive:default [24/Mar/2018:13:02:11 -0700] - new socket:  2foyM-4ueC-7w2kgAAAA 
+7581-c897e105 hive:default [24/Mar/2018:13:03:20 -0700] - new socket:  jxlZjLYidd65FzIFAAAA 
+da75-b58fcbe4 hive:default [24/Mar/2018:13:03:49 -0700] - new socket:  drd0B8JQKT16LKeSAAAA 
+da75-b58fcbe4 hive:default [24/Mar/2018:13:04:16 -0700] - received socket event: disconnect from: drd0B8JQKT16LKeSAAAA 
+da75-b58fcbe4 hive:default [24/Mar/2018:13:04:16 -0700] - socket drd0B8JQKT16LKeSAAAA has disconnected reason: transport close 
+da75-b58fcbe4 hive:default [24/Mar/2018:13:04:27 -0700] - new socket:  n3_rKmaTtQVLIts7AAAB 
+da75-b58fcbe4 hive:default [24/Mar/2018:13:05:14 -0700] - received socket event: disconnect from: n3_rKmaTtQVLIts7AAAB 
+da75-b58fcbe4 hive:default [24/Mar/2018:13:05:14 -0700] - socket n3_rKmaTtQVLIts7AAAB has disconnected reason: transport close 
+2933-d06efbf8 hive:default [24/Mar/2018:13:05:21 -0700] - new socket:  25Ax8JnEMv4DL5xsAAAA 
+47f7-48299efc hive:default [24/Mar/2018:13:06:20 -0700] - new socket:  VDwUtimPhXfkxyEjAAAA 
+47f7-48299efc hive:default [24/Mar/2018:13:06:30 -0700] - received socket event: disconnect from: VDwUtimPhXfkxyEjAAAA 
+47f7-48299efc hive:default [24/Mar/2018:13:06:30 -0700] - socket VDwUtimPhXfkxyEjAAAA has disconnected reason: transport close 
+4e4b-1f6fabfb hive:default [24/Mar/2018:13:06:36 -0700] - new socket:  XcBM1M81FcXztCgOAAAA 
+4e4b-1f6fabfb hive:default [24/Mar/2018:13:07:01 -0700] - received socket event: disconnect from: XcBM1M81FcXztCgOAAAA 
+4e4b-1f6fabfb hive:default [24/Mar/2018:13:07:01 -0700] - socket XcBM1M81FcXztCgOAAAA has disconnected reason: transport close 
+0e5f-916511a7 hive:default [24/Mar/2018:13:07:04 -0700] - new socket:  -VukQXgMSJgbQLLQAAAA 
+7d18-1ac97562 hive:default [24/Mar/2018:13:07:38 -0700] - new socket:  6p-zSEgerCYFsDssAAAA 

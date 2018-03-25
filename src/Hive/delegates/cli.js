@@ -7,27 +7,18 @@ module.exports = function CliDelegates(Hive){
     callback(table, stats);
   };
 
-  delegates.tailErrors = function(args, callback){
-    Hive.on('errorline', function(line){
-      Hive.blast('errorline', line);
-      console.error(line);
-    });
-    callback();
-  };
-
   delegates.startDrones = function(args, callback){
     if(args.options.all){
       args.drones = '*';
     }
     Hive.log("starting drones...", args);
-    callback(Hive.queen.startDrones(args.drones));
+    Hive.emit('startDrones', args.drones, callback);
   };
 
   delegates.loadDrones = function(args, callback){
     if(args.options.all){
       args.drones = '*';
     }
-    //callback(Hive.queen.loadDrones(args.drones));
     Hive.emit('loadDrones', args.drones, callback);
   };
 
@@ -36,48 +27,6 @@ module.exports = function CliDelegates(Hive){
     Hive.queen.listDrones(function(minds){
       callback(Hive.queen.render('list-drones', {minds: minds}), minds);
     });
-    //callback();
-  };
-
-  delegates.showLogs = function(args, callback){
-    let output = "LOGS:\n";
-    for(let beeID in hive.bees){
-      let bee = hive.bees[beeID];
-      output += beeID+"\t"+bee.meta.class+":\t"+bee.meta.mind+"\n";
-      output += "\t\t"+bee.meta.stdout.replace(/\n/g, "\n\t\t");
-      output += "\n";
-    }
-    callback(output);
-  };
-
-  delegates.showErrors = function(args, callback){
-    let output = "Errors:\n";
-    for(let beeID in hive.bees){
-      let bee = hive.bees[beeID];
-      output += beeID+"\t"+bee.meta.class+":\t"+bee.meta.mind+"\n";
-      output += "\t\t"+bee.meta.stderr.replace(/\n/g, "\n\t\t");
-      output += "\n";
-    }
-    callback(output);
-  };
-
-  delegates.tailLogs = function(args, callback){
-    hive.on('logline', function(line){
-      hive.blast('logline', line);
-      console.log(line);
-    });
-    callback();
-  };
-
-  delegates.stopTailLogs = function(args, callback){
-    hive.off('logline');
-    callback();
-  };
-
-
-  delegates.stopTailErrors = function(args, callback){
-    hive.off('errorline');
-    callback();
   };
 
   delegates.runBee = function(args, callback){
@@ -97,6 +46,21 @@ module.exports = function CliDelegates(Hive){
     Hive.log("begin replication...");
     let replicator = require('../../Replicator')(Hive);
     replicator.replicateToHive.call(this, args, callback);
+  };
+
+  delegates.remote = function(args, callback){
+    let message = "attempting to remote into: " + args.host;
+    Hive.log(message);
+    this.log(message);
+    Hive.emit('remote', args, callback);
+  };
+
+  delegates.remote = function(args, callback){
+    Hive.runDelegate('socket', 'connectToHost', args, callback);
+  };
+
+  delegates.remoteEntry = function(command, callback){
+    Hive.runDelegate('remote', 'remoteAction', command, callback);
   };
 
   return delegates;

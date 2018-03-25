@@ -60,34 +60,37 @@ module.exports = function Bee(Hive){
     debug = require('debug')(bee.meta.debugName());
     bee.meta.spawnAt = moment().format('x');
     debug("i am being spawned... better let the hive know");
-    Hive.emit("on:beeSpawn", this.export());
+    //Hive.emit("on:beeSpawn", this.export());
+    Hive.runDelegate('on', 'beeSpawn', bee.export());
   };
 
   delegates.on.retire = function(){
     bee.retireSpawn();
     bee.gc();
     debug("i am being retired... the hive should know about my two-weeks");
-    Hive.emit("on:beeRetire", this.export());
+    Hive.runDelegate('on', 'beeRetire', bee.export());
     bee.gc();
   };
 
   delegates.on.taskStart = function(task){
-    Hive.emit('on:taskStart', bee, task.export());
+    Hive.runDelegate('on', 'taskStart', bee.export(), task.export());
   };
 
   delegates.on.taskComplete = function(task){
     bee.retireSpawn();
-    Hive.emit('on:taskComplete', bee, task);
+    Hive.runDelegate('on', 'taskComplete', bee.export(), task.export());
     bee.tasks[task.meta.id] = null;
     delete bee.tasks[task.meta.id];
   };
 
   bee.spawn = function(){
-    bee.emit("on:spawn", bee);
+    //bee.emit("on:spawn", bee);
+    delegates.on.spawn();
   };
 
   bee.retire = function(){
-    bee.emit("on:retire", bee);
+    //bee.emit("on:retire", bee);
+    delegates.on.retire();
   };
 
   bee.retireSpawn = function(){
@@ -106,7 +109,8 @@ module.exports = function Bee(Hive){
   bee.taskStart = function(taskName){
     let task = require('./Task')(bee, taskName);
     bee.tasks[task.meta.id] = task;
-    bee.emit.apply(bee, ['on:taskStart', bee.tasks[task.meta.id]]);
+    //bee.emit.apply(bee, ['on:taskStart', bee.tasks[task.meta.id]]);
+    delegates.on.taskStart(bee.tasks[task.meta.id]);
     task.run();
     return task.meta.id;
   };
@@ -120,7 +124,8 @@ module.exports = function Bee(Hive){
     let task = bee.tasks[taskID];
     task.stop();
     bee.timers.taskComplete = setTimeout(function(){
-      bee.emit.apply(bee, ["on:taskComplete", task]);
+      //bee.emit.apply(bee, ["on:taskComplete", task]);
+      delegates.on.taskComplete(task);
     }, 5000);
     bee.completionCallback.apply(bee, arguments);
     bee.completionCallback = function(){};

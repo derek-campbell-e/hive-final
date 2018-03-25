@@ -6,7 +6,6 @@ module.exports = function OnDelegates(Hive){
   };
 
   delegates.beeRetire = function(bee){
-    console.log(bee);
     Hive.bees[bee.id] = null;
     delete Hive.bees[bee.id];
   };
@@ -14,13 +13,13 @@ module.exports = function OnDelegates(Hive){
   delegates.taskStart = function(bee, task){
     Hive.tasks[task.id] = {
       task: task,
-      bee: bee.meta.id
+      bee: bee.id
     };
   };
 
   delegates.taskComplete = function(bee, task){
-    Hive.tasks[task.meta.id] = null;
-    delete Hive.tasks[task.meta.id];
+    Hive.tasks[task.id] = null;
+    delete Hive.tasks[task.id];
   };
 
   Hive.on("on:beeSpawn", delegates.beeSpawn);

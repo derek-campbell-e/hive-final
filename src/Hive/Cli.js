@@ -12,17 +12,17 @@ module.exports = function CLI(Hive){
 
   vorpal.delimiter('hive:'+Hive.meta.version+"$").show();
 
-  vorpal.command('stdout [bees...]').action(delegateAction.bind(Hive, 'showLogs'));
+ // vorpal.command('stdout [bees...]').action(delegateAction.bind(Hive, 'showLogs'));
 
-  vorpal.command('stderr [bees...]').action(delegateAction.bind(Hive, 'showErrors'));
+  //vorpal.command('stderr [bees...]').action(delegateAction.bind(Hive, 'showErrors'));
 
   vorpal.command("load drones [drones...]").option('-a, --all', 'load all the drones').action(delegateAction.bind(Hive, 'loadDrones'));
 
   vorpal.command("start drones [drones...]").option('-a, --all', 'start all the drones').action(delegateAction.bind(Hive, 'startDrones'));
 
-  vorpal.command("logs [bees...]").action(delegateAction.bind(Hive, 'logs'));
+  //vorpal.command("logs [bees...]").action(delegateAction.bind(Hive, 'logs'));
   
-  vorpal.command("errors [bees...]").action(delegateAction.bind(Hive, 'errors'));
+  //vorpal.command("errors [bees...]").action(delegateAction.bind(Hive, 'errors'));
 
   vorpal.command("stats [bees...]").action(delegateAction.bind(Hive, 'showStats'));
 
@@ -40,6 +40,12 @@ module.exports = function CLI(Hive){
   vorpal.command("repl <host>").action(delegateAction.bind(Hive, 'replicate'));
 
   vorpal.command("ps [bee]").action(delegateAction.bind(Hive, 'ps'));
+
+  //vorpal.command("remote <host>").action(delegateAction.bind(Hive, 'remote'));
+
+  vorpal.mode('remote <host>').init(function(args, callback){
+    delegateAction.bind(Hive, 'remote')(args, callback);
+  }).action(delegateAction.bind(Hive, 'remoteEntry'));
 
   return vorpal;
 

@@ -29,6 +29,9 @@ module.exports = function Hive(options){
   // our private socket variable
   let sockets = {};
 
+  // our remote handler
+  let remote = null;
+
   // our cli object
   // might make this private??
   hive.cli = null;
@@ -51,6 +54,7 @@ module.exports = function Hive(options){
   delegates.socket = require('./delegates/socket')(hive, io, sockets);
   delegates.cli = require('./delegates/cli')(hive);
   delegates.on = require('./delegates/on')(hive);
+  
 
   hive.isValidDelegate = function(delegateKey, delegateFunction){
     if(delegates.hasOwnProperty(delegateKey) && delegates[delegateKey].hasOwnProperty(delegateFunction)){
@@ -61,11 +65,11 @@ module.exports = function Hive(options){
 
   hive.runDelegate = function(delegateKey, delegateFunctionKey, ...delegateArguments){
     let cli = this;
-    hive.log("attempting to run delegate function", delegateKey, delegateFunctionKey);
     let delegateFunction = hive.isValidDelegate(delegateKey, delegateFunctionKey);
     if(delegateFunction){
-      delegateFunction.apply(cli, delegateArguments);
+      return delegateFunction.apply(cli, delegateArguments);
     }
+    hive.log("attempting to run non-existent delegate function", delegateKey, delegateFunctionKey);
     return false;
   };
 
@@ -143,6 +147,8 @@ module.exports = function Hive(options){
     };
     queen = require('../Queen')(hive, options);
     hive.cli = require('./Cli')(hive);
+    remote = require('./Remote')(hive, hive.cli);
+    delegates.remote = require('./delegates/remote')(hive, hive.cli);
     process.on('SIGINT', hive.gc);
     return hive;
   };

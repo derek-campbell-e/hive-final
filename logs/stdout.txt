@@ -119,3 +119,95 @@ a81c-c164e78b hive:default [25/Mar/2018:22:10:55 -0700] - starting drones... { o
 9ae4-4f91d7c5 drone:testDroneNotLoaded [25/Mar/2018:22:10:56 -0700] - hello WE FINALLY STARTED 
 1b66-275660f1 drone:autocommit [25/Mar/2018:22:11:05 -0700] - would be committing right now 
 9ae4-4f91d7c5 drone:testDroneNotLoaded [25/Mar/2018:22:11:07 -0700] - hello WE FINALLY STARTED 
+cca0-22fc22b3 hive:default [26/Mar/2018:09:13:26 -0700] - starting drones... %o { options: { all: true }, drones: '*' } 
+1293-e3614eea drone:testDroneNotLoaded [26/Mar/2018:09:13:27 -0700] - hello WE FINALLY STARTED 
+19aa-1564e66c drone:autocommit [26/Mar/2018:09:13:36 -0700] - would be committing right now 
+1293-e3614eea drone:testDroneNotLoaded [26/Mar/2018:09:13:38 -0700] - hello WE FINALLY STARTED 
+19aa-1564e66c drone:autocommit [26/Mar/2018:09:13:46 -0700] - would be committing right now 
+1293-e3614eea drone:testDroneNotLoaded [26/Mar/2018:09:13:49 -0700] - hello WE FINALLY STARTED 
+19aa-1564e66c drone:autocommit [26/Mar/2018:09:13:56 -0700] - would be committing right now 
+1293-e3614eea drone:testDroneNotLoaded [26/Mar/2018:09:14:00 -0700] - hello WE FINALLY STARTED 
+19aa-1564e66c drone:autocommit [26/Mar/2018:09:14:06 -0700] - would be committing right now 
+53ae-4b1df059 hive:default [26/Mar/2018:09:15:12 -0700] - new socket:  Ec77-hw_ALTwIGYQAAAA 
+53ae-4b1df059 hive:default [26/Mar/2018:09:15:17 -0700] - received socket event: disconnect from: Ec77-hw_ALTwIGYQAAAA 
+53ae-4b1df059 hive:default [26/Mar/2018:09:15:17 -0700] - socket Ec77-hw_ALTwIGYQAAAA has disconnected reason: transport close 
+584b-46a693b0 hive:default [26/Mar/2018:09:20:04 -0700] - new socket:  aO9GYCyyU7RTdIV0AAAA 
+4858-ba0d79c8 hive:default [26/Mar/2018:09:21:21 -0700] - new socket:  yMkfVG5ERuzS5y2nAAAA 
+e800-5ad88918 hive:default [26/Mar/2018:09:22:19 -0700] - new socket:  _jVN8FlGZMh8tHJKAAAA 
+43fb-d023de5b hive:default [26/Mar/2018:14:04:34 -0700] - new socket:  VXzNZ_tm7Znz88mKAAAA 
+570b-e3bd07c6 hive:default [26/Mar/2018:14:04:34 -0700] - attempting to run non-existent delegate function remote connectedToRemote 
+e4c4-21551ed2 hive:default [26/Mar/2018:14:08:01 -0700] - new socket:  kz6P534OI_riTM33AAAA 
+e4c4-21551ed2 hive:default [26/Mar/2018:14:08:03 -0700] - received socket event: remote:message from: kz6P534OI_riTM33AAAA 
+c629-7558ac40 hive:default [26/Mar/2018:14:08:20 -0700] - new socket:  zThw3Y8tgrii76PhAAAA 
+c629-7558ac40 hive:default [26/Mar/2018:14:08:21 -0700] - received socket event: remote:message from: zThw3Y8tgrii76PhAAAA 
+b76d-30e0a5a2 hive:default [26/Mar/2018:14:10:16 -0700] - new socket:  zZG4J4Fl3NQ-12GnAAAA 
+b76d-30e0a5a2 hive:default [26/Mar/2018:14:10:17 -0700] - received socket event: remote:message from: zZG4J4Fl3NQ-12GnAAAA 
+b76d-30e0a5a2 hive:default [26/Mar/2018:14:10:24 -0700] - received socket event: remote:message from: zZG4J4Fl3NQ-12GnAAAA 
+b76d-30e0a5a2 hive:default [26/Mar/2018:14:10:44 -0700] - received socket event: remote:message from: zZG4J4Fl3NQ-12GnAAAA 
+b76d-30e0a5a2 hive:default [26/Mar/2018:14:10:53 -0700] - received socket event: remote:message from: zZG4J4Fl3NQ-12GnAAAA 
+b76d-30e0a5a2 hive:default [26/Mar/2018:14:10:53 -0700] - starting drones... %o { options: { all: true }, drones: '*' } 
+dd9c-cf54a5e9 drone:testDroneNotLoaded [26/Mar/2018:14:10:54 -0700] - hello WE FINALLY STARTED 
+b76d-30e0a5a2 hive:default [26/Mar/2018:14:10:56 -0700] - received socket event: remote:message from: zZG4J4Fl3NQ-12GnAAAA 
+b76d-30e0a5a2 hive:default [26/Mar/2018:14:10:58 -0700] - received socket event: remote:message from: zZG4J4Fl3NQ-12GnAAAA 
+b76d-30e0a5a2 hive:default [26/Mar/2018:14:10:58 -0700] - received socket event: remote:message from: zZG4J4Fl3NQ-12GnAAAA 
+b76d-30e0a5a2 hive:default [26/Mar/2018:14:10:59 -0700] - received socket event: remote:message from: zZG4J4Fl3NQ-12GnAAAA 
+b76d-30e0a5a2 hive:default [26/Mar/2018:14:11:00 -0700] - received socket event: remote:message from: zZG4J4Fl3NQ-12GnAAAA 
+b76d-30e0a5a2 hive:default [26/Mar/2018:14:11:02 -0700] - received socket event: remote:message from: zZG4J4Fl3NQ-12GnAAAA 
+b76d-30e0a5a2 hive:default [26/Mar/2018:14:11:02 -0700] - received socket event: remote:message from: zZG4J4Fl3NQ-12GnAAAA 
+b76d-30e0a5a2 hive:default [26/Mar/2018:14:11:03 -0700] - received socket event: remote:message from: zZG4J4Fl3NQ-12GnAAAA 
+9baa-c31148bd drone:autocommit [26/Mar/2018:14:11:03 -0700] - would be committing right now 
+b76d-30e0a5a2 hive:default [26/Mar/2018:14:11:04 -0700] - received socket event: remote:message from: zZG4J4Fl3NQ-12GnAAAA 
+dd9c-cf54a5e9 drone:testDroneNotLoaded [26/Mar/2018:14:11:05 -0700] - hello WE FINALLY STARTED 
+b76d-30e0a5a2 hive:default [26/Mar/2018:14:11:06 -0700] - received socket event: remote:message from: zZG4J4Fl3NQ-12GnAAAA 
+b76d-30e0a5a2 hive:default [26/Mar/2018:14:11:07 -0700] - received socket event: remote:message from: zZG4J4Fl3NQ-12GnAAAA 
+b76d-30e0a5a2 hive:default [26/Mar/2018:14:11:07 -0700] - received socket event: remote:message from: zZG4J4Fl3NQ-12GnAAAA 
+b76d-30e0a5a2 hive:default [26/Mar/2018:14:11:09 -0700] - received socket event: remote:message from: zZG4J4Fl3NQ-12GnAAAA 
+b76d-30e0a5a2 hive:default [26/Mar/2018:14:11:10 -0700] - received socket event: remote:message from: zZG4J4Fl3NQ-12GnAAAA 
+b76d-30e0a5a2 hive:default [26/Mar/2018:14:11:11 -0700] - received socket event: remote:message from: zZG4J4Fl3NQ-12GnAAAA 
+b76d-30e0a5a2 hive:default [26/Mar/2018:14:11:12 -0700] - received socket event: remote:message from: zZG4J4Fl3NQ-12GnAAAA 
+9baa-c31148bd drone:autocommit [26/Mar/2018:14:11:13 -0700] - would be committing right now 
+b76d-30e0a5a2 hive:default [26/Mar/2018:14:11:13 -0700] - received socket event: remote:message from: zZG4J4Fl3NQ-12GnAAAA 
+b76d-30e0a5a2 hive:default [26/Mar/2018:14:11:15 -0700] - received socket event: remote:message from: zZG4J4Fl3NQ-12GnAAAA 
+dd9c-cf54a5e9 drone:testDroneNotLoaded [26/Mar/2018:14:11:16 -0700] - hello WE FINALLY STARTED 
+9baa-c31148bd drone:autocommit [26/Mar/2018:14:11:23 -0700] - would be committing right now 
+dd9c-cf54a5e9 drone:testDroneNotLoaded [26/Mar/2018:14:11:27 -0700] - hello WE FINALLY STARTED 
+9baa-c31148bd drone:autocommit [26/Mar/2018:14:11:33 -0700] - would be committing right now 
+dd9c-cf54a5e9 drone:testDroneNotLoaded [26/Mar/2018:14:11:38 -0700] - hello WE FINALLY STARTED 
+9baa-c31148bd drone:autocommit [26/Mar/2018:14:11:43 -0700] - would be committing right now 
+dd9c-cf54a5e9 drone:testDroneNotLoaded [26/Mar/2018:14:11:49 -0700] - hello WE FINALLY STARTED 
+9baa-c31148bd drone:autocommit [26/Mar/2018:14:11:53 -0700] - would be committing right now 
+dd9c-cf54a5e9 drone:testDroneNotLoaded [26/Mar/2018:14:12:00 -0700] - hello WE FINALLY STARTED 
+9baa-c31148bd drone:autocommit [26/Mar/2018:14:12:03 -0700] - would be committing right now 
+dd9c-cf54a5e9 drone:testDroneNotLoaded [26/Mar/2018:14:12:11 -0700] - hello WE FINALLY STARTED 
+9baa-c31148bd drone:autocommit [26/Mar/2018:14:12:13 -0700] - would be committing right now 
+dd9c-cf54a5e9 drone:testDroneNotLoaded [26/Mar/2018:14:12:22 -0700] - hello WE FINALLY STARTED 
+9baa-c31148bd drone:autocommit [26/Mar/2018:14:12:23 -0700] - would be committing right now 
+9baa-c31148bd drone:autocommit [26/Mar/2018:14:12:33 -0700] - would be committing right now 
+dd9c-cf54a5e9 drone:testDroneNotLoaded [26/Mar/2018:14:12:33 -0700] - hello WE FINALLY STARTED 
+9baa-c31148bd drone:autocommit [26/Mar/2018:14:12:43 -0700] - would be committing right now 
+dd9c-cf54a5e9 drone:testDroneNotLoaded [26/Mar/2018:14:12:44 -0700] - hello WE FINALLY STARTED 
+9baa-c31148bd drone:autocommit [26/Mar/2018:14:12:53 -0700] - would be committing right now 
+dd9c-cf54a5e9 drone:testDroneNotLoaded [26/Mar/2018:14:12:55 -0700] - hello WE FINALLY STARTED 
+9baa-c31148bd drone:autocommit [26/Mar/2018:14:13:03 -0700] - would be committing right now 
+dd9c-cf54a5e9 drone:testDroneNotLoaded [26/Mar/2018:14:13:07 -0700] - hello WE FINALLY STARTED 
+9baa-c31148bd drone:autocommit [26/Mar/2018:14:13:13 -0700] - would be committing right now 
+dd9c-cf54a5e9 drone:testDroneNotLoaded [26/Mar/2018:14:13:18 -0700] - hello WE FINALLY STARTED 
+9baa-c31148bd drone:autocommit [26/Mar/2018:14:13:23 -0700] - would be committing right now 
+dd9c-cf54a5e9 drone:testDroneNotLoaded [26/Mar/2018:14:13:29 -0700] - hello WE FINALLY STARTED 
+9baa-c31148bd drone:autocommit [26/Mar/2018:14:13:33 -0700] - would be committing right now 
+dd9c-cf54a5e9 drone:testDroneNotLoaded [26/Mar/2018:14:13:40 -0700] - hello WE FINALLY STARTED 
+9baa-c31148bd drone:autocommit [26/Mar/2018:14:13:43 -0700] - would be committing right now 
+dd9c-cf54a5e9 drone:testDroneNotLoaded [26/Mar/2018:14:13:51 -0700] - hello WE FINALLY STARTED 
+b76d-30e0a5a2 hive:default [26/Mar/2018:14:13:52 -0700] - new socket:  wC_-1vgNkdBWupxOAAAB 
+9baa-c31148bd drone:autocommit [26/Mar/2018:14:13:53 -0700] - would be committing right now 
+b76d-30e0a5a2 hive:default [26/Mar/2018:14:13:54 -0700] - received socket event: remote:message from: wC_-1vgNkdBWupxOAAAB 
+b76d-30e0a5a2 hive:default [26/Mar/2018:14:13:55 -0700] - received socket event: remote:message from: wC_-1vgNkdBWupxOAAAB 
+b76d-30e0a5a2 hive:default [26/Mar/2018:14:13:56 -0700] - received socket event: remote:message from: wC_-1vgNkdBWupxOAAAB 
+dd9c-cf54a5e9 drone:testDroneNotLoaded [26/Mar/2018:14:14:02 -0700] - hello WE FINALLY STARTED 
+9baa-c31148bd drone:autocommit [26/Mar/2018:14:14:03 -0700] - would be committing right now 
+dd9c-cf54a5e9 drone:testDroneNotLoaded [26/Mar/2018:14:14:13 -0700] - hello WE FINALLY STARTED 
+9baa-c31148bd drone:autocommit [26/Mar/2018:14:14:13 -0700] - would be committing right now 
+9baa-c31148bd drone:autocommit [26/Mar/2018:14:14:23 -0700] - would be committing right now 
+dd9c-cf54a5e9 drone:testDroneNotLoaded [26/Mar/2018:14:14:24 -0700] - hello WE FINALLY STARTED 
+df49-c70decc0 hive:default [26/Mar/2018:14:14:30 -0700] - new socket:  RCQMjVKD2ouyW_23AAAA 
+df49-c70decc0 hive:default [26/Mar/2018:14:14:31 -0700] - received socket event: remote:message from: RCQMjVKD2ouyW_23AAAA 

@@ -54,6 +54,7 @@ module.exports = function Hive(options){
   delegates.socket = require('./delegates/socket')(hive, io, sockets);
   delegates.cli = require('./delegates/cli')(hive);
   delegates.on = require('./delegates/on')(hive);
+  delegates.remote = require('./delegates/remote')(hive);
   
 
   hive.isValidDelegate = function(delegateKey, delegateFunction){

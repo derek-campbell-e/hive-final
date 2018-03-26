@@ -3,6 +3,8 @@ module.exports = function SocketDelegates(Hive, io, sockets){
   let newSocketDelegates = {};
   let clientio = require('socket.io-client');
   
+  let remoteSockets = {};
+  
   delegates.bindNewSocket = function(socket){
     for(let eventName in newSocketDelegates){
       let delegateMethod = newSocketDelegates[eventName];
@@ -48,11 +50,23 @@ module.exports = function SocketDelegates(Hive, io, sockets){
   };
 
   delegates.connectToHost = function(args, callback){
-    //console.log("connecting to host", args);
     let socket = clientio(args.host);
     socket.on('connect', function(){
       callback("CONNECTED TO HOST");
+      remoteSockets[socket.id] = socket;
+      Hive.runDelegate('remote', 'connectedToRemote', socket);
     });
+    socket.on('disconnect', function(){
+      delete remoteSockets[socket.id];
+    });
+  };
+
+  delegates.remoteAction = function(args, callback){
+    Hive.runDelegate('remote', 'sendToRemote', args, callback);
+  };
+
+  delegates.receiveRemoteAction = function(command, callback){
+    Hive.cli.exec(command, callback);
   };
 
   newSocketDelegates['stats'] = delegates.showStats;
@@ -60,6 +74,7 @@ module.exports = function SocketDelegates(Hive, io, sockets){
   newSocketDelegates['begin:replication'] = delegates.prepareForReplication;
   newSocketDelegates['replication'] = delegates.replication;
   newSocketDelegates['remoteMessageIn'] = delegates.performActionFromRemote;
+  newSocketDelegates['remote:message'] = delegates.receiveRemoteAction;
 
   // our initializer for our socket delegates
   let init = function(){

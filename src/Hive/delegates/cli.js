@@ -60,7 +60,7 @@ module.exports = function CliDelegates(Hive){
   };
 
   delegates.remoteEntry = function(command, callback){
-    Hive.runDelegate('remote', 'remoteAction', command, callback);
+    Hive.runDelegate('socket', 'remoteAction', command, callback);
   };
 
   return delegates;

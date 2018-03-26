@@ -96,3 +96,26 @@ da75-b58fcbe4 hive:default [24/Mar/2018:13:05:14 -0700] - socket n3_rKmaTtQVLIts
 4e4b-1f6fabfb hive:default [24/Mar/2018:13:07:01 -0700] - socket XcBM1M81FcXztCgOAAAA has disconnected reason: transport close 
 0e5f-916511a7 hive:default [24/Mar/2018:13:07:04 -0700] - new socket:  -VukQXgMSJgbQLLQAAAA 
 7d18-1ac97562 hive:default [24/Mar/2018:13:07:38 -0700] - new socket:  6p-zSEgerCYFsDssAAAA 
+6a9e-ee36561b hive:default [25/Mar/2018:21:28:13 -0700] - starting drones... { options: {},   drones: [ 'ableton', 'droneinfolder', [length]: 2 ] } 
+b317-8e3ad8a5 hive:default [25/Mar/2018:21:28:36 -0700] - starting drones... { options: { all: true }, drones: '*' } 
+55c0-d31f9fa1 drone:testDroneNotLoaded [25/Mar/2018:21:28:37 -0700] - hello WE FINALLY STARTED 
+ded7-0e492b79 drone:autocommit [25/Mar/2018:21:28:46 -0700] - would be committing right now 
+55c0-d31f9fa1 drone:testDroneNotLoaded [25/Mar/2018:21:28:48 -0700] - hello WE FINALLY STARTED 
+ded7-0e492b79 drone:autocommit [25/Mar/2018:21:28:56 -0700] - would be committing right now 
+55c0-d31f9fa1 drone:testDroneNotLoaded [25/Mar/2018:21:28:59 -0700] - hello WE FINALLY STARTED 
+ded7-0e492b79 drone:autocommit [25/Mar/2018:21:29:06 -0700] - would be committing right now 
+55c0-d31f9fa1 drone:testDroneNotLoaded [25/Mar/2018:21:29:10 -0700] - hello WE FINALLY STARTED 
+ded7-0e492b79 drone:autocommit [25/Mar/2018:21:29:16 -0700] - would be committing right now 
+55c0-d31f9fa1 drone:testDroneNotLoaded [25/Mar/2018:21:29:21 -0700] - hello WE FINALLY STARTED 
+ded7-0e492b79 drone:autocommit [25/Mar/2018:21:29:26 -0700] - would be committing right now 
+55c0-d31f9fa1 drone:testDroneNotLoaded [25/Mar/2018:21:29:32 -0700] - hello WE FINALLY STARTED 
+55c0-d31f9fa1 drone:testDroneNotLoaded [25/Mar/2018:21:29:43 -0700] - hello WE FINALLY STARTED 
+ba6e-b317cdf2 hive:default [25/Mar/2018:21:56:36 -0700] - attempting to run non-existent delegate function on BeeSpawn 
+6630-2ff548c2 hive:default [25/Mar/2018:21:57:54 -0700] - attempting to run non-existent delegate function on BeeSpawn 
+278f-4969d134 hive:default [25/Mar/2018:22:02:24 -0700] - starting drones... { options: { all: true }, drones: '*' } 
+caac-eb1165bc hive:default [25/Mar/2018:22:03:05 -0700] - starting drones... { options: { all: true }, drones: '*' } 
+8c90-e631b3cd hive:default [25/Mar/2018:22:10:23 -0700] - starting drones... { options: { all: true }, drones: '*' } 
+a81c-c164e78b hive:default [25/Mar/2018:22:10:55 -0700] - starting drones... { options: { all: true }, drones: '*' } 
+9ae4-4f91d7c5 drone:testDroneNotLoaded [25/Mar/2018:22:10:56 -0700] - hello WE FINALLY STARTED 
+1b66-275660f1 drone:autocommit [25/Mar/2018:22:11:05 -0700] - would be committing right now 
+9ae4-4f91d7c5 drone:testDroneNotLoaded [25/Mar/2018:22:11:07 -0700] - hello WE FINALLY STARTED 

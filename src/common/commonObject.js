@@ -10,8 +10,16 @@ module.exports = function CommonObject(){
   Module.meta.stderr = "";
   Module.meta.class = "";
 
+  Module.meta.debugName = function(){
+    return Module.meta.class + ":" + Module.meta.mind;
+  };
+
   Module.meta.mind = "default";
   Module.meta.spawnAt = common.timestamp();
+  Module.meta.spawnAt.__proto__.refresh = function(){
+    Module.meta.spawnAt = common.timestamp();
+  };
+
   Module.meta.timeSince = function(formatString){
     return require('moment')(Module.meta.spawnAt, 'x').subtract(common.timestamp(), 'x').fromNow();
   };

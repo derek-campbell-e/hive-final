@@ -23,8 +23,11 @@ module.exports = function Drone(Hive, Queen, MindFile){
 
   drone.taskTimer = null;
 
-  drone.delegates.threads = {};
-  drone.delegates.threads.shouldStartThread = function(){
+  let delegates = {};
+  delegates.threads = {};
+
+  delegates.threads = {};
+  delegates.threads.shouldStartThread = function(){
     if(!drone.mind.maxThreads){
       return true;
     }
@@ -70,7 +73,7 @@ module.exports = function Drone(Hive, Queen, MindFile){
       return this.spawnWorker.apply(this, arguments);
     }.bind(drone);
     let func = function droneTask(callback){
-      if(drone.delegates.threads.shouldStartThread()){
+      if(delegates.threads.shouldStartThread()){
         let taskID = drone.taskStart(drone.meta.taskName());
         callback = callback.bind(taskID);
         drone.spawnWorker = drone.spawnWorker.bind(taskID);

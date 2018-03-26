@@ -1,6 +1,6 @@
 module.exports = function Bee(Hive){
   // our common tools
-  const common = require('./common');
+  const common = require('../common');
   const uuid = common.uuid;
   const makeEmitter = common.makeEmitter;
   const delegateBinder = common.delegateBinder;
@@ -29,7 +29,7 @@ module.exports = function Bee(Hive){
   };
 
   // make our bee a logger
-  makeLogger(bee);
+  //makeLogger(bee);
   
   // holds the tasks object for the bee;
   // we may end out having more than one task based on timeouts and delays and such
@@ -107,7 +107,7 @@ module.exports = function Bee(Hive){
   };
 
   bee.taskStart = function(taskName){
-    let task = require('./Task')(bee, taskName);
+    let task = require('../Task')(bee, taskName);
     bee.tasks[task.meta.id] = task;
     //bee.emit.apply(bee, ['on:taskStart', bee.tasks[task.meta.id]]);
     delegates.on.taskStart(bee.tasks[task.meta.id]);
@@ -176,9 +176,6 @@ module.exports = function Bee(Hive){
   // our private initializer
   let init = function(){
     debug("initializing a new bee...");
-    for(let delegateKey in delegates.on){
-      bee.on('on:'+delegateKey, delegates.on[delegateKey]);
-    }
     return bee;
   };
 

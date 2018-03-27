@@ -36,10 +36,15 @@ module.exports = function Hive(options){
   // might make this private??
   hive.cli = null;
 
+  
+
   // our meta object for data
   hive.meta.version = package.version;
   hive.meta.class = 'hive';
   hive.meta.mind = 'default';
+
+  let cli = {};
+  cli = require('./_Cli')(hive);
 
   // our object for bee awareness
   hive.bees = {};
@@ -51,10 +56,11 @@ module.exports = function Hive(options){
 
   // our private delegates
   let delegates = {};
-  delegates.socket = require('./delegates/socket')(hive, io, sockets);
-  delegates.cli = require('./delegates/cli')(hive);
+  delegates.socket = require('./delegates/socket')(hive, io, sockets, cli);
+  delegates.cli = require('./delegates/cli')(hive, cli);
   delegates.on = require('./delegates/on')(hive);
-  delegates.remote = require('./delegates/remote')(hive);
+  remote = require('./Remote')(hive, cli);
+  delegates.remote = require('./delegates/remote')(hive, cli);
   
 
   hive.isValidDelegate = function(delegateKey, delegateFunction){
@@ -147,9 +153,9 @@ module.exports = function Hive(options){
       startAllDrones: false,
     };
     queen = require('../Queen')(hive, options);
-    hive.cli = require('./Cli')(hive);
-    remote = require('./Remote')(hive, hive.cli);
-    delegates.remote = require('./delegates/remote')(hive, hive.cli);
+    
+    cli.local.show();
+    
     process.on('SIGINT', hive.gc);
     return hive;
   };

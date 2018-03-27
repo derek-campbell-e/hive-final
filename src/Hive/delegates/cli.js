@@ -1,4 +1,6 @@
-module.exports = function CliDelegates(Hive){
+module.exports = function CliDelegates(Hive, Cli){
+  const URL = require('url').URL;
+
   let delegates = {};
 
   delegates.showStats = function(args, callback){
@@ -34,7 +36,6 @@ module.exports = function CliDelegates(Hive){
   };
 
   delegates.retireBees = function(args, callback){
-    //callback(Hive.queen.retireChildrenFromCLI(args.bees));
     Hive.emit('retireBees', args.bees, callback);
   };
 
@@ -57,6 +58,56 @@ module.exports = function CliDelegates(Hive){
 
   delegates.remote = function(args, callback){
     Hive.runDelegate('socket', 'connectToHost', args, callback);
+  };
+
+  delegates.switchToRemote = function(args, callback){
+    let url = new URL(args.host);
+    let remoteDelimiter = "hive@"+url.host+"$";
+    Cli.local.hide();
+    Cli.remote.delimiter(remoteDelimiter).show();
+    Cli.remote.exec("nothing");
+    callback("connected to host!");
+  };
+
+  delegates.switchToLocal = function(args, callback){
+    callback = callback || function(){};
+    Hive.runDelegate('remote', 'disconnectFromRemote');
+    Cli.remote.hide();
+    Cli.local.show();
+    callback("returned to local");
+    /*
+    Cli.local.exec("nothing", function(){
+      //Cli.local.log("Returned to local hive");
+    });
+    */
+  };
+
+  delegates.connectToRemote = function(args, callback){
+    let isConnectedCallback = function(socket){
+      socket.on('disconnect', disconnectedCallback);
+      delegates.switchToRemote(args, callback);
+    };
+
+    let failedConnectionCallback = function(){
+      callback("An error occured when trying to connect to remote host");
+    };
+
+    let disconnectedCallback = function(callback){
+      Cli.local.log("recieved a disconnect event...");
+      //delegates.switchToLocal(callback);
+    }.bind(delegates, callback);
+
+    Hive.runDelegate('remote', 'connectToHost', args, isConnectedCallback, failedConnectionCallback, disconnectedCallback);
+  };
+
+  delegates.disconnectRemote = function(args, callback){
+    delegates.switchToLocal(args, function(){
+      callback();
+    });
+  };
+
+  delegates.remoteCommandEntry = function(delegateFunction, args, callback){
+    Hive.runDelegate('remote', 'commandToRemoteHost', delegateFunction, args, callback);
   };
 
   delegates.remoteEntry = function(command, callback){

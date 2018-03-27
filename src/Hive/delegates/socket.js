@@ -1,4 +1,4 @@
-module.exports = function SocketDelegates(Hive, io, sockets){
+module.exports = function SocketDelegates(Hive, io, sockets, Cli){
   let delegates = {};
   let newSocketDelegates = {};
   let clientio = require('socket.io-client');
@@ -64,9 +64,12 @@ module.exports = function SocketDelegates(Hive, io, sockets){
   delegates.remoteAction = function(args, callback){
     Hive.runDelegate('remote', 'sendToRemote', args, callback);
   };
+  
 
-  delegates.receiveRemoteAction = function(command, callback){
-    Hive.cli.exec(command, callback);
+  delegates.receiveRemoteAction = function(delegateFunction, args, callback, socket){
+    //Cli.local.exec(command, callback);
+    console.log(socket.id, delegateFunction, args);
+    Hive.runDelegate('cli', delegateFunction, args, callback);
   };
 
   newSocketDelegates['stats'] = delegates.showStats;

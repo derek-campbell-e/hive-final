@@ -114,11 +114,15 @@ module.exports = function Drone(Hive, Queen, MindFile){
 
     if(isHz){
       drone.taskTimer = clearInterval(drone.taskTimer);
+      return;
     }
 
     if(isLater || isCron){
-      drone.taskTimer = drone.taskTimer.clear();
+      if(drone.taskTimer){
+        drone.taskTimer = drone.taskTimer.clear();
+      }
     }
+    
   };
 
   drone.start = function(callback){

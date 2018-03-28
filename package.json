@@ -23,9 +23,11 @@
     "moment": "^2.21.0",
     "multi-glob": "^1.0.1",
     "node-cron": "^1.2.1",
+    "sentencer": "^0.1.5",
     "socket.io": "^2.0.4",
     "string-argv": "0.0.2",
     "text-table": "^0.2.0",
+    "twilio": "^3.14.0",
     "vorpal": "^1.12.0"
   }
 }

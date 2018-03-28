@@ -9,7 +9,7 @@ module.exports = function AutoCommitDrone(){
       });
     });
     */
-    this.log("would be committing right now");
+    //this.log("would be committing right now");
   };
   return mind;
 };

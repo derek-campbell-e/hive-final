@@ -45,6 +45,9 @@ module.exports = function Drone(Hive, Queen, MindFile){
     const later = require('later');
     later.date.localTime();
     let schedule = later.parse.text(laterSchedule);
+    if(schedule.error !== -1){
+      console.log(schedule.error);
+    }
     drone.taskTimer = later.setInterval(bindedFunction, schedule);
   };
 

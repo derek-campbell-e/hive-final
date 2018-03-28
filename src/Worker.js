@@ -41,7 +41,7 @@ module.exports = function Worker(Hive, Queen, MindFile){
       let taskName = tasks.shift();
 
       if(currentTaskID) {
-        worker.taskComplete.call(currentTaskID);
+        worker.taskComplete.apply(currentTaskID, arguments);
       }
 
       if(typeof taskName === 'undefined'){
@@ -71,6 +71,14 @@ module.exports = function Worker(Hive, Queen, MindFile){
       return worker.runSync.apply(worker, arguments);
     }
     return worker.runAsync.apply(worker, arguments);
+  };
+
+  //overrite Bee.taskComplete
+  worker.taskComplete = function(){
+    let taskID = this;
+    let task = worker.tasks[taskID];
+    task.stop.apply(task, arguments);
+    setTimeout(worker.delegates.onTaskComplete.bind(worker, task), 5000);
   };
 
   let init = function(){

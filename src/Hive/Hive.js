@@ -5,12 +5,15 @@ module.exports = function Hive(options){
   defaultOptions.port = process.env.PORT || 4202;
   defaultOptions.loadAllDrones = true; // load all the drones from the bees/drones folder
   defaultOptions.beeFolder = path.join(__dirname, '..', '..', 'bees');
+  defaultOptions.logFolder = path.join(__dirname, '..', '..', 'logs');
   defaultOptions.startDronesOnLoad = true;
   defaultOptions.loadDrones = []; // drones to load by default
   defaultOptions.startDrones = []; // drones to start by default
   defaultOptions.maxTaskRuntime = 60 * 1000; // max runtime for tasks in ms, default is 1 minute
 
   options = require('extend')(true, {}, defaultOptions, options);
+
+  global['HiveOptions'] = options;
 
   const common = require('../common');
   const delegateBinder = common.delegateBinder;
@@ -155,13 +158,8 @@ module.exports = function Hive(options){
   
   let init = function(){
     debug("initializing the hive...");
-    let options = {
-      startAllDrones: false,
-    };
     queen = require('../Queen')(hive, options);
-    
     cli.local.show();
-    
     process.on('SIGINT', hive.gc);
     return hive;
   };

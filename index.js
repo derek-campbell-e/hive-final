@@ -1,1 +1,1 @@
-module.exports = require('./src/Hive')();
+module.exports = require('./src/Hive');

@@ -8,6 +8,7 @@ module.exports = function CommonObject(){
   Module.meta.id = common.uuid();
   Module.meta.stdout = "";
   Module.meta.stderr = "";
+  Module.meta.results = "";
   Module.meta.class = "";
 
   Module.meta.debugName = function(){

@@ -1,18 +1,24 @@
 module.exports = function Task(bee, taskName){
   const uuid = require('./common/uuid');
   const timestamp = require('./common/timestamp');
+  const common = require('./common');
   
-  let task = {};
-  
-  task.meta = {};
+  let task = common.commonObject();
 
-  task.meta.id = uuid();
+  task.meta.class = 'task';
+  task.meta.mind = taskName;
   task.meta.name = taskName;
   task.meta.runTime = 0;
   task.meta.startTime = -1;
   task.meta.endTime = -1;
 
   task.updateRuntimeTimer = null;
+
+  task.completeTask = function(){
+    task.result.apply(task, arguments);
+    task.meta.endTime = timestamp();
+    task.updateRuntimeTimer = clearInterval(task.updateRuntimeTimer);
+  };
 
   task.stop = function(){
     task.meta.endTime = timestamp();

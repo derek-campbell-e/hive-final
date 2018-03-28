@@ -25,6 +25,9 @@ module.exports = function Bee(Hive){
   // our delegate methods
   let delegates = require('./delegates')(bee, Hive);
 
+  bee.delegates = {};
+  bee.delegates.onTaskComplete = delegates.onTaskComplete;
+
   bee.isValidDelegate = function(delegateKey, delegateFunction){
     if(delegates.hasOwnProperty(delegateKey) && delegates[delegateKey].hasOwnProperty(delegateFunction)){
       return delegates[delegateKey][delegateFunction];
@@ -76,7 +79,7 @@ module.exports = function Bee(Hive){
   bee.taskComplete = function(){
     let taskID = this;
     let task = bee.tasks[taskID];
-    task.stop();
+    task.completeTask.apply(task, arguments);
     timers.taskComplete = setTimeout(function(){
       delegates.onTaskComplete(task);
     }, 5000);

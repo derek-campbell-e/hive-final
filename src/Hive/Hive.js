@@ -17,7 +17,11 @@ module.exports = function Hive(options){
   const Table = require('cli-table');
 
   const debug = require('debug')('hive');
-  const io = require('socket.io')(options.port);  
+  const app = require('express')();
+  const server = require('http').Server(app);
+  const io = require('socket.io')(server);  
+
+  server.listen(options.port);
   
   let package = require(path.join(__dirname, '..', '..', 'package.json'));
   
@@ -59,6 +63,8 @@ module.exports = function Hive(options){
   delegates.socket = require('./delegates/socket')(hive, io, sockets, cli);
   delegates.cli = require('./delegates/cli')(hive, cli);
   delegates.on = require('./delegates/on')(hive);
+  delegates.server = require('./delegates/server')(app);
+
   remote = require('./Remote')(hive, cli);
   delegates.remote = require('./delegates/remote')(hive, cli);
   

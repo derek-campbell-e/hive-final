@@ -4,9 +4,10 @@ module.exports = function CLI(Hive){
   const remote = vorpal();
 
   let delegateAction = function(delegateFunction, args, callback){
+    let self = this;
     let delegateKey = 'cli';
     if(Hive.isValidDelegate(delegateKey, delegateFunction)){
-      return Hive.runDelegate.call(vorpal, delegateKey, delegateFunction, args, callback);
+      return Hive.runDelegate.call(self, delegateKey, delegateFunction, args, callback);
     }
     Hive.log("unrecognized delegate funcation attempted", delegateKey, delegateFunction);
     callback('an error occured processing your request');
@@ -35,8 +36,8 @@ module.exports = function CLI(Hive){
   commands.loadDrones.description = "Load up the drones by their mind name. (spawned)";
   commands.loadDrones.option = ['-a, --all', 'load all the drones'];
   commands.loadDrones.action = {
-    local: delegateAction.bind(Hive, 'loadDrones'),
-    remote: remoteDelegateAction.bind(Hive, 'loadDrones')
+    local: delegateAction.bind(local, 'loadDrones'),
+    remote: remoteDelegateAction.bind(remote, 'loadDrones')
   };
 
 
@@ -46,8 +47,8 @@ module.exports = function CLI(Hive){
   commands.startDrones.description = "Start the drones on their own task schedule";
   commands.startDrones.option = ['-a, --all', 'start all the drones'];
   commands.startDrones.action = {
-    local: delegateAction.bind(Hive, 'startDrones'),
-    remote: remoteDelegateAction.bind(Hive, 'startDrones')
+    local: delegateAction.bind(local, 'startDrones'),
+    remote: remoteDelegateAction.bind(remote, 'startDrones')
   };
 
   // get the hive stats or stats for a certain bee
@@ -55,8 +56,8 @@ module.exports = function CLI(Hive){
   commands.stats.command = "stats [bees...]";
   commands.stats.description = "Show the stats for the hive or certain bees";
   commands.stats.action = {
-    local: delegateAction.bind(Hive, 'showStats'),
-    remote: remoteDelegateAction.bind(Hive, 'showStats')
+    local: delegateAction.bind(local, 'showStats'),
+    remote: remoteDelegateAction.bind(remote, 'showStats')
   };
 
   // command to retire bee or bees
@@ -64,8 +65,8 @@ module.exports = function CLI(Hive){
   commands.retireBees.command = "retire <bees...>";
   commands.retireBees.description = "retire the specified bees";
   commands.retireBees.action = {
-    local: delegateAction.bind(Hive, 'retireBees'),
-    remote: remoteDelegateAction.bind(Hive, 'retireBees')
+    local: delegateAction.bind(local, 'retireBees'),
+    remote: remoteDelegateAction.bind(remote, 'retireBees')
   };
 
   // tell our drones to run now and return the output
@@ -73,8 +74,8 @@ module.exports = function CLI(Hive){
   commands.fireDrones.command = "fire <drones...>";
   commands.fireDrones.description = "Tell a drone to run now, and output its result";
   commands.fireDrones.action = {
-    local: delegateAction.bind(Hive, 'fireDrones'),
-    remote: remoteDelegateAction.bind(Hive, 'fireDrones')
+    local: delegateAction.bind(local, 'fireDrones'),
+    remote: remoteDelegateAction.bind(remote, 'fireDrones')
   };
 
   // create a drone or worker to make your own
@@ -82,8 +83,8 @@ module.exports = function CLI(Hive){
   commands.createBees.command = "create <bee>";
   commands.createBees.description = "create a drone/worker to make your own";
   commands.createBees.action = {
-    local: delegateAction.bind(Hive, 'createBee'),
-    remote: remoteDelegateAction.bind(Hive, 'createBee')
+    local: delegateAction.bind(local, 'createBee'),
+    remote: remoteDelegateAction.bind(remote, 'createBee')
   };
   
   // replicate our hive to another host
@@ -91,8 +92,8 @@ module.exports = function CLI(Hive){
   commands.replicate.command = "repl <host>";
   commands.replicate.description = "Replicate current hive structure to another host";
   commands.replicate.action = {
-    local: delegateAction.bind(Hive, 'replicate'),
-    remote: remoteDelegateAction.bind(Hive, 'replicate')
+    local: delegateAction.bind(local, 'replicate'),
+    remote: remoteDelegateAction.bind(remote, 'replicate')
   };
 
   // show basic process stuffs
@@ -100,8 +101,8 @@ module.exports = function CLI(Hive){
   commands.ps.command = "ps [bee]";
   commands.ps.description = "Show process meta";
   commands.ps.action = {
-    local: delegateAction.bind(Hive, 'ps'),
-    remote: remoteDelegateAction.bind(Hive, 'ps')
+    local: delegateAction.bind(local, 'ps'),
+    remote: remoteDelegateAction.bind(remote, 'ps')
   };
   
 
@@ -110,8 +111,8 @@ module.exports = function CLI(Hive){
   commands.remote.command = "remote <host>";
   commands.remote.description = "connect to remote hive";
   commands.remote.action = {
-    local: delegateAction.bind(Hive, 'connectToRemote'),
-    remote: remoteDelegateAction.bind(Hive, 'connectToRemote')
+    local: delegateAction.bind(local, 'connectToRemote'),
+    remote: remoteDelegateAction.bind(remote, 'connectToRemote')
   };
 
   // disconnect from remote hive
@@ -119,8 +120,8 @@ module.exports = function CLI(Hive){
   commands.disconnectRemote.command = "xrem";
   commands.disconnectRemote.description = "disconnect from remote hive";
   commands.disconnectRemote.action = {
-    local: delegateAction.bind(Hive, 'disconnectRemote'),
-    remote: delegateAction.bind(Hive, 'disconnectRemote')
+    local: delegateAction.bind(local, 'disconnectRemote'),
+    remote: delegateAction.bind(remote, 'disconnectRemote')
   };
 
   commands.nothing = {};

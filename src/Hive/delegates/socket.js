@@ -4,8 +4,14 @@ module.exports = function SocketDelegates(Hive, io, sockets, Cli){
   let clientio = require('socket.io-client');
   
   let remoteSockets = {};
+
+  let socketAuthentication = function(packet, next){
+    console.log(packet);
+    next();
+  };
   
   delegates.bindNewSocket = function(socket){
+    socket.use(socketAuthentication);
     for(let eventName in newSocketDelegates){
       let delegateMethod = newSocketDelegates[eventName];
       socket.on(eventName, function(){

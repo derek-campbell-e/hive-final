@@ -67,8 +67,6 @@ module.exports = function SocketDelegates(Hive, io, sockets, Cli){
   
 
   delegates.receiveRemoteAction = function(delegateFunction, args, callback, socket){
-    //Cli.local.exec(command, callback);
-    console.log(socket.id, delegateFunction, args);
     Hive.runDelegate('cli', delegateFunction, args, callback);
   };
 

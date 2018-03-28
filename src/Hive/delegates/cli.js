@@ -64,9 +64,9 @@ module.exports = function CliDelegates(Hive, Cli){
     let url = new URL(args.host);
     let remoteDelimiter = "hive@"+url.host+"$";
     Cli.local.hide();
-    Cli.remote.delimiter(remoteDelimiter).show();
-    Cli.remote.exec("nothing");
     callback("connected to host!");
+    Cli.remote.delimiter(remoteDelimiter);
+    Cli.remote.show();
   };
 
   delegates.switchToLocal = function(args, callback){
@@ -74,36 +74,28 @@ module.exports = function CliDelegates(Hive, Cli){
     Hive.runDelegate('remote', 'disconnectFromRemote');
     Cli.remote.hide();
     Cli.local.show();
-    callback("returned to local");
-    /*
-    Cli.local.exec("nothing", function(){
-      //Cli.local.log("Returned to local hive");
+    callback("Returned to local hive...");
+  };
+
+  delegates.switchToLocalFromDisconnect = function(callback){
+    Cli.remote.exec("xrem", function(){
+      this.log("exited");
     });
-    */
   };
 
   delegates.connectToRemote = function(args, callback){
-    let isConnectedCallback = function(socket){
-      socket.on('disconnect', disconnectedCallback);
-      delegates.switchToRemote(args, callback);
-    };
-
-    let failedConnectionCallback = function(){
-      callback("An error occured when trying to connect to remote host");
-    };
-
-    let disconnectedCallback = function(callback){
-      Cli.local.log("recieved a disconnect event...");
-      //delegates.switchToLocal(callback);
-    }.bind(delegates, callback);
-
-    Hive.runDelegate('remote', 'connectToHost', args, isConnectedCallback, failedConnectionCallback, disconnectedCallback);
+    Hive.runDelegate('remote', 'connectToHost_', args, function(remoteSocket){
+      if(remoteSocket){
+        remoteSocket.once('disconnect', delegates.switchToLocalFromDisconnect);
+        remoteSocket.once('connect_timeout', delegates.switchToLocalFromDisconnect);
+        return delegates.switchToRemote(args, callback);
+      }
+      return callback("An error occured connecting to remote hive");
+    });
   };
 
   delegates.disconnectRemote = function(args, callback){
-    delegates.switchToLocal(args, function(){
-      callback();
-    });
+    delegates.switchToLocal(args, callback);
   };
 
   delegates.remoteCommandEntry = function(delegateFunction, args, callback){

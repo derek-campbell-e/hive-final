@@ -639,3 +639,247 @@ df39-14b2a1b8 hive:default [26/Mar/2018:22:39:24 -0700] - socket rx2nmxTRvaO1O2v
 41b3-663852f1 hive:default [26/Mar/2018:22:41:12 -0700] - new socket:  0UW4adFnJHL0P4UNAAAD 
 41b3-663852f1 hive:default [26/Mar/2018:22:41:13 -0700] - received socket event: remote:message from: 0UW4adFnJHL0P4UNAAAD 
 41b3-663852f1 hive:default [26/Mar/2018:22:41:16 -0700] - received socket event: remote:message from: 0UW4adFnJHL0P4UNAAAD 
+41b3-663852f1 hive:default [27/Mar/2018:18:07:00 -0700] - received socket event: disconnect from: 0UW4adFnJHL0P4UNAAAD 
+41b3-663852f1 hive:default [27/Mar/2018:18:07:00 -0700] - socket 0UW4adFnJHL0P4UNAAAD has disconnected reason: transport close 
+acb7-c5f25ad6 hive:default [27/Mar/2018:19:06:10 -0700] - new socket:  K9w-1Sm8fDKG1DSuAAAA 
+acb7-c5f25ad6 hive:default [27/Mar/2018:19:06:14 -0700] - received socket event: remote:message from: K9w-1Sm8fDKG1DSuAAAA 
+be95-b76decf2 hive:default [27/Mar/2018:19:06:59 -0700] - new socket:  0k4t4R4CZ3Odjw43AAAA 
+be95-b76decf2 hive:default [27/Mar/2018:19:07:01 -0700] - received socket event: remote:message from: 0k4t4R4CZ3Odjw43AAAA 
+be95-b76decf2 hive:default [27/Mar/2018:19:07:20 -0700] - new socket:  s4zjH6XQxhyXWoySAAAB 
+be95-b76decf2 hive:default [27/Mar/2018:19:07:21 -0700] - received socket event: remote:message from: s4zjH6XQxhyXWoySAAAB 
+a914-7abf52cc hive:default [27/Mar/2018:19:08:27 -0700] - new socket:  7tUhvXDzfKHm9qcdAAAA 
+a914-7abf52cc hive:default [27/Mar/2018:19:08:30 -0700] - received socket event: remote:message from: 7tUhvXDzfKHm9qcdAAAA 
+a914-7abf52cc hive:default [27/Mar/2018:19:08:31 -0700] - received socket event: remote:message from: 7tUhvXDzfKHm9qcdAAAA 
+a914-7abf52cc hive:default [27/Mar/2018:19:08:33 -0700] - received socket event: remote:message from: 7tUhvXDzfKHm9qcdAAAA 
+a914-7abf52cc hive:default [27/Mar/2018:19:08:33 -0700] - received socket event: remote:message from: 7tUhvXDzfKHm9qcdAAAA 
+a914-7abf52cc hive:default [27/Mar/2018:19:08:34 -0700] - received socket event: remote:message from: 7tUhvXDzfKHm9qcdAAAA 
+a914-7abf52cc hive:default [27/Mar/2018:19:08:35 -0700] - received socket event: remote:message from: 7tUhvXDzfKHm9qcdAAAA 
+a914-7abf52cc hive:default [27/Mar/2018:19:08:35 -0700] - received socket event: remote:message from: 7tUhvXDzfKHm9qcdAAAA 
+a914-7abf52cc hive:default [27/Mar/2018:19:08:36 -0700] - received socket event: remote:message from: 7tUhvXDzfKHm9qcdAAAA 
+a914-7abf52cc hive:default [27/Mar/2018:19:08:37 -0700] - received socket event: remote:message from: 7tUhvXDzfKHm9qcdAAAA 
+a914-7abf52cc hive:default [27/Mar/2018:19:08:38 -0700] - received socket event: remote:message from: 7tUhvXDzfKHm9qcdAAAA 
+a914-7abf52cc hive:default [27/Mar/2018:19:08:39 -0700] - received socket event: disconnect from: 7tUhvXDzfKHm9qcdAAAA 
+a914-7abf52cc hive:default [27/Mar/2018:19:08:39 -0700] - socket 7tUhvXDzfKHm9qcdAAAA has disconnected reason: transport close 
+a914-7abf52cc hive:default [27/Mar/2018:19:08:46 -0700] - new socket:  1-n4Tysm3Rp-Cyk7AAAB 
+2e62-3f3a120b hive:default [27/Mar/2018:19:22:52 -0700] - new socket:  IM9u1KRTu7eB_3M5AAAA 
+24aa-71d19218 hive:default [27/Mar/2018:19:24:09 -0700] - new socket:  w7xAVxuZA_AapwhCAAAA 
+0a31-5231ece5 hive:default [27/Mar/2018:19:25:06 -0700] - new socket:  tL-4obe4ppf9sVmIAAAA 
+279b-c1ce3009 hive:default [27/Mar/2018:19:25:59 -0700] - new socket:  jCQp6MoM-ZyBzfHGAAAA 
+9b91-e6d464f0 hive:default [27/Mar/2018:19:26:19 -0700] - new socket:  sEIXS28bo8N9xHukAAAA 
+9b91-e6d464f0 hive:default [27/Mar/2018:19:26:23 -0700] - received socket event: remote:message from: sEIXS28bo8N9xHukAAAA 
+9b91-e6d464f0 hive:default [27/Mar/2018:19:26:24 -0700] - received socket event: remote:message from: sEIXS28bo8N9xHukAAAA 
+9b91-e6d464f0 hive:default [27/Mar/2018:19:26:27 -0700] - received socket event: disconnect from: sEIXS28bo8N9xHukAAAA 
+9b91-e6d464f0 hive:default [27/Mar/2018:19:26:27 -0700] - socket sEIXS28bo8N9xHukAAAA has disconnected reason: client namespace disconnect 
+fd21-b336a963 hive:default [27/Mar/2018:19:27:05 -0700] - new socket:  B7aDTofmod9VQ9fhAAAA 
+fd21-b336a963 hive:default [27/Mar/2018:19:27:06 -0700] - received socket event: disconnect from: B7aDTofmod9VQ9fhAAAA 
+fd21-b336a963 hive:default [27/Mar/2018:19:27:06 -0700] - socket B7aDTofmod9VQ9fhAAAA has disconnected reason: client namespace disconnect 
+fd21-b336a963 hive:default [27/Mar/2018:19:27:17 -0700] - new socket:  3C7XtkgRiwxXdCkQAAAB 
+fd21-b336a963 hive:default [27/Mar/2018:19:27:26 -0700] - received socket event: remote:message from: 3C7XtkgRiwxXdCkQAAAB 
+42c1-d414a5ce hive:default [27/Mar/2018:19:28:17 -0700] - new socket:  ss2R8NEiz1n4RzREAAAA 
+a9fc-0e215db7 hive:default [27/Mar/2018:19:28:46 -0700] - new socket:  60yfgHajPkReuyzuAAAA 
+71e3-15db3769 hive:default [27/Mar/2018:19:29:23 -0700] - new socket:  t03vKqs-mUmwVrLdAAAA 
+321f-9e4266dc hive:default [27/Mar/2018:19:29:45 -0700] - new socket:  x8dGYEBpf0Hkw7XmAAAA 
+8c79-6117e030 hive:default [27/Mar/2018:19:30:02 -0700] - new socket:  iD8hiQevK8ogdVT8AAAA 
+8c79-6117e030 hive:default [27/Mar/2018:19:30:06 -0700] - received socket event: remote:message from: iD8hiQevK8ogdVT8AAAA 
+8c79-6117e030 hive:default [27/Mar/2018:19:30:07 -0700] - received socket event: remote:message from: iD8hiQevK8ogdVT8AAAA 
+8c79-6117e030 hive:default [27/Mar/2018:19:30:10 -0700] - received socket event: disconnect from: iD8hiQevK8ogdVT8AAAA 
+8c79-6117e030 hive:default [27/Mar/2018:19:30:10 -0700] - socket iD8hiQevK8ogdVT8AAAA has disconnected reason: client namespace disconnect 
+b9cb-ec6daa5f hive:default [27/Mar/2018:19:30:42 -0700] - new socket:  rhe4UXRsKvmhKAVRAAAA 
+07f4-678579e6 hive:default [27/Mar/2018:19:30:48 -0700] - new socket:  oNKrXzfK5C1ps-kqAAAA 
+07f4-678579e6 hive:default [27/Mar/2018:19:30:50 -0700] - received socket event: disconnect from: oNKrXzfK5C1ps-kqAAAA 
+07f4-678579e6 hive:default [27/Mar/2018:19:30:50 -0700] - socket oNKrXzfK5C1ps-kqAAAA has disconnected reason: client namespace disconnect 
+566e-4462c412 hive:default [27/Mar/2018:19:31:27 -0700] - new socket:  qVehoZXnqTxyFsznAAAA 
+566e-4462c412 hive:default [27/Mar/2018:19:31:29 -0700] - received socket event: disconnect from: qVehoZXnqTxyFsznAAAA 
+566e-4462c412 hive:default [27/Mar/2018:19:31:29 -0700] - socket qVehoZXnqTxyFsznAAAA has disconnected reason: client namespace disconnect 
+5eea-f116f642 hive:default [27/Mar/2018:19:31:38 -0700] - new socket:  Zjs4lLKCSsaN8KJ6AAAA 
+5eea-f116f642 hive:default [27/Mar/2018:19:31:40 -0700] - received socket event: disconnect from: Zjs4lLKCSsaN8KJ6AAAA 
+5eea-f116f642 hive:default [27/Mar/2018:19:31:40 -0700] - socket Zjs4lLKCSsaN8KJ6AAAA has disconnected reason: client namespace disconnect 
+8631-93054c3b hive:default [27/Mar/2018:19:31:52 -0700] - new socket:  Qka90cMPugw8r8lLAAAA 
+a314-bb35a532 hive:default [27/Mar/2018:19:32:38 -0700] - new socket:  WNYh1IO5RQw9ZJDaAAAA 
+a314-bb35a532 hive:default [27/Mar/2018:19:32:40 -0700] - received socket event: disconnect from: WNYh1IO5RQw9ZJDaAAAA 
+a314-bb35a532 hive:default [27/Mar/2018:19:32:40 -0700] - socket WNYh1IO5RQw9ZJDaAAAA has disconnected reason: client namespace disconnect 
+a314-bb35a532 hive:default [27/Mar/2018:19:32:43 -0700] - new socket:  gL60x1-_BUmTxkgOAAAB 
+3a4c-fd0152c5 hive:default [27/Mar/2018:19:32:54 -0700] - new socket:  6cy4jEAvRsrCbcvuAAAA 
+9e74-79ba4f3c hive:default [27/Mar/2018:19:34:37 -0700] - new socket:  HMl_mC4wAGPCn9-oAAAA 
+9e74-79ba4f3c hive:default [27/Mar/2018:19:34:38 -0700] - received socket event: remote:message from: HMl_mC4wAGPCn9-oAAAA 
+9e74-79ba4f3c hive:default [27/Mar/2018:19:34:39 -0700] - received socket event: remote:message from: HMl_mC4wAGPCn9-oAAAA 
+9e74-79ba4f3c hive:default [27/Mar/2018:19:34:40 -0700] - received socket event: disconnect from: HMl_mC4wAGPCn9-oAAAA 
+9e74-79ba4f3c hive:default [27/Mar/2018:19:34:40 -0700] - socket HMl_mC4wAGPCn9-oAAAA has disconnected reason: client namespace disconnect 
+9e74-79ba4f3c hive:default [27/Mar/2018:19:34:45 -0700] - new socket:  52o3F-bRz1cNhBlFAAAB 
+b0ec-8c4e3a18 hive:default [27/Mar/2018:19:35:18 -0700] - new socket:  tkmGCqJBwr_JLJHIAAAA 
+b0ec-8c4e3a18 hive:default [27/Mar/2018:19:35:20 -0700] - received socket event: remote:message from: tkmGCqJBwr_JLJHIAAAA 
+cb11-da873309 hive:default [27/Mar/2018:19:35:35 -0700] - new socket:  Qrv5AIKIajEBEr7cAAAA 
+cb11-da873309 hive:default [27/Mar/2018:19:36:09 -0700] - received socket event: disconnect from: Qrv5AIKIajEBEr7cAAAA 
+cb11-da873309 hive:default [27/Mar/2018:19:36:09 -0700] - socket Qrv5AIKIajEBEr7cAAAA has disconnected reason: transport close 
+cb11-da873309 hive:default [27/Mar/2018:19:36:20 -0700] - new socket:  xqFRuWA6Q2rdaVdxAAAB 
+cb11-da873309 hive:default [27/Mar/2018:19:36:22 -0700] - received socket event: remote:message from: xqFRuWA6Q2rdaVdxAAAB 
+cb11-da873309 hive:default [27/Mar/2018:19:36:23 -0700] - received socket event: disconnect from: xqFRuWA6Q2rdaVdxAAAB 
+cb11-da873309 hive:default [27/Mar/2018:19:36:23 -0700] - socket xqFRuWA6Q2rdaVdxAAAB has disconnected reason: client namespace disconnect 
+cb11-da873309 hive:default [27/Mar/2018:19:36:24 -0700] - new socket:  lilMbhSnfJl_xTByAAAC 
+b3a3-fa029aba hive:default [27/Mar/2018:19:36:46 -0700] - new socket:  JBe5NaxdIfZzDw-XAAAA 
+b3a3-fa029aba hive:default [27/Mar/2018:19:36:47 -0700] - received socket event: remote:message from: JBe5NaxdIfZzDw-XAAAA 
+d3b3-6183c87c hive:default [27/Mar/2018:19:36:59 -0700] - new socket:  GEnyJYRBn_I1w0wVAAAA 
+d3b3-6183c87c hive:default [27/Mar/2018:19:37:00 -0700] - received socket event: remote:message from: GEnyJYRBn_I1w0wVAAAA 
+d3b3-6183c87c hive:default [27/Mar/2018:19:37:04 -0700] - received socket event: disconnect from: GEnyJYRBn_I1w0wVAAAA 
+d3b3-6183c87c hive:default [27/Mar/2018:19:37:04 -0700] - socket GEnyJYRBn_I1w0wVAAAA has disconnected reason: client namespace disconnect 
+d3b3-6183c87c hive:default [27/Mar/2018:19:37:05 -0700] - new socket:  vYLelWK9fSwofCOHAAAB 
+d3b3-6183c87c hive:default [27/Mar/2018:19:37:13 -0700] - received socket event: disconnect from: vYLelWK9fSwofCOHAAAB 
+d3b3-6183c87c hive:default [27/Mar/2018:19:37:13 -0700] - socket vYLelWK9fSwofCOHAAAB has disconnected reason: transport close 
+8c79-78e84b6a hive:default [27/Mar/2018:19:37:29 -0700] - new socket:  md1NKz_TBp5SAZlZAAAA 
+8c79-78e84b6a hive:default [27/Mar/2018:19:37:31 -0700] - received socket event: disconnect from: md1NKz_TBp5SAZlZAAAA 
+8c79-78e84b6a hive:default [27/Mar/2018:19:37:31 -0700] - socket md1NKz_TBp5SAZlZAAAA has disconnected reason: client namespace disconnect 
+38c9-3d07feea hive:default [27/Mar/2018:19:37:42 -0700] - new socket:  ntm2p6bMnEO-DeYWAAAA 
+38c9-3d07feea hive:default [27/Mar/2018:19:37:45 -0700] - received socket event: disconnect from: ntm2p6bMnEO-DeYWAAAA 
+38c9-3d07feea hive:default [27/Mar/2018:19:37:45 -0700] - socket ntm2p6bMnEO-DeYWAAAA has disconnected reason: client namespace disconnect 
+41ac-92a400d9 hive:default [27/Mar/2018:19:38:20 -0700] - new socket:  Ro8Dl5dm8wQ2u3UMAAAA 
+41ac-92a400d9 hive:default [27/Mar/2018:19:38:21 -0700] - received socket event: disconnect from: Ro8Dl5dm8wQ2u3UMAAAA 
+41ac-92a400d9 hive:default [27/Mar/2018:19:38:21 -0700] - socket Ro8Dl5dm8wQ2u3UMAAAA has disconnected reason: client namespace disconnect 
+4ec4-d5ea529c hive:default [27/Mar/2018:19:38:52 -0700] - new socket:  TNHwMwvtxIdoBJeOAAAA 
+4ec4-d5ea529c hive:default [27/Mar/2018:19:38:54 -0700] - received socket event: disconnect from: TNHwMwvtxIdoBJeOAAAA 
+4ec4-d5ea529c hive:default [27/Mar/2018:19:38:54 -0700] - socket TNHwMwvtxIdoBJeOAAAA has disconnected reason: client namespace disconnect 
+7063-5724f1bd hive:default [27/Mar/2018:19:39:04 -0700] - new socket:  Pz48it69X4OCtJgwAAAA 
+7063-5724f1bd hive:default [27/Mar/2018:19:39:06 -0700] - received socket event: disconnect from: Pz48it69X4OCtJgwAAAA 
+7063-5724f1bd hive:default [27/Mar/2018:19:39:06 -0700] - socket Pz48it69X4OCtJgwAAAA has disconnected reason: client namespace disconnect 
+72f1-764b4f2d hive:default [27/Mar/2018:19:40:29 -0700] - new socket:  2r-py1dhWKBsKUD_AAAA 
+72f1-764b4f2d hive:default [27/Mar/2018:19:40:31 -0700] - received socket event: disconnect from: 2r-py1dhWKBsKUD_AAAA 
+72f1-764b4f2d hive:default [27/Mar/2018:19:40:31 -0700] - socket 2r-py1dhWKBsKUD_AAAA has disconnected reason: client namespace disconnect 
+2c22-044faf21 hive:default [27/Mar/2018:19:41:10 -0700] - new socket:  sixRwsGARYRK6mSrAAAA 
+2c22-044faf21 hive:default [27/Mar/2018:19:41:12 -0700] - received socket event: disconnect from: sixRwsGARYRK6mSrAAAA 
+2c22-044faf21 hive:default [27/Mar/2018:19:41:12 -0700] - socket sixRwsGARYRK6mSrAAAA has disconnected reason: client namespace disconnect 
+2c22-044faf21 hive:default [27/Mar/2018:19:41:17 -0700] - new socket:  bHI_LDOBYlpi0BljAAAB 
+f6e7-126f7712 hive:default [27/Mar/2018:19:42:51 -0700] - new socket:  _42FUMvmrNdPbm-JAAAA 
+f6e7-126f7712 hive:default [27/Mar/2018:19:42:53 -0700] - received socket event: remote:message from: _42FUMvmrNdPbm-JAAAA 
+1acb-8bbaedac hive:default [27/Mar/2018:19:43:33 -0700] - new socket:  Mbe2bNn8v0isRVqCAAAA 
+14e7-986fd331 hive:default [27/Mar/2018:19:44:27 -0700] - new socket:  JcHBchOL_0NB7c4nAAAA 
+14e7-986fd331 hive:default [27/Mar/2018:19:44:28 -0700] - received socket event: remote:message from: JcHBchOL_0NB7c4nAAAA 
+06dc-db7b64ea hive:default [27/Mar/2018:19:44:55 -0700] - new socket:  P5AeDDdFDj1Pn_G1AAAA 
+06dc-db7b64ea hive:default [27/Mar/2018:19:44:56 -0700] - received socket event: remote:message from: P5AeDDdFDj1Pn_G1AAAA 
+976c-f52a166e hive:default [27/Mar/2018:19:47:11 -0700] - new socket:  L8sJ8wXrJvdxhZYZAAAA 
+83cc-ec36b6c5 hive:default [27/Mar/2018:19:47:33 -0700] - new socket:  O1dEblFjn6QzFeL4AAAA 
+3032-787605f5 hive:default [27/Mar/2018:19:48:04 -0700] - new socket:  Nrhzfn3uKRVpAxQpAAAA 
+56a8-31b2f325 hive:default [27/Mar/2018:19:48:14 -0700] - new socket:  euQp-5a72sqXJC51AAAA 
+56a8-31b2f325 hive:default [27/Mar/2018:19:48:16 -0700] - received socket event: disconnect from: euQp-5a72sqXJC51AAAA 
+56a8-31b2f325 hive:default [27/Mar/2018:19:48:16 -0700] - socket euQp-5a72sqXJC51AAAA has disconnected reason: client namespace disconnect 
+56a8-31b2f325 hive:default [27/Mar/2018:19:48:18 -0700] - new socket:  9Cn30thJH1ESwA3NAAAB 
+56a8-31b2f325 hive:default [27/Mar/2018:19:48:22 -0700] - received socket event: disconnect from: 9Cn30thJH1ESwA3NAAAB 
+56a8-31b2f325 hive:default [27/Mar/2018:19:48:22 -0700] - socket 9Cn30thJH1ESwA3NAAAB has disconnected reason: transport close 
+56a8-31b2f325 hive:default [27/Mar/2018:19:49:22 -0700] - new socket:  FA3n5sL3geMJaEniAAAC 
+56a8-31b2f325 hive:default [27/Mar/2018:19:49:23 -0700] - received socket event: disconnect from: FA3n5sL3geMJaEniAAAC 
+56a8-31b2f325 hive:default [27/Mar/2018:19:49:23 -0700] - socket FA3n5sL3geMJaEniAAAC has disconnected reason: client namespace disconnect 
+56a8-31b2f325 hive:default [27/Mar/2018:19:49:26 -0700] - new socket:  tackC9MKy_QGsog0AAAD 
+918d-23c5394a hive:default [27/Mar/2018:19:49:57 -0700] - new socket:  oDbylkTcJ0MkbjKSAAAA 
+918d-23c5394a hive:default [27/Mar/2018:19:50:00 -0700] - received socket event: remote:message from: oDbylkTcJ0MkbjKSAAAA 
+918d-23c5394a hive:default [27/Mar/2018:19:50:02 -0700] - received socket event: disconnect from: oDbylkTcJ0MkbjKSAAAA 
+918d-23c5394a hive:default [27/Mar/2018:19:50:02 -0700] - socket oDbylkTcJ0MkbjKSAAAA has disconnected reason: client namespace disconnect 
+918d-23c5394a hive:default [27/Mar/2018:19:50:04 -0700] - new socket:  CW3fH2hmIu0mvJmTAAAB 
+918d-23c5394a hive:default [27/Mar/2018:19:50:06 -0700] - received socket event: disconnect from: CW3fH2hmIu0mvJmTAAAB 
+918d-23c5394a hive:default [27/Mar/2018:19:50:06 -0700] - socket CW3fH2hmIu0mvJmTAAAB has disconnected reason: transport close 
+49bc-d2269f1e hive:default [27/Mar/2018:19:50:59 -0700] - new socket:  5BHmS8e_hz5G5q3aAAAA 
+49bc-d2269f1e hive:default [27/Mar/2018:19:51:03 -0700] - received socket event: remote:message from: 5BHmS8e_hz5G5q3aAAAA 
+49bc-d2269f1e hive:default [27/Mar/2018:19:51:04 -0700] - received socket event: remote:message from: 5BHmS8e_hz5G5q3aAAAA 
+49bc-d2269f1e hive:default [27/Mar/2018:19:51:06 -0700] - received socket event: disconnect from: 5BHmS8e_hz5G5q3aAAAA 
+49bc-d2269f1e hive:default [27/Mar/2018:19:51:06 -0700] - socket 5BHmS8e_hz5G5q3aAAAA has disconnected reason: client namespace disconnect 
+49bc-d2269f1e hive:default [27/Mar/2018:19:51:07 -0700] - new socket:  FAk5nSTwuDNg5BTqAAAB 
+49bc-d2269f1e hive:default [27/Mar/2018:19:51:15 -0700] - received socket event: disconnect from: FAk5nSTwuDNg5BTqAAAB 
+49bc-d2269f1e hive:default [27/Mar/2018:19:51:15 -0700] - socket FAk5nSTwuDNg5BTqAAAB has disconnected reason: client namespace disconnect 
+49bc-d2269f1e hive:default [27/Mar/2018:19:51:15 -0700] - new socket:  xrFaGMoWvfzaauMNAAAC 
+49bc-d2269f1e hive:default [27/Mar/2018:19:51:18 -0700] - received socket event: disconnect from: xrFaGMoWvfzaauMNAAAC 
+49bc-d2269f1e hive:default [27/Mar/2018:19:51:18 -0700] - socket xrFaGMoWvfzaauMNAAAC has disconnected reason: transport close 
+49bc-d2269f1e hive:default [27/Mar/2018:19:51:20 -0700] - new socket:  vgAWc5ZjmZZgMSceAAAD 
+49bc-d2269f1e hive:default [27/Mar/2018:19:51:20 -0700] - received socket event: remote:message from: vgAWc5ZjmZZgMSceAAAD 
+49bc-d2269f1e hive:default [27/Mar/2018:19:51:22 -0700] - received socket event: remote:message from: vgAWc5ZjmZZgMSceAAAD 
+49bc-d2269f1e hive:default [27/Mar/2018:19:51:23 -0700] - received socket event: disconnect from: vgAWc5ZjmZZgMSceAAAD 
+49bc-d2269f1e hive:default [27/Mar/2018:19:51:23 -0700] - socket vgAWc5ZjmZZgMSceAAAD has disconnected reason: client namespace disconnect 
+49bc-d2269f1e hive:default [27/Mar/2018:19:51:28 -0700] - new socket:  KwvLKXUuhUXidlPEAAAE 
+d4fb-4d28cb4b hive:default [27/Mar/2018:19:53:03 -0700] - new socket:  9jneUdz8AqWaUnw4AAAA 
+d4fb-4d28cb4b hive:default [27/Mar/2018:19:53:05 -0700] - received socket event: disconnect from: 9jneUdz8AqWaUnw4AAAA 
+d4fb-4d28cb4b hive:default [27/Mar/2018:19:53:05 -0700] - socket 9jneUdz8AqWaUnw4AAAA has disconnected reason: client namespace disconnect 
+d4fb-4d28cb4b hive:default [27/Mar/2018:19:53:52 -0700] - new socket:  2Du18XvF-p5Gb5DkAAAB 
+d4fb-4d28cb4b hive:default [27/Mar/2018:19:53:54 -0700] - received socket event: disconnect from: 2Du18XvF-p5Gb5DkAAAB 
+d4fb-4d28cb4b hive:default [27/Mar/2018:19:53:54 -0700] - socket 2Du18XvF-p5Gb5DkAAAB has disconnected reason: client namespace disconnect 
+ebf3-c08f6521 hive:default [27/Mar/2018:19:54:08 -0700] - new socket:  O4YCjnOOzsi_HHZyAAAA 
+ebf3-c08f6521 hive:default [27/Mar/2018:19:54:10 -0700] - received socket event: disconnect from: O4YCjnOOzsi_HHZyAAAA 
+ebf3-c08f6521 hive:default [27/Mar/2018:19:54:10 -0700] - socket O4YCjnOOzsi_HHZyAAAA has disconnected reason: client namespace disconnect 
+a5a0-25bc325f hive:default [27/Mar/2018:19:54:47 -0700] - new socket:  8XMbZOT_NZO4oS9VAAAA 
+a5a0-25bc325f hive:default [27/Mar/2018:19:54:49 -0700] - received socket event: remote:message from: 8XMbZOT_NZO4oS9VAAAA 
+a5a0-25bc325f hive:default [27/Mar/2018:19:54:50 -0700] - received socket event: remote:message from: 8XMbZOT_NZO4oS9VAAAA 
+a5a0-25bc325f hive:default [27/Mar/2018:19:54:52 -0700] - received socket event: disconnect from: 8XMbZOT_NZO4oS9VAAAA 
+a5a0-25bc325f hive:default [27/Mar/2018:19:54:52 -0700] - socket 8XMbZOT_NZO4oS9VAAAA has disconnected reason: client namespace disconnect 
+a5a0-25bc325f hive:default [27/Mar/2018:19:54:57 -0700] - new socket:  lQlYOBut1OKB0mLRAAAB 
+a5a0-25bc325f hive:default [27/Mar/2018:19:54:57 -0700] - received socket event: disconnect from: lQlYOBut1OKB0mLRAAAB 
+a5a0-25bc325f hive:default [27/Mar/2018:19:54:57 -0700] - socket lQlYOBut1OKB0mLRAAAB has disconnected reason: client namespace disconnect 
+a5a0-25bc325f hive:default [27/Mar/2018:19:54:57 -0700] - new socket:  vqnxLf9vzjmBnIJoAAAC 
+a5a0-25bc325f hive:default [27/Mar/2018:19:54:59 -0700] - received socket event: remote:message from: vqnxLf9vzjmBnIJoAAAC 
+a5a0-25bc325f hive:default [27/Mar/2018:19:55:00 -0700] - received socket event: remote:message from: vqnxLf9vzjmBnIJoAAAC 
+a5a0-25bc325f hive:default [27/Mar/2018:19:55:02 -0700] - received socket event: disconnect from: vqnxLf9vzjmBnIJoAAAC 
+a5a0-25bc325f hive:default [27/Mar/2018:19:55:02 -0700] - socket vqnxLf9vzjmBnIJoAAAC has disconnected reason: client namespace disconnect 
+890b-daad8732 hive:default [27/Mar/2018:19:56:01 -0700] - new socket:  W236sq-HJInUEVcdAAAA 
+d116-a7d11fe6 hive:default [27/Mar/2018:19:56:09 -0700] - new socket:  aIXEcaI-WGF32IMcAAAA 
+d116-a7d11fe6 hive:default [27/Mar/2018:19:56:10 -0700] - received socket event: remote:message from: aIXEcaI-WGF32IMcAAAA 
+d116-a7d11fe6 hive:default [27/Mar/2018:19:56:12 -0700] - received socket event: remote:message from: aIXEcaI-WGF32IMcAAAA 
+d363-d83d645c hive:default [27/Mar/2018:19:56:48 -0700] - new socket:  hr3VlS-HVXq25tuwAAAA 
+d363-d83d645c hive:default [27/Mar/2018:19:56:50 -0700] - received socket event: disconnect from: hr3VlS-HVXq25tuwAAAA 
+d363-d83d645c hive:default [27/Mar/2018:19:56:50 -0700] - socket hr3VlS-HVXq25tuwAAAA has disconnected reason: client namespace disconnect 
+d363-d83d645c hive:default [27/Mar/2018:19:57:00 -0700] - new socket:  hmPmxG_NhEBP8PAjAAAB 
+d363-d83d645c hive:default [27/Mar/2018:19:57:00 -0700] - received socket event: disconnect from: hmPmxG_NhEBP8PAjAAAB 
+d363-d83d645c hive:default [27/Mar/2018:19:57:00 -0700] - socket hmPmxG_NhEBP8PAjAAAB has disconnected reason: client namespace disconnect 
+d363-d83d645c hive:default [27/Mar/2018:19:57:00 -0700] - new socket:  LsEwZKSC_3ZC9RT1AAAC 
+d363-d83d645c hive:default [27/Mar/2018:19:57:02 -0700] - received socket event: remote:message from: LsEwZKSC_3ZC9RT1AAAC 
+d363-d83d645c hive:default [27/Mar/2018:19:57:04 -0700] - received socket event: remote:message from: LsEwZKSC_3ZC9RT1AAAC 
+d363-d83d645c hive:default [27/Mar/2018:19:57:06 -0700] - received socket event: disconnect from: LsEwZKSC_3ZC9RT1AAAC 
+d363-d83d645c hive:default [27/Mar/2018:19:57:06 -0700] - socket LsEwZKSC_3ZC9RT1AAAC has disconnected reason: client namespace disconnect 
+1950-bdac1d10 hive:default [27/Mar/2018:19:57:42 -0700] - new socket:  HdbSSEBjC52R8_ljAAAA 
+1950-bdac1d10 hive:default [27/Mar/2018:19:57:44 -0700] - received socket event: disconnect from: HdbSSEBjC52R8_ljAAAA 
+1950-bdac1d10 hive:default [27/Mar/2018:19:57:44 -0700] - socket HdbSSEBjC52R8_ljAAAA has disconnected reason: client namespace disconnect 
+1950-bdac1d10 hive:default [27/Mar/2018:19:57:49 -0700] - new socket:  Bnvx6pC1VBFbHPcsAAAB 
+1950-bdac1d10 hive:default [27/Mar/2018:19:57:50 -0700] - received socket event: remote:message from: Bnvx6pC1VBFbHPcsAAAB 
+1950-bdac1d10 hive:default [27/Mar/2018:19:57:51 -0700] - received socket event: remote:message from: Bnvx6pC1VBFbHPcsAAAB 
+1950-bdac1d10 hive:default [27/Mar/2018:19:57:54 -0700] - received socket event: disconnect from: Bnvx6pC1VBFbHPcsAAAB 
+1950-bdac1d10 hive:default [27/Mar/2018:19:57:54 -0700] - socket Bnvx6pC1VBFbHPcsAAAB has disconnected reason: client namespace disconnect 
+1950-bdac1d10 hive:default [27/Mar/2018:19:57:57 -0700] - new socket:  aOWMQCxhiyZaZmRyAAAC 
+1950-bdac1d10 hive:default [27/Mar/2018:19:57:59 -0700] - received socket event: remote:message from: aOWMQCxhiyZaZmRyAAAC 
+1950-bdac1d10 hive:default [27/Mar/2018:19:58:00 -0700] - received socket event: remote:message from: aOWMQCxhiyZaZmRyAAAC 
+1950-bdac1d10 hive:default [27/Mar/2018:19:58:01 -0700] - received socket event: disconnect from: aOWMQCxhiyZaZmRyAAAC 
+1950-bdac1d10 hive:default [27/Mar/2018:19:58:01 -0700] - socket aOWMQCxhiyZaZmRyAAAC has disconnected reason: client namespace disconnect 
+1950-bdac1d10 hive:default [27/Mar/2018:19:58:06 -0700] - new socket:  TTv5MoU0YeXbrOpSAAAD 
+1950-bdac1d10 hive:default [27/Mar/2018:19:58:06 -0700] - received socket event: remote:message from: TTv5MoU0YeXbrOpSAAAD 
+1950-bdac1d10 hive:default [27/Mar/2018:19:58:07 -0700] - received socket event: remote:message from: TTv5MoU0YeXbrOpSAAAD 
+1950-bdac1d10 hive:default [27/Mar/2018:19:58:10 -0700] - received socket event: disconnect from: TTv5MoU0YeXbrOpSAAAD 
+1950-bdac1d10 hive:default [27/Mar/2018:19:58:10 -0700] - socket TTv5MoU0YeXbrOpSAAAD has disconnected reason: client namespace disconnect 
+1950-bdac1d10 hive:default [27/Mar/2018:19:58:11 -0700] - new socket:  aWbyRuUuNiRECSfSAAAE 
+c467-e511b34d hive:default [27/Mar/2018:19:58:20 -0700] - new socket:  qqRGyadPxa3Qa4iGAAAA 
+c467-e511b34d hive:default [27/Mar/2018:19:58:21 -0700] - received socket event: remote:message from: qqRGyadPxa3Qa4iGAAAA 
+c467-e511b34d hive:default [27/Mar/2018:19:58:23 -0700] - received socket event: remote:message from: qqRGyadPxa3Qa4iGAAAA 
+c467-e511b34d hive:default [27/Mar/2018:19:58:25 -0700] - received socket event: disconnect from: qqRGyadPxa3Qa4iGAAAA 
+c467-e511b34d hive:default [27/Mar/2018:19:58:25 -0700] - socket qqRGyadPxa3Qa4iGAAAA has disconnected reason: client namespace disconnect 
+c467-e511b34d hive:default [27/Mar/2018:19:58:29 -0700] - new socket:  0iBJV28KReGJ79OoAAAB 
+276f-6bee8578 hive:default [27/Mar/2018:19:58:42 -0700] - new socket:  kzWHjBWvSKry_IkbAAAA 
+276f-6bee8578 hive:default [27/Mar/2018:19:58:44 -0700] - received socket event: remote:message from: kzWHjBWvSKry_IkbAAAA 
+276f-6bee8578 hive:default [27/Mar/2018:19:58:45 -0700] - received socket event: remote:message from: kzWHjBWvSKry_IkbAAAA 
+7722-3381d3f7 hive:default [27/Mar/2018:19:58:54 -0700] - new socket:  ySQwuMsA99_4tupxAAAA 
+7722-3381d3f7 hive:default [27/Mar/2018:19:58:55 -0700] - received socket event: remote:message from: ySQwuMsA99_4tupxAAAA 
+7722-3381d3f7 hive:default [27/Mar/2018:19:58:56 -0700] - received socket event: remote:message from: ySQwuMsA99_4tupxAAAA 
+dccf-4d3b6a21 hive:default [27/Mar/2018:19:59:34 -0700] - new socket:  Xaji3Reo8pdpBtePAAAA 
+dccf-4d3b6a21 hive:default [27/Mar/2018:19:59:36 -0700] - received socket event: remote:message from: Xaji3Reo8pdpBtePAAAA 
+dccf-4d3b6a21 hive:default [27/Mar/2018:19:59:37 -0700] - received socket event: remote:message from: Xaji3Reo8pdpBtePAAAA 
+88d5-3cef2f99 hive:default [27/Mar/2018:20:00:56 -0700] - new socket:  rz21ETQvPe9-FGAHAAAA 
+88d5-3cef2f99 hive:default [27/Mar/2018:20:00:58 -0700] - received socket event: remote:message from: rz21ETQvPe9-FGAHAAAA 
+88d5-3cef2f99 hive:default [27/Mar/2018:20:00:59 -0700] - received socket event: remote:message from: rz21ETQvPe9-FGAHAAAA 
+88d5-3cef2f99 hive:default [27/Mar/2018:20:01:03 -0700] - received socket event: disconnect from: rz21ETQvPe9-FGAHAAAA 
+88d5-3cef2f99 hive:default [27/Mar/2018:20:01:03 -0700] - socket rz21ETQvPe9-FGAHAAAA has disconnected reason: client namespace disconnect 
+7b1b-f40a73b2 hive:default [27/Mar/2018:20:02:12 -0700] - new socket:  FXyYxI_BVKd77XtnAAAA 
+7b1b-f40a73b2 hive:default [27/Mar/2018:20:02:13 -0700] - received socket event: remote:message from: FXyYxI_BVKd77XtnAAAA 
+7b1b-f40a73b2 hive:default [27/Mar/2018:20:02:21 -0700] - received socket event: remote:message from: FXyYxI_BVKd77XtnAAAA 
+7b1b-f40a73b2 hive:default [27/Mar/2018:20:03:28 -0700] - received socket event: remote:message from: FXyYxI_BVKd77XtnAAAA 
+7b1b-f40a73b2 hive:default [27/Mar/2018:20:03:28 -0700] - begin replication... 
+7b1b-f40a73b2 hive:default [27/Mar/2018:20:03:28 -0700] - starting to replicate to hive: http://localhost:5666 
+a67f-cd341e4a replicator:default [27/Mar/2018:20:03:28 -0700] - starting to replicate to hive: http://localhost:5666 
+88d5-3cef2f99 hive:default [27/Mar/2018:20:03:28 -0700] - new socket:  qacFornsQKEwkgO7AAAB 
+7b1b-f40a73b2 hive:default [27/Mar/2018:20:03:28 -0700] - successfully connected! 
+88d5-3cef2f99 hive:default [27/Mar/2018:20:03:28 -0700] - received socket event: begin:replication from: qacFornsQKEwkgO7AAAB 
+88d5-3cef2f99 hive:default [27/Mar/2018:20:03:28 -0700] - received replication request 
+a67f-cd341e4a replicator:default [27/Mar/2018:20:03:28 -0700] - building assets... 
+88d5-3cef2f99 hive:default [27/Mar/2018:20:03:28 -0700] - received socket event: replication from: qacFornsQKEwkgO7AAAB 
+88d5-3cef2f99 hive:default [27/Mar/2018:20:03:28 -0700] - received socket event: disconnect from: qacFornsQKEwkgO7AAAB 
+88d5-3cef2f99 hive:default [27/Mar/2018:20:03:28 -0700] - socket qacFornsQKEwkgO7AAAB has disconnected reason: client namespace disconnect 
+b51b-fe658893 hive:default [27/Mar/2018:20:05:21 -0700] - new socket:  aoifZ52o6Go1JViyAAAA 

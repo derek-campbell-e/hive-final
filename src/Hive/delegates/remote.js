@@ -28,6 +28,27 @@ module.exports = function RemoteDelegates(Hive, Cli){
       disconnectCallback();
     });
   };
+  
+  // this callback is not for vorpals use
+  delegates.connectToHost_ = function(args, callback){
+    delegates.removeRemoteSocket();
+    remoteSocket = clientio(args.host);
+    remoteSocket.once('connect', function(){
+      callback(remoteSocket);
+    });
+    //remoteSocket.once('disconnect', delegates.removeRemoteSocket);
+    remoteSocket.once('connect_error', function(){
+      delegates.removeRemoteSocket();
+      callback(null);
+    });
+  };
+
+  delegates.removeRemoteSocket = function(){
+    if(remoteSocket){
+      remoteSocket.close();
+      remoteSocket = null;
+    }
+  };
 
   delegates.connectedToRemote = function(socket){
     remoteSocket = socket;
@@ -35,20 +56,23 @@ module.exports = function RemoteDelegates(Hive, Cli){
 
   delegates.disconnectFromRemote = function(){
     if(remoteSocket){
-      console.log("HAD A REMOTE SOCKET, GOTTA CLOSE IT");
       remoteSocket.close();
       remoteSocket = null;
     }
   };
 
   delegates.sendToRemote = function(command, callback){
-    remoteSocket.emit("remote:message", command, callback);
+    if(remoteSocket){
+      console.log("SEND THAT FUCKER");
+      return remoteSocket.emit("remote:message", command, callback);
+    }
+    callback("An error occured, remote socket not connected...");
   };
 
   delegates.commandToRemoteHost = function(command, args, callback){
-    console.log("SENDING REMOTE COMMAND", remoteSocket.id);
+    //console.log(remoteSocket, command);
     if(remoteSocket){
-      console.log("SENDING REMOTE COMMAND", remoteSocket.id);
+      console.log("SEND THAT FUCKER");
       remoteSocket.emit("remote:message", command, args, callback);
       return;
     } else {

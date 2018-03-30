@@ -1,21 +1,38 @@
 module.exports = function RemoteDelegates(Hive, Cli){
-  let clientio = require('socket.io-client');
+  const request = require('request');
+  const clientio = require('socket.io-client');
 
   let delegates = {};
   let remoteSocket = null;
+
+  delegates.retrieveTokenFromRemoteHost = function(host, username, password, callback){
+    //request.post(host + "/authenticate").form({username: username, password: password})
+    request.post({
+      url : host + "/authenticate",
+      form: {username: username, password: password}
+    }, function(error, response, body){
+      let json = JSON.parse(body) || {};
+      callback(json.token || false);
+    });
+  };
   
   // this callback is not for vorpals use
-  delegates.connectToHost = function(args, callback){
-    let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJuYW1lIjoidWdlbnUiLCJwYXNzd29yZCI6Ijh0YT1SYW1hIn0sImlhdCI6MTUyMjM5MTUzNiwiZXhwIjoxNTIyMzk1MTM2fQ.Q3RDJiFoaOEcD4I8G9m3_eYSZIK-hfUJ_qXlSGnbmjs";
-    delegates.removeRemoteSocket();
-    remoteSocket = clientio(args.host + "?token=" + token);
-    remoteSocket.once('connect', function(){
-      callback(remoteSocket);
-    });
-    //remoteSocket.once('disconnect', delegates.removeRemoteSocket);
-    remoteSocket.once('connect_error', function(){
+  delegates.connectToHost = function(args, username, password, callback){
+    delegates.retrieveTokenFromRemoteHost(args.host, username, password, function(token){
       delegates.removeRemoteSocket();
-      callback(null);
+      remoteSocket = clientio(args.host + "?token=" + token);
+      remoteSocket.once('connect', function(){
+        callback(remoteSocket);
+      });
+      //remoteSocket.once('disconnect', delegates.removeRemoteSocket);
+      remoteSocket.once('connect_error', function(){
+        delegates.removeRemoteSocket();
+        callback(null);
+      });
+      remoteSocket.once('error', function(error){
+        delegates.removeRemoteSocket();
+        callback(null);
+      });
     });
   };
 
@@ -49,6 +66,9 @@ module.exports = function RemoteDelegates(Hive, Cli){
     //console.log(remoteSocket, command);
     if(remoteSocket){
       remoteSocket.emit("remote:message", command, args, callback);
+      remoteSocket.on("error", function(){
+        callback("an error occured during process");
+      })
       return;
     } else {
       callback("not connected to a hive instance");

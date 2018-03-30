@@ -84,15 +84,43 @@ module.exports = function CliDelegates(Hive, Cli){
   };
 
   delegates.hasUserNameAndPasswordForRemote = function(args, callback){
-    if(args.username){}
-    callback();
+    //console.log("AAA", this);
+    let cli = this;
+    let promptQuestions = [];
+    let usernamePrompt = {
+      type: 'input',
+      name: 'username',
+      message: 'Please enter username: ',
+    };
+    let passwordPrompt = {
+      type: 'password',
+      name: 'password',
+      message: 'Please enter password: '
+    };
+    if(!args.password){
+      promptQuestions.push(passwordPrompt);
+    }
+    if(!args.username){
+      promptQuestions.unshift(usernamePrompt);
+    }
+
+    return this.prompt(promptQuestions, function(result){
+      let username = result.username || args.username || false;
+      let password = result.password || args.password || false;
+      callback(username, password);
+    });
   };
 
   delegates.connectToRemote = function(args, callback){
-    delegates.hasUserNameAndPasswordForRemote.call(this, args, function(username, password){
-      Hive.runDelegate('remote', 'connectToHost', args, function(remoteSocket){
+    let cli = this;
+    delegates.hasUserNameAndPasswordForRemote.call(cli, args, function(username, password){
+      Hive.runDelegate('remote', 'connectToHost', args, username, password, function(remoteSocket){
         if(remoteSocket){
           remoteSocket.once('disconnect', delegates.switchToLocalFromDisconnect);
+          remoteSocket.once('error', function(error){
+            cli.log("An error occured processing the request... exiting...");
+            delegates.switchToLocalFromDisconnect();
+          });
           remoteSocket.once('connect_timeout', delegates.switchToLocalFromDisconnect);
           return delegates.switchToRemote(args, callback);
         }

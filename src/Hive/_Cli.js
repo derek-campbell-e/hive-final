@@ -14,10 +14,11 @@ module.exports = function CLI(Hive){
   };
 
   let remoteDelegateAction = function(delegateFunction, args, callback){
+    let self = this;
     let delegateKey = 'cli';
     let internalDelegateFunction = 'remoteCommandEntry'
     if(Hive.isValidDelegate(delegateKey, internalDelegateFunction)){
-      return Hive.runDelegate.call(vorpal, delegateKey, internalDelegateFunction, delegateFunction, args, callback);
+      return Hive.runDelegate.call(self, delegateKey, internalDelegateFunction, delegateFunction, args, callback);
     }
     Hive.log("unrecognized delegate funcation attempted", delegateKey, delegateFunction);
     callback('an error occured processing your request');
@@ -104,16 +105,24 @@ module.exports = function CLI(Hive){
     local: delegateAction.bind(local, 'ps'),
     remote: remoteDelegateAction.bind(remote, 'ps')
   };
-  
+
 
   // connect to remote hive instance
   commands.remote = {};
   commands.remote.command = "remote <host> [username] [password]";
   commands.remote.description = "connect to remote hive";
   commands.remote.action = {
-    local: delegateAction.bind(local, 'connectToRemote'),
-    remote: remoteDelegateAction.bind(remote, 'connectToRemote')
+    local: function(args, callback){
+      const self = this;
+      return delegateAction.call(self, 'connectToRemote', args, callback);
+    },
+    remote: function(args, callback){
+      const self = this;
+      return delegateAction.call(self, 'connectToRemote', args, callback);
+    },
   };
+
+
 
   // disconnect from remote hive
   commands.disconnectRemote = {};

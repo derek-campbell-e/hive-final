@@ -9,15 +9,26 @@ module.exports = function SocketDelegates(Hive, io, sockets, Cli){
     let token = socket.handshake.query.token;
     Hive.runDelegate('tokens', 'verifyToken', token, function(error, data){
       if(!error){
+        socket.token = token;
         return next();
       }
       return next(new Error("Not authenticated..."));
     });
-    //next();
+  };
+
+  let socketVerifyTokenStillWorks = function(packet, next){
+    let socket = this;
+    console.log(this.token);
+    Hive.runDelegate('tokens', 'verifyToken', this.token, function(error, data){
+      if(!error){
+        return next();
+      }
+      return next(new Error("Not authenticated..."));
+    });
   };
   
   delegates.bindNewSocket = function(socket){
-    //socket.use(socketAuthentication.bind(socket));
+    socket.use(socketVerifyTokenStillWorks.bind(socket));
     for(let eventName in newSocketDelegates){
       let delegateMethod = newSocketDelegates[eventName];
       socket.on(eventName, function(){
@@ -81,7 +92,7 @@ module.exports = function SocketDelegates(Hive, io, sockets, Cli){
   delegates.receiveRemoteAction = function(delegateFunction, args, callback, socket){
     Hive.runDelegate('cli', delegateFunction, args, callback);
   };
-
+ 
   newSocketDelegates['stats'] = delegates.showStats;
   newSocketDelegates['disconnect'] = delegates.onDisconnect;
   newSocketDelegates['begin:replication'] = delegates.prepareForReplication;

@@ -3,36 +3,12 @@ module.exports = function RemoteDelegates(Hive, Cli){
 
   let delegates = {};
   let remoteSocket = null;
-
-  delegates.connectToHost = function(args, connectedCallback, failedCallback, disconnectCallback){
-    if(remoteSocket) {
-      remoteSocket.close();
-      remoteSocket = null;
-    }
-    let socket = clientio(args.host);
-    socket.once('connect', function(){
-      console.log(socket.id);
-      remoteSocket = socket;
-      connectedCallback(remoteSocket);
-      
-    });
-    socket.on('disconnect', function(){
-      remoteSocket = null;
-    });
-    socket.on('connect_error', function(){
-      remoteSocket = null;
-      failedCallback();
-    });
-    socket.on('connect_timeout', function(){
-      remoteSocket = null;
-      disconnectCallback();
-    });
-  };
   
   // this callback is not for vorpals use
-  delegates.connectToHost_ = function(args, callback){
+  delegates.connectToHost = function(args, callback){
+    let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJuYW1lIjoidWdlbnUiLCJwYXNzd29yZCI6Ijh0YT1SYW1hIn0sImlhdCI6MTUyMjM5MTUzNiwiZXhwIjoxNTIyMzk1MTM2fQ.Q3RDJiFoaOEcD4I8G9m3_eYSZIK-hfUJ_qXlSGnbmjs";
     delegates.removeRemoteSocket();
-    remoteSocket = clientio(args.host);
+    remoteSocket = clientio(args.host + "?token=" + token);
     remoteSocket.once('connect', function(){
       callback(remoteSocket);
     });
@@ -72,7 +48,6 @@ module.exports = function RemoteDelegates(Hive, Cli){
   delegates.commandToRemoteHost = function(command, args, callback){
     //console.log(remoteSocket, command);
     if(remoteSocket){
-      console.log("SEND THAT FUCKER");
       remoteSocket.emit("remote:message", command, args, callback);
       return;
     } else {

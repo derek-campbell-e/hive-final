@@ -108,7 +108,7 @@ module.exports = function CLI(Hive){
 
   // connect to remote hive instance
   commands.remote = {};
-  commands.remote.command = "remote <host>";
+  commands.remote.command = "remote <host> [username] [password]";
   commands.remote.description = "connect to remote hive";
   commands.remote.action = {
     local: delegateAction.bind(local, 'connectToRemote'),

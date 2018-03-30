@@ -22,7 +22,13 @@ module.exports = function Hive(options){
   const debug = require('debug')('hive');
   const app = require('express')();
   const server = require('http').Server(app);
-  const io = require('socket.io')(server);  
+  const io = require('socket.io')(server);
+  const bodyParser = require('body-parser');
+  const multer = require('multer');
+  
+  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({extended: true}));
+  app.use(multer().array());
 
   server.listen(options.port);
   
@@ -63,10 +69,11 @@ module.exports = function Hive(options){
 
   // our private delegates
   let delegates = {};
+  delegates.tokens = require('./delegates/tokens')(hive);
   delegates.socket = require('./delegates/socket')(hive, io, sockets, cli);
   delegates.cli = require('./delegates/cli')(hive, cli);
   delegates.on = require('./delegates/on')(hive);
-  delegates.server = require('./delegates/server')(app);
+  delegates.server = require('./delegates/server')(app, delegates.tokens);
 
   remote = require('./Remote')(hive, cli);
   delegates.remote = require('./delegates/remote')(hive, cli);

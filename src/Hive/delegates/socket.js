@@ -5,13 +5,19 @@ module.exports = function SocketDelegates(Hive, io, sockets, Cli){
   
   let remoteSockets = {};
 
-  let socketAuthentication = function(packet, next){
-    console.log(packet);
-    next();
+  let socketAuthentication = function(socket, next){
+    let token = socket.handshake.query.token;
+    Hive.runDelegate('tokens', 'verifyToken', token, function(error, data){
+      if(!error){
+        return next();
+      }
+      return next(new Error("Not authenticated..."));
+    });
+    //next();
   };
   
   delegates.bindNewSocket = function(socket){
-    socket.use(socketAuthentication);
+    //socket.use(socketAuthentication.bind(socket));
     for(let eventName in newSocketDelegates){
       let delegateMethod = newSocketDelegates[eventName];
       socket.on(eventName, function(){
@@ -86,6 +92,7 @@ module.exports = function SocketDelegates(Hive, io, sockets, Cli){
   // our initializer for our socket delegates
   let init = function(){
     io.on('connection', delegates.onConnection);
+    io.use(socketAuthentication);
     return delegates;
   };
 

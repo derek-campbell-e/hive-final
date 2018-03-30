@@ -83,14 +83,21 @@ module.exports = function CliDelegates(Hive, Cli){
     });
   };
 
+  delegates.hasUserNameAndPasswordForRemote = function(args, callback){
+    if(args.username){}
+    callback();
+  };
+
   delegates.connectToRemote = function(args, callback){
-    Hive.runDelegate('remote', 'connectToHost_', args, function(remoteSocket){
-      if(remoteSocket){
-        remoteSocket.once('disconnect', delegates.switchToLocalFromDisconnect);
-        remoteSocket.once('connect_timeout', delegates.switchToLocalFromDisconnect);
-        return delegates.switchToRemote(args, callback);
-      }
-      return callback("An error occured connecting to remote hive");
+    delegates.hasUserNameAndPasswordForRemote.call(this, args, function(username, password){
+      Hive.runDelegate('remote', 'connectToHost', args, function(remoteSocket){
+        if(remoteSocket){
+          remoteSocket.once('disconnect', delegates.switchToLocalFromDisconnect);
+          remoteSocket.once('connect_timeout', delegates.switchToLocalFromDisconnect);
+          return delegates.switchToRemote(args, callback);
+        }
+        return callback("An error occured connecting to remote hive");
+      });
     });
   };
 

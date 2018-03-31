@@ -73,7 +73,7 @@ module.exports = function Hive(options){
   delegates.socket = require('./delegates/socket')(hive, io, sockets, cli);
   delegates.cli = require('./delegates/cli')(hive, cli);
   delegates.on = require('./delegates/on')(hive);
-  delegates.server = require('./delegates/server')(app, delegates.tokens);
+  delegates.server = require('./delegates/server')(hive, app, delegates.tokens);
 
   remote = require('./Remote')(hive, cli);
   delegates.remote = require('./delegates/remote')(hive, cli);

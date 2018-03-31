@@ -1,4 +1,4 @@
-module.exports = function(app, tokenDelegate){
+module.exports = function(Hive, app, tokenDelegate){
   let delegates = {};
   let processArgs = require('vorpal')().parse(process.argv, {use: 'minimist'});
 
@@ -14,6 +14,8 @@ module.exports = function(app, tokenDelegate){
   };
 
   delegates.post["/authenticate"] = function(req, res){
+    let ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+    Hive.log("Authentication request from: ", ip);
     let loginInformation = {username: processArgs.u, password: processArgs.p};
     let postedLogin = {username: req.body.username, password: req.body.password};
     let sameUsername = postedLogin.username === loginInformation.username;

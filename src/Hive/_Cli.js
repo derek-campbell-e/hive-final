@@ -93,8 +93,14 @@ module.exports = function CLI(Hive){
   commands.replicate.command = "repl <host>";
   commands.replicate.description = "Replicate current hive structure to another host";
   commands.replicate.action = {
-    local: delegateAction.bind(local, 'replicate'),
-    remote: remoteDelegateAction.bind(remote, 'replicate')
+    local: function(args, callback){
+      const self = this;
+      return delegateAction.call(self, 'replicate', args, callback);
+    },
+    remote: function(args, callback){
+      const self = this;
+      return delegateAction.call(self, 'replicate', args, callback);
+    }
   };
 
   // show basic process stuffs

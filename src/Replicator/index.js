@@ -25,20 +25,22 @@ module.exports = function Replicator(Hive){
 
   let delegates = require('./delegates')(repl);
 
-  repl.replicateToHive = function(args, callback){
+  repl.replicateToHive = function(args, username, password, callback){
     let cli = this;
     let message = "starting to replicate to hive: " + args.host;
     this.log(message);
     repl.log(message);
     resetAssets();
-    repl.connectToHive.call(cli, args, callback);
+    repl.connectToHive.call(cli, args, username, password, callback);
   };
 
-  repl.connectToHive = function(args, callback){
+  repl.connectToHive = function(args, username, password, callback){
     let cli = this;
-    replicateSocket = io(args.host, {forceNew: true});
-    replicateSocket.once('connect', delegates.onConnectionSuccess.bind(cli, args, callback));
-    replicateSocket.once('connect_error', delegates.onConnectionFailed.bind(cli, args, callback));
+    delegates.retrieveTokenFromRemoteHost(args.host, username, password, function(token){
+      replicateSocket = io(args.host+"?token="+token, {forceNew: true});
+      replicateSocket.once('connect', delegates.onConnectionSuccess.bind(cli, args, callback));
+      replicateSocket.once('connect_error', delegates.onConnectionFailed.bind(cli, args, callback));
+    });
   };
 
   repl.notifyHiveOfTransaction = function(args, callback){

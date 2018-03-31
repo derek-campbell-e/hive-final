@@ -54,6 +54,10 @@ module.exports = function SocketDelegates(Hive, io, sockets, Cli){
     });
   };
 
+  delegates.completeReplication = function(){
+    console.log("WE ARE COMPLETE");
+  };
+
   delegates.performActionFromRemote = function(command, callback){
     Hive.log("performing a command from a remote host...");
     callback("GOTCHA");
@@ -96,6 +100,7 @@ module.exports = function SocketDelegates(Hive, io, sockets, Cli){
   newSocketDelegates['stats'] = delegates.showStats;
   newSocketDelegates['disconnect'] = delegates.onDisconnect;
   newSocketDelegates['begin:replication'] = delegates.prepareForReplication;
+  newSocketDelegates['complete:replication'] = delegates.completeReplication;
   newSocketDelegates['replication'] = delegates.replication;
   newSocketDelegates['remoteMessageIn'] = delegates.performActionFromRemote;
   newSocketDelegates['remote:message'] = delegates.receiveRemoteAction;

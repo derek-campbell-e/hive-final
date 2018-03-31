@@ -59,6 +59,7 @@ module.exports = function Replicator(Hive){
 
   repl.completeReplication = function(args, callback){
     debug("we are done replicating so close the socket!");
+    repl.log("replication is complete...");
     replicateSocket.close();
     Hive.reload();
     callback("REPLICATION COMPLETED");
@@ -120,7 +121,9 @@ module.exports = function Replicator(Hive){
   repl.replicateInto = function(assets, callback){
     let folders = assets.dirs;
     repl.createFolders(folders, function(){
-      repl.createFiles(assets.files, callback);
+      repl.createFiles(assets.files, function(){
+        repl.installDependencies(folders, callback);
+      });
     });
   };
 
@@ -139,6 +142,26 @@ module.exports = function Replicator(Hive){
         loop();
       });
     };
+    loop();
+  };
+
+  repl.installDependencies = function(folders, callback){
+    const child_process = require('child_process');
+    const stringArgv = require('string-argv');
+    let basePath = Hive.options.beeFolder;
+    let foldersCopy = [...folders];
+    let loop = function(){
+      let folder = foldersCopy.shift();
+      if(typeof folder === "undefined"){
+        debug("folders are done, lets write the data");
+        callback();
+        return;
+      }
+      let fullFolderPath = path.join(basePath, folder);
+      let commandArgs = stringArgv("npm install");
+      let spawn = child_process.spawn(commandArgs[0], commandArgs.slice(1), {cwd: fullFolderPath});
+      spawn.on('close', loop);
+    }
     loop();
   };
 

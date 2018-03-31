@@ -56,6 +56,7 @@ module.exports = function SocketDelegates(Hive, io, sockets, Cli){
 
   delegates.completeReplication = function(){
     console.log("WE ARE COMPLETE");
+    Hive.log("completed replication....");
   };
 
   delegates.performActionFromRemote = function(command, callback){

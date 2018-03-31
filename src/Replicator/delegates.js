@@ -1,4 +1,5 @@
 module.exports = function ReplicatorDelegates(Replicator){
+  const request = require('request');
   let delegates = {};
 
   delegates.retrieveTokenFromRemoteHost = function(host, username, password, callback){

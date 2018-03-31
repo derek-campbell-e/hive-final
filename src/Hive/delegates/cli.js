@@ -44,9 +44,12 @@ module.exports = function CliDelegates(Hive, Cli){
   };
 
   delegates.replicate = function(args, callback){
-    Hive.log("begin replication...");
-    let replicator = require('../../Replicator')(Hive);
-    replicator.replicateToHive.call(this, args, callback);
+    let cli = this;
+    delegates.hasUserNameAndPasswordForRemote.call(cli, args, function(username, password){
+      Hive.log("begin replication...");
+      let replicator = require('../../Replicator')(Hive);
+      replicator.replicateToHive.call(cli, args, username, password, callback);
+    });
   };
 
   delegates.remote = function(args, callback){
@@ -84,7 +87,6 @@ module.exports = function CliDelegates(Hive, Cli){
   };
 
   delegates.hasUserNameAndPasswordForRemote = function(args, callback){
-    //console.log("AAA", this);
     let cli = this;
     let promptQuestions = [];
     let usernamePrompt = {

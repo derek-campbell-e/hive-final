@@ -65,7 +65,7 @@ module.exports = function SocketDelegates(Hive, io, sockets, Cli){
   
 
   delegates.onConnection = function(socket){
-    Hive.log("new socket: ", socket.id, socket.handshake.address);
+    Hive.log("new socket: ", socket.id, socket.handshake.address, socket.handshake.headers["x-real-ip"]);
     sockets[socket.id] = socket;
     delegates.bindNewSocket(socket);
   };

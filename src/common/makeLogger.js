@@ -31,14 +31,14 @@ module.exports = function MakeLogger(Module){
 
   logger.log = function(){
     let line = logger.makeLogLine.apply(logger, arguments);
-    Module.meta.stdout += line;
-    Module.emit("logline", line.replace(/\n/g, " "));
+    Module.meta.stdout += line + "\n";
+    Module.emit("logline", line);
     if(HiveOptions.verbose){
       console.log(line);
     }
     logger.beforeWrite(logpaths.stdout, function(error){
       if(!error){
-        fs.writeFileSync(logpaths.stdout, line, {encoding: 'utf-8', flag: 'a'});
+        fs.writeFileSync(logpaths.stdout, line + "\n", {encoding: 'utf-8', flag: 'a'});
         trim();
         return;
       }
@@ -47,14 +47,14 @@ module.exports = function MakeLogger(Module){
 
   logger.error = function(){
     let line = logger.makeLogLine.apply(logger, arguments);
-    Module.meta.stderr += line;
-    Module.emit("errorline", line.replace(/\n/g, " ").red);
+    Module.meta.stderr += line + "\n";
+    Module.emit("errorline", line.red);
     if(HiveOptions.verbose){
       console.error(line);
     }
     logger.beforeWrite(logpaths.stderr, function(error){
       if(!error){
-        fs.writeFileSync(logpaths.stderr, line, {encoding: 'utf-8', flag: 'a'});
+        fs.writeFileSync(logpaths.stderr, line + "\n", {encoding: 'utf-8', flag: 'a'});
         trim();
         return;
       }
@@ -63,10 +63,10 @@ module.exports = function MakeLogger(Module){
   
   logger.result = function(){
     let line = logger.makeLogLine.apply(logger, arguments);
-    Module.meta.results += line;
+    Module.meta.results += line + "\n";
     logger.beforeWrite(logpaths.results, function(error){
       if(!error){
-        fs.writeFileSync(logpaths.results, line, {encoding: 'utf-8', flag: 'a'});
+        fs.writeFileSync(logpaths.results, line + "\n", {encoding: 'utf-8', flag: 'a'});
         trim();
         return;
       }

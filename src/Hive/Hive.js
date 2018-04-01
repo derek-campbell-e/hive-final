@@ -32,6 +32,7 @@ module.exports = function Hive(options){
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({extended: true}));
   app.use(multer().array());
+  app.set('trust proxy', true);
 
   server.listen(options.port);
   

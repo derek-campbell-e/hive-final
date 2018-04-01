@@ -92,7 +92,7 @@ module.exports = function Bee(Hive){
     for(let key in bee.meta){
       let exportData = bee.meta[key];
       if(typeof exportData === 'function'){
-        exports[key] = exportData();
+        exports[key] = exportData;
       } else {
         exports[key] = exportData;
       }

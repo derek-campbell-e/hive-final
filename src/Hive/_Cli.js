@@ -3,6 +3,9 @@ module.exports = function CLI(Hive){
   const local = vorpal();
   const remote = vorpal();
 
+  local.history('hive-local');
+  remote.history('hive-remote');
+
   let delegateAction = function(delegateFunction, args, callback){
     let self = this;
     let delegateKey = 'cli';
@@ -90,8 +93,11 @@ module.exports = function CLI(Hive){
   
   // replicate our hive to another host
   commands.replicate = {};
-  commands.replicate.command = "repl <host>";
+  commands.replicate.command = "repl <host> [username] [password]";
   commands.replicate.description = "Replicate current hive structure to another host";
+  commands.replicate.types = {
+    string: ['username', 'password']
+  };
   commands.replicate.action = {
     local: function(args, callback){
       const self = this;
@@ -117,6 +123,9 @@ module.exports = function CLI(Hive){
   commands.remote = {};
   commands.remote.command = "remote <host> [username] [password]";
   commands.remote.description = "connect to remote hive";
+  commands.remote.types = {
+    string: ['username', 'password']
+  };
   commands.remote.action = {
     local: function(args, callback){
       const self = this;
@@ -163,6 +172,10 @@ module.exports = function CLI(Hive){
     
     if(typeof commandDict.option !== "undefined"){
       cliSession.option.apply(cliSession, commandDict.option);
+    }
+
+    if(typeof commandDict.types !== "undefined"){
+      cliSession.types.apply(cliSession, commandDict.types);
     }
   };
 

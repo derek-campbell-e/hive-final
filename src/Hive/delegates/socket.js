@@ -18,7 +18,6 @@ module.exports = function SocketDelegates(Hive, io, sockets, Cli){
 
   let socketVerifyTokenStillWorks = function(packet, next){
     let socket = this;
-    console.log(this.token);
     Hive.runDelegate('tokens', 'verifyToken', this.token, function(error, data){
       if(!error){
         return next();

@@ -94,16 +94,24 @@ module.exports = function CliDelegates(Hive, Cli){
       name: 'username',
       message: 'Please enter username: ',
     };
+
     let passwordPrompt = {
       type: 'password',
       name: 'password',
       message: 'Please enter password: '
     };
+
     if(!args.password){
       promptQuestions.push(passwordPrompt);
     }
     if(!args.username){
       promptQuestions.unshift(usernamePrompt);
+    }
+
+    if(args.username && args.password){
+      let username = args.username.replace(/'/g, '');
+      let password = args.password.replace(/'/g, '');
+      return callback(username, password);
     }
 
     return this.prompt(promptQuestions, function(result){

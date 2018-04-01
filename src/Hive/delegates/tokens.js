@@ -1,7 +1,6 @@
 module.exports = function(Hive){
   const jwt = require('jsonwebtoken');
   let secret = require('crypto').randomBytes(10).toString('hex');
-  //secret = "shhhhhhh";
   
   let delegates = {};
 

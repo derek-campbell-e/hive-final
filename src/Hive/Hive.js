@@ -1,6 +1,8 @@
 module.exports = function Hive(options){
   const path = require('path');
   // our common tools
+  const processArgs = require('vorpal')().parse(process.argv, {use: 'minimist'});
+
   const defaultOptions = {};
   defaultOptions.port = process.env.PORT || 4202;
   defaultOptions.loadAllDrones = true; // load all the drones from the bees/drones folder
@@ -10,6 +12,7 @@ module.exports = function Hive(options){
   defaultOptions.loadDrones = []; // drones to load by default
   defaultOptions.startDrones = []; // drones to start by default
   defaultOptions.maxTaskRuntime = 60 * 1000; // max runtime for tasks in ms, default is 1 minute
+  defaultOptions.verbose = processArgs['show-logs'] || false;
 
   options = require('extend')(true, {}, defaultOptions, options);
 

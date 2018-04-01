@@ -53,6 +53,7 @@ module.exports = function Replicator(Hive){
     debug("STARTING TO REPLICATE");
     repl.log("building assets...");
     repl.buildAssets(function(){
+      //console.log(assets);
       replicateSocket.compress().emit("replication", assets);
     });
   };
@@ -110,7 +111,7 @@ module.exports = function Replicator(Hive){
     globOptions.cwd = Hive.options.beeFolder;
     globOptions.absolute = true;
     globOptions.realpath = true;
-    globOptions.ignore = ['node_modules/'];
+    globOptions.ignore = ['**/node_modules/**'];
     glob(['**/*'], globOptions, function(error, files){
       if(!error){
         repl.compileIntoAssets(files, callback);

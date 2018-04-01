@@ -33,6 +33,9 @@ module.exports = function MakeLogger(Module){
     let line = logger.makeLogLine.apply(logger, arguments);
     Module.meta.stdout += line;
     Module.emit("logline", line.replace(/\n/g, " "));
+    if(HiveOptions.verbose){
+      console.log(line);
+    }
     logger.beforeWrite(logpaths.stdout, function(error){
       if(!error){
         fs.writeFileSync(logpaths.stdout, line, {encoding: 'utf-8', flag: 'a'});
@@ -46,6 +49,9 @@ module.exports = function MakeLogger(Module){
     let line = logger.makeLogLine.apply(logger, arguments);
     Module.meta.stderr += line;
     Module.emit("errorline", line.replace(/\n/g, " ").red);
+    if(HiveOptions.verbose){
+      console.error(line);
+    }
     logger.beforeWrite(logpaths.stderr, function(error){
       if(!error){
         fs.writeFileSync(logpaths.stderr, line, {encoding: 'utf-8', flag: 'a'});

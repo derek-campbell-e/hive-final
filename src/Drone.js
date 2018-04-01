@@ -21,6 +21,10 @@ module.exports = function Drone(Hive, Queen, MindFile){
     return drone.meta.class + ":" + drone.meta.mind;
   };
 
+  drone.meta.nextFire = function(number, start, end){
+    //return 
+  };
+
   drone.taskTimer = null;
 
   let delegates = {};
